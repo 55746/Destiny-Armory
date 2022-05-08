@@ -12,9 +12,11 @@ export const Home = () => {
         <div className="card-body">
           <h1 className="card-title">LOUIS ALERT</h1>
           <p className="card-text">Public missing brodcast alert system</p>
-          <a href="#" className="btn btn-primary">
-            Missing Persons Page
-          </a>
+          <Link to="/missingpersons">
+            <button href="#" className="btn btn-primary">
+              Missing Persons Page
+            </button>
+          </Link>
         </div>
       </div>
       <div>

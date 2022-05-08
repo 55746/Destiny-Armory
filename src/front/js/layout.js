@@ -10,6 +10,8 @@ import injectContext from "./store/appContext";
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
 import { CreatePage } from "./component/create";
+import { Statistics } from "./component/statistics";
+import { MissingPersons } from "./component/missingpersons";
 
 //create your first component
 const Layout = () => {
@@ -26,6 +28,12 @@ const Layout = () => {
           <Switch>
             <Route exact path="/create">
               <CreatePage />
+            </Route>
+            <Route exact path="/statistics">
+              <Statistics />
+            </Route>
+            <Route exact path="/missingper">
+              <MissingPersons />
             </Route>
             {/* THIS IS REQUIRED TO CONNECT YOUR PAGES AND MAKE THEM FOUND */}
             <Route exact path="/">

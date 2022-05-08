@@ -27,28 +27,15 @@ export const Navbar = () => {
         <div>
           <ul className="nav justify-content-center">
             <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="#">
-                example
-              </a>
+              <Link to="/statistics">
+                <a className="nav-link active" aria-current="page" href="#">
+                  Statistics
+                </a>
+              </Link>
             </li>
             <li className="nav-item">
               <a className="nav-link" href="#">
-                example
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#">
-                example
-              </a>
-            </li>
-            <li className="nav-item">
-              <a
-                className="nav-link disabled"
-                href="#"
-                tabIndex="-1"
-                aria-disabled="true"
-              >
-                example
+                About Louise Alert
               </a>
             </li>
           </ul>
