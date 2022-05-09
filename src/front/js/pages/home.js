@@ -7,30 +7,25 @@ export const Home = () => {
   const { store, actions } = useContext(Context);
 
   return (
-    <div className="text-center mt-5">
-      <div className="card text-center">
-        <div className="card-body">
-          <h1 className="card-title">LOUIS ALERT</h1>
-          <p className="card-text">Public missing brodcast alert system</p>
-          <Link to="/missingpersons">
-            <button href="#" className="btn btn-primary">
-              Missing Persons Page
-            </button>
-          </Link>
+    <>
+      <div class="input-group">
+        <div class="form-outline">
+          <input type="search" id="form1" class="form-control" />
+          <label class="form-label" for="form1">
+            Search
+          </label>
         </div>
+        <button type="button" class="btn btn-primary">
+          <i class="fas fa-search"></i>
+        </button>
       </div>
       <div>
-        <h2> Sign up to report missing persons</h2>
-        <Link to="/signUp">
-          <button type="button" className="btn btn-primary">
-            Sign up
-          </button>
-        </Link>
+        <img
+          src="src/front/img/media_screenshot_thumb_1.jpg"
+          class="img-fluid"
+          alt="..."
+        />
       </div>
-      <div className="alert alert-info">
-        {store.message ||
-          "make sure to make a loading screen or img when the website is loading"}
-      </div>
-    </div>
+    </>
   );
 };

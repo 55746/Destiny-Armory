@@ -29,13 +29,33 @@ export const Navbar = () => {
             <li className="nav-item">
               <Link to="/statistics">
                 <a className="nav-link active" aria-current="page" href="#">
-                  Statistics
+                  Exotic
                 </a>
               </Link>
             </li>
             <li className="nav-item">
               <a className="nav-link" href="#">
-                About Louise Alert
+                Legendary
+              </a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="#">
+                Rare
+              </a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="#">
+                Uncommon
+              </a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="#">
+                Common
+              </a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="#">
+                All
               </a>
             </li>
           </ul>
