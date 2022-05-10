@@ -10,7 +10,12 @@ import injectContext from "./store/appContext";
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
 import { CreatePage } from "./component/create";
-import { Statistics } from "./component/statistics";
+import { Exotics } from "./component/exotics";
+import { Legendary } from "./component/legendary";
+import { Rare } from "./component/rare";
+import { Uncommon } from "./component/uncommon";
+import { Common } from "./component/common";
+import { All } from "./component/all";
 import { MissingPersons } from "./component/missingpersons";
 
 //create your first component
@@ -29,8 +34,23 @@ const Layout = () => {
             <Route exact path="/create">
               <CreatePage />
             </Route>
-            <Route exact path="/statistics">
-              <Statistics />
+            <Route exact path="/exotics">
+              <Exotics />
+            </Route>
+            <Route exact path="/legendary">
+              <Legendary />
+            </Route>
+            <Route exact path="/rare">
+              <Rare />
+            </Route>
+            <Route exact path="/uncommon">
+              <Uncommon />
+            </Route>
+            <Route exact path="/common">
+              <Common />
+            </Route>
+            <Route exact path="/all">
+              <All />
             </Route>
             <Route exact path="/missingper">
               <MissingPersons />

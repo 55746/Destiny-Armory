@@ -8,21 +8,22 @@ export const Home = () => {
 
   return (
     <>
-      <div class="input-group">
-        <div class="form-outline">
-          <input type="search" id="form1" class="form-control" />
-          <label class="form-label" for="form1">
-            Search
-          </label>
+      <div
+        style={{ position: "absolute", left: "40%", marginTop: "5%" }}
+        className="input-group"
+      >
+        <div className="form-outline">
+          <input type="search" id="form1" className="form-control" />
+          <label className="form-label" for="form1"></label>
         </div>
-        <button type="button" class="btn btn-primary">
-          <i class="fas fa-search"></i>
+        <button type="button" className="btn btn-primary">
+          search
         </button>
       </div>
       <div>
         <img
           src="src/front/img/media_screenshot_thumb_1.jpg"
-          class="img-fluid"
+          className="img-fluid"
           alt="..."
         />
       </div>

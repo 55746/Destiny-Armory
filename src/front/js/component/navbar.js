@@ -8,12 +8,12 @@ export const Navbar = () => {
         <img src="src/front/img/3396e642ba214821b01dde9d23292526.png" />
         <div className="container">
           <Link to="/">
-            <span className="navbar-brand mb-0 h1">Louis Alert</span>
+            <span className="navbar-brand mb-0 h1">Destiny</span>
           </Link>
           <div className="ml-auto">
-            <Link to="/demo">
+            {/* <Link to="/demo">
               <button className="btn btn-primary">Contact</button>
-            </Link>
+            </Link> */}
             <Link to="/create">
               <button className="btn btn-primary">Create</button>
             </Link>
@@ -25,38 +25,51 @@ export const Navbar = () => {
         </div>
 
         <div>
-          <ul className="nav justify-content-center">
+          <ul
+            style={{ position: "absolute", left: "25%" }}
+            className="nav justify-content-center"
+          >
             <li className="nav-item">
-              <Link to="/statistics">
+              <Link to="/exotics">
                 <a className="nav-link active" aria-current="page" href="#">
                   Exotic
                 </a>
               </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
-                Legendary
-              </a>
+              <Link to="/legendary">
+                <a className="nav-link" href="#">
+                  Legendary
+                </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
-                Rare
-              </a>
+              <Link to="/rare">
+                <a className="nav-link" href="#">
+                  Rare
+                </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
-                Uncommon
-              </a>
+              <Link to="/uncommon">
+                <a className="nav-link" href="#">
+                  Uncommon
+                </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
-                Common
-              </a>
+              <Link to="/common">
+                <a className="nav-link" href="#">
+                  Common
+                </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
-                All
-              </a>
+              <Link to="/all">
+                <a className="nav-link" href="#">
+                  All
+                </a>
+              </Link>
             </li>
           </ul>
         </div>
