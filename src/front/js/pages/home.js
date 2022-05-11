@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { Context } from "../store/appContext";
 import "../../styles/home.css";
 import { Link } from "react-router-dom";
+import Marcus from "../../img/4k-destiny-2-warmind-dlc-screenshot-wallpaper-preview.jpg";
 
 export const Home = () => {
   const { store, actions } = useContext(Context);
@@ -22,8 +23,9 @@ export const Home = () => {
       </div>
       <div>
         <img
-          src="src/front/img/media_screenshot_thumb_1.jpg"
+          src={Marcus}
           className="img-fluid"
+          style={{ width: "100%" }}
           alt="..."
         />
       </div>

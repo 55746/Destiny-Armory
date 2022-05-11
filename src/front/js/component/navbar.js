@@ -4,11 +4,11 @@ import { Link } from "react-router-dom";
 export const Navbar = () => {
   return (
     <>
-      <nav className="navbar navbar-light bg-light">
-        <img src="src/front/img/3396e642ba214821b01dde9d23292526.png" />
+      <nav className="navbar navbar-light text-light bg-dark">
+        {/* <img src="src/front/img/3396e642ba214821b01dde9d23292526.png" /> */}
         <div className="container">
           <Link to="/">
-            <span className="navbar-brand mb-0 h1">Destiny</span>
+            <span className="navbar-brand mb-0 h1 text-light">Destiny</span>
           </Link>
           <div className="ml-auto">
             {/* <Link to="/demo">
