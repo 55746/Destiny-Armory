@@ -10,7 +10,12 @@ export const Home = () => {
   return (
     <>
       <div
-        style={{ position: "absolute", left: "40%", marginTop: "5%" }}
+        style={{
+          position: "absolute",
+          left: "40%",
+          marginTop: "5%",
+          display: "inline-block",
+        }}
         className="input-group"
       >
         <div className="form-outline">
