@@ -7,16 +7,15 @@ import { Demo } from "./pages/demo";
 import { Single } from "./pages/single";
 import injectContext from "./store/appContext";
 
-import { Navbar } from "./component/navbar";
-import { Footer } from "./component/footer";
-import { CreatePage } from "./component/create";
-import { Exotics } from "./component/exotics";
-import { Legendary } from "./component/legendary";
-import { Rare } from "./component/rare";
-import { Uncommon } from "./component/uncommon";
-import { Common } from "./component/common";
-import { All } from "./component/all";
-import { MissingPersons } from "./component/missingpersons";
+import { Navbar } from "./component/navbar.jsx";
+import { Footer } from "./component/footer.jsx";
+import { CreatePage } from "./component/create.jsx";
+import { Exotics } from "./component/exotics.jsx";
+import { Legendary } from "./component/legendary.jsx";
+import { Rare } from "./component/rare.jsx";
+import { Uncommon } from "./component/uncommon.jsx";
+import { Common } from "./component/common.jsx";
+import { All } from "./component/all.jsx";
 
 //create your first component
 const Layout = () => {
@@ -51,9 +50,6 @@ const Layout = () => {
             </Route>
             <Route exact path="/all">
               <All />
-            </Route>
-            <Route exact path="/missingper">
-              <MissingPersons />
             </Route>
             {/* THIS IS REQUIRED TO CONNECT YOUR PAGES AND MAKE THEM FOUND */}
             <Route exact path="/">

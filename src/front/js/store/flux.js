@@ -33,6 +33,7 @@ const getState = ({ getStore, getActions, setStore }) => {
           .then((data) => setStore({ getData: data }))
           .catch((err) => console.error(err, error));
       },
+
       getMessage: () => {
         // fetching data from the backend
         let newList = "testing to see if this shows up";
