@@ -1,38 +1,25 @@
 import React from "react";
+import Marcus from "../../img/4k-destiny-2-warmind-dlc-screenshot-wallpaper-preview.jpg";
 
 export const Common = () => {
   return (
-    <>
+    <div>
       <ul class="list-group list-group-horizontal">
         <li class="list-group-item">An item</li>
         <li class="list-group-item">A second item</li>
-        <li class="list-group-item">A third item</li>
+        <li class="list-group-item">
+          <button
+            className="fa fa-share-alt"
+            style={{ fontSize: "36px" }}
+          ></button>
+        </li>
       </ul>
-      <ul class="list-group list-group-horizontal-sm">
-        <li class="list-group-item">An item</li>
-        <li class="list-group-item">A second item</li>
-        <li class="list-group-item">A third item</li>
-      </ul>
-      <ul class="list-group list-group-horizontal-md">
-        <li class="list-group-item">An item</li>
-        <li class="list-group-item">A second item</li>
-        <li class="list-group-item">A third item</li>
-      </ul>
-      <ul class="list-group list-group-horizontal-lg">
-        <li class="list-group-item">An item</li>
-        <li class="list-group-item">A second item</li>
-        <li class="list-group-item">A third item</li>
-      </ul>
-      <ul class="list-group list-group-horizontal-xl">
-        <li class="list-group-item">An item</li>
-        <li class="list-group-item">A second item</li>
-        <li class="list-group-item">A third item</li>
-      </ul>
-      <ul class="list-group list-group-horizontal-xxl">
-        <li class="list-group-item">An item</li>
-        <li class="list-group-item">A second item</li>
-        <li class="list-group-item">A third item</li>
-      </ul>
-    </>
+      <img
+        src={Marcus}
+        className="img-fluid"
+        style={{ width: "100%" }}
+        alt="..."
+      />
+    </div>
   );
 };

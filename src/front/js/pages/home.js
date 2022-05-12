@@ -13,8 +13,8 @@ export const Home = () => {
         style={{
           position: "absolute",
           left: "40%",
-          marginTop: "5%",
-          display: "inline-block",
+          marginTop: "15%",
+          width: "50%",
         }}
         className="input-group"
       >
@@ -22,7 +22,11 @@ export const Home = () => {
           <input type="search" id="form1" className="form-control" />
           <label className="form-label" for="form1"></label>
         </div>
-        <button type="button" className="btn btn-primary">
+        <button
+          type="button"
+          className="btn btn-primary"
+          style={{ position: "absolute", left: "25%" }}
+        >
           search
         </button>
       </div>

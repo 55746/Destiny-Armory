@@ -17,7 +17,7 @@ class User(db.Model):
             "email": self.email,
             # do not serialize the password, its a security breach
         }
-    class Weapons(db,Model):
+    class Weapons(db.Model):
         id = db.Column(db.Integer, primary_key=True)
         weapon_name=db.Column(db.String(120), nullable=False)
         weapon_type=db.Column(db.String(20), nullable=False)
