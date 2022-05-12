@@ -2,7 +2,7 @@
 This module takes care of starting the API Server, Loading the DB and Adding the endpoints
 """
 from flask import Flask, request, jsonify, url_for, Blueprint
-from api.models import db, User
+from api.models import db, User, Weapons
 from api.utils import generate_sitemap, APIException
 
 api = Blueprint('api', __name__)
@@ -25,4 +25,4 @@ def login_user():
     exoticWeapons=Weapons(weapon_name=response_body['weapon_name'], weapon_type=response_body['weapon_type'],weapons_lore=response_body['weapon_lore'])
     db.session.add(exoticWeapons)
     db.session.commit()
-    return jsonify(exoticWeapons.serialize()), 200
+    return "[]", 200

@@ -21,36 +21,39 @@ const getState = ({ getStore, getActions, setStore }) => {
       exampleFunction: () => {
         getActions().changeColor(0, "green");
       },
-      getData: (par) => {
-        fetch(
-          `https://3000-55746-louisealert20-ewghhi2nbe0.ws-us44.gitpod.io/api/hello`,
-          {
-            method: "GET",
-            redirect: "follow",
-          }
-        )
-          .then((res) => res.json())
-          .then((data) => setStore({ getData: data }))
-          .catch((err) => console.error(err, error));
-      },
+      // getData: (par) => {
+      //   fetch(
+      //     `https://3000-55746-louisealert20-ewghhi2nbe0.ws-us44.gitpod.io/api/hello`,
+      //     {
+      //       method: "GET",
+      //       headers: {
+      //         "Content-Type": "application/json",
+      //       },
+      //       redirect: "follow",
+      //     }
+      //   )
+      //     .then((res) => res.json())
+      //     .then((data) => setStore({ getData: data }))
+      //     .catch((err) => console.error(err, error));
+      // },
 
-      getMessage: () => {
-        // fetching data from the backend
-        let newList = "testing to see if this shows up";
-        fetch(process.env.BACKEND_URL + "/api/hello", {
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(newList),
-          redirect: "follow",
-        })
-          .then((resp) => resp.json())
-          .then((data) => setStore({ newList: data.newList }))
-          .catch((error) =>
-            console.log("Error loading message from backend", error)
-          );
-      },
+      // getMessage: () => {
+      //   // fetching data from the backend
+      //   let newList = "testing to see if this shows up";
+      //   fetch(process.env.BACKEND_URL + "/api/hello", {
+      //     method: "GET",
+      //     headers: {
+      //       "Content-Type": "application/json",
+      //     },
+      //     body: JSON.stringify(newList),
+      //     redirect: "follow",
+      //   })
+      //     .then((resp) => resp.json())
+      //     .then((data) => setStore({ newList: data.newList }))
+      //     .catch((error) =>
+      //       console.log("Error loading message from backend", error)
+      //     );
+      // },
       changeColor: (index, color) => {
         //get the store
         const store = getStore();
