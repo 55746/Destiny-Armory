@@ -17,7 +17,7 @@ class User(db.Model):
             "email": self.email,
             # do not serialize the password, its a security breach
         }
-    class Weapons(db.Model):
+class Weapon(db.Model):
         id = db.Column(db.Integer, primary_key=True)
         weapon_name=db.Column(db.String(120), nullable=False)
         weapon_type=db.Column(db.String(20), nullable=False)
@@ -27,7 +27,7 @@ class User(db.Model):
         # gunImg = 
 
         def __repr__(self):
-            return f'<Weapons {self.weapon_name}>'
+            return f'<Weapon {self.weapon_name}>'
 
         def serialize(self):
             return {
