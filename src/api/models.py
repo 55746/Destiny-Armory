@@ -27,10 +27,11 @@ class Weapon(db.Model):
         # gunImg = 
 
         def __repr__(self):
-            return f'<Weapon {self.weapon_name}>'
+            return f'<Weapon {self.weapon_name}>' 
 
         def serialize(self):
             return {
+                "id": self.id,
                 "weapon_name": self.weapon_name,
                 "weapon_type": self.weapon_type,
                 "weapon_class": self.weapon_class,
