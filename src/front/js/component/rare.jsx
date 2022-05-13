@@ -1,5 +1,5 @@
 import React from "react";
-import Marcus from "../../img/4k-destiny-2-warmind-dlc-screenshot-wallpaper-preview.jpg";
+import Marcus from "../../img/warmindImg.jpg";
 
 export const Rare = () => {
   return (

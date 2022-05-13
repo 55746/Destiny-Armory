@@ -1,11 +1,11 @@
-import React, { useContext } from "react";
-import { Context } from "../store/appContext";
-import "../../styles/home.css";
-import { Link } from "react-router-dom";
-import Marcus from "../../img/4k-destiny-2-warmind-dlc-screenshot-wallpaper-preview.jpg";
+import React from "react";
+// import { Context } from "/pages/"
+import "../../../styles/home.css";
+// import { Link } from "react-router-dom";
+import Marcus from "../../../img/warmindImg.jpg";
 
 export const Home = () => {
-  const { store, actions } = useContext(Context);
+  // const { store, actions } = useContext(Context);
 
   return (
     <>
