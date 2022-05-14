@@ -2,7 +2,7 @@
 This module takes care of starting the API Server, Loading the DB and Adding the endpoints
 """
 from flask import Flask, request, jsonify, url_for, Blueprint
-from api.models import db, User, Weapon
+from api.models import db, User, Weapon, Legendaryweapon
 from api.utils import generate_sitemap, APIException
 
 api = Blueprint('api', __name__)
@@ -18,10 +18,19 @@ def handle_hello():
     return jsonify(response_body), 200
 
 @api.route('/exotics', methods=['GET'])
-def gunsgunsguns():
+def exotic_get():
     weapons=Weapon.query.all()
     weapons_list=list(map(lambda x: x.serialize(), weapons))
     return jsonify(weapons_list), 200
+
+@api.route('/exotics', methods=['POST'])
+def access_exoticweapons():
+    response_body = request.get_json()
+    # exoticModel= Weapons.query.filter(Weapons.weapon_name == response_body['weapon_name'], Weapons.weapon_type == response_body['weapon_type'],Weapons.weapon_lore == response_body['weapon_lore'])
+    exoticWeapons=Weapon(weapon_name=response_body['weapon_name'], weapon_type=response_body['weapon_type'],weapon_class=response_body['weapon_class'], weapon_lore=response_body['weapon_lore']) #location_description=response_body['location_description'])
+    db.session.add(exoticWeapons)
+    db.session.commit()
+    return jsonify(exoticWeapons.serialize()), 200
 
 @api.route('/exotics/<int:exotics_id>', methods=['DELETE'])
 def exoticsId(exotics_id):
@@ -33,27 +42,34 @@ def exoticsId(exotics_id):
     delete_exotics = db.session.delete(singleweapon)
     db.session.commit()
     return jsonify(singleweapon.serialize())
+# THIS IS WHERE WE DO GET FOR LEGENDARY
 
-# @app.route('/charachters/<int:charachters_id>', methods=['DELETE'])
-# def delete_charachter(charachters_id):
-#     charachter_id = Charachters.query.get(charachters_id)
-#     print(charachter_id)
-#     if charachter_id is None:
-#         raise APIException(
-#             'This charachter doesnt exist, or has already been deleted', status_code=404)
-#     db.session.delete(charachter_id)
-#     db.session.commit()
-#     return f"It has been succesfully deleted", 200
 
-@api.route('/exotics', methods=['POST'])
-def access_weapons():
+@api.route('/legendary', methods=['GET'])
+def Legendary_get():
+    Legendary_get=Weapon.query.all()
+    weapons_list=list(map(lambda x: x.serialize(), Legendary_get))
+    return jsonify(weapons_list), 200
+
+@api.route('/legendary', methods=['POST'])
+def access_legendaryweapons():
     response_body = request.get_json()
     # exoticModel= Weapons.query.filter(Weapons.weapon_name == response_body['weapon_name'], Weapons.weapon_type == response_body['weapon_type'],Weapons.weapon_lore == response_body['weapon_lore'])
-    exoticWeapons=Weapon(weapon_name=response_body['weapon_name'], weapon_type=response_body['weapon_type'],weapon_class=response_body['weapon_class'], weapon_lore=response_body['weapon_lore'])
-    db.session.add(exoticWeapons)
+    weaponInput=Legendaryweapon(weapon_name=response_body['weapon_name'], weapon_type=response_body['weapon_type'],weapon_class=response_body['weapon_class'], weapon_lore=response_body['weapon_lore'], location_description=response_body['location_description'])
+    db.session.add(weaponInput)
     db.session.commit()
-    return jsonify(exoticWeapons.serialize()), 200
+    return jsonify(weaponInput.serialize()), 200
 
+@api.route('/legendary/<int:legendary_id>', methods=['DELETE'])
+def legendaryId(legendary_id):
+    singleweapon = Legendaryweapon.query.get(legendary_id)
+    print(singleweapon)
+    if singleweapon is None:
+        raise APIException(
+            'This Weapon doesnt exist, or has already been deleted', status_code=404)
+    delete_legendary = db.session.delete(singleweapon)
+    db.session.commit()
+    return jsonify(singleweapon.serialize())
 # @api.route('/exotics/<int:exotics_id>}', methods=['DELETE'])
 # def delete_exotics(exotics_id):
 #     weapons_id = Weapon.query.get(exotics_id)
