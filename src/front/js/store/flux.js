@@ -18,19 +18,22 @@ const getState = ({ getStore, getActions, setStore }) => {
         },
       ],
     },
-    getData: () => {
-      fetch(
-        "https://3001-55746-destinyweaponsli-j7wgtlzvgc1.ws-us45.gitpod.io/api/legendary/",
-        {
-          // FIGURING OUT HOW TO GET THE RIGHT END TO THE URL TO SHOW US ALL THE INFO IN A LIST
-          method: "GET",
-          redirect: "follow",
-        }
-      )
-        .then((res) => res.json())
-        .then((data) => setStore({ legendaryWeapons: data }))
-        .catch((err) => console.error(err, error));
-      // let url = fetch().map() +
+    actions: {
+      getData: () => {
+        fetch(
+          "https://3001-55746-destinyweaponsli-4bt3rw87ozx.ws-us45.gitpod.io/api/legendary",
+          {
+            // FIGURING OUT HOW TO GET THE RIGHT END TO THE URL TO SHOW US ALL THE INFO IN A LIST
+            method: "GET",
+            redirect: "follow",
+            mode: "no-cors",
+          }
+        )
+          .then((res) => res.json())
+          .then((data) => setStore({ legendaryWeapons: data }))
+          .catch((error) => console.error("error", error));
+        // let url = fetch().map() +
+      },
     },
   };
 };
