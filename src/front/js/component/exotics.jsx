@@ -14,7 +14,7 @@ import { Context } from "../store/appContext";
 
 // import {LearnMore} from ""
 
-export const People = () => {
+export const Exotics = () => {
   // const par = list.results.uid;
   const { store, actions } = useContext(Context);
   console.log(store);
