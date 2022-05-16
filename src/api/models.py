@@ -15,7 +15,6 @@ class User(db.Model):
         return {
             "id": self.id,
             "email": self.email,
-            # do not serialize the password, its a security breach
         }
 class Weapon(db.Model):
         id = db.Column(db.Integer, primary_key=True)
@@ -23,7 +22,7 @@ class Weapon(db.Model):
         weapon_type=db.Column(db.String(20), nullable=False)
         weapon_class=db.Column(db.String(20), nullable=False)
         weapon_lore=db.Column(db.String(1000), nullable=False)
-        # location_description=db.Column(db.String(1000), nullable=False)
+        location_description=db.Column(db.String(1000), nullable=False)
         # locationImg=
         # gunImg = 
 
@@ -37,10 +36,9 @@ class Weapon(db.Model):
                 "weapon_type": self.weapon_type,
                 "weapon_class": self.weapon_class,
                 "weapon_lore": self.weapon_lore,
-                # "location_description": self.location_description
+                "location_description": self.location_description
                 # "locationImg": "...",
                 # "gunImg": "..."
-                # do not serialize the password, its a security breach
             }
 class Legendaryweapon(db.Model):
         id = db.Column(db.Integer, primary_key=True)
@@ -65,5 +63,4 @@ class Legendaryweapon(db.Model):
                 "location_description": self.location_description
                 # "locationImg": "...",
                 # "gunImg": "..."
-                # do not serialize the password, its a security breach
             }

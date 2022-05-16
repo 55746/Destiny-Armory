@@ -18,8 +18,6 @@ const getState = ({ getStore, getActions, setStore }) => {
         },
       ],
     },
-<<<<<<< HEAD
-=======
     actions: {
       getData: () => {
         fetch(
@@ -37,7 +35,6 @@ const getState = ({ getStore, getActions, setStore }) => {
         // let url = fetch().map() +
       },
     },
->>>>>>> 1c1d8ddad911d8dfc02dd5c31320b7b467016246
   };
 };
 export default getState;

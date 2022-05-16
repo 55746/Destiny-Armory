@@ -27,7 +27,7 @@ def exotic_get():
 def access_exoticweapons():
     response_body = request.get_json()
     # exoticModel= Weapons.query.filter(Weapons.weapon_name == response_body['weapon_name'], Weapons.weapon_type == response_body['weapon_type'],Weapons.weapon_lore == response_body['weapon_lore'])
-    exoticWeapons=Weapon(weapon_name=response_body['weapon_name'], weapon_type=response_body['weapon_type'],weapon_class=response_body['weapon_class'], weapon_lore=response_body['weapon_lore']) #location_description=response_body['location_description'])
+    exoticWeapons=Weapon(weapon_name=response_body['weapon_name'], weapon_type=response_body['weapon_type'],weapon_class=response_body['weapon_class'], weapon_lore=response_body['weapon_lore'], location_description=response_body['location_description'])
     db.session.add(exoticWeapons)
     db.session.commit()
     return jsonify(exoticWeapons.serialize()), 200
