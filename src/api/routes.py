@@ -44,11 +44,11 @@ def exoticsId(exotics_id):
     return jsonify(singleweapon.serialize())
 # THIS IS WHERE WE DO GET FOR LEGENDARY
 
-
+# never start anything thats not a class with a captal letter
 @api.route('/legendary', methods=['GET'])
-def Legendary_get():
-    Legendary_get=Weapon.query.all()
-    weapons_list=list(map(lambda x: x.serialize(), Legendary_get))
+def legendary_get():
+    legendary_get=Legendaryweapon.query.all()
+    weapons_list=list(map(lambda x: x.serialize(), legendary_get))
     return jsonify(weapons_list), 200
 
 @api.route('/legendary', methods=['POST'])

@@ -48,7 +48,7 @@ class Legendaryweapon(db.Model):
         weapon_type=db.Column(db.String(20), nullable=False)
         weapon_class=db.Column(db.String(20), nullable=False)
         weapon_lore=db.Column(db.String(1000), nullable=False)
-        location_description=db.Column(db.String(1000), nullable=False)
+        location_description=db.Column(db.String(1000), nullable=True)
         # locationImg=
         # gunImg = 
 
