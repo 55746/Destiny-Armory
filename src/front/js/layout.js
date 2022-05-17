@@ -16,6 +16,8 @@ import { Rare } from "./component/rare.jsx";
 import { Uncommon } from "./component/uncommon.jsx";
 import { Common } from "./component/common.jsx";
 import { All } from "./component/all.jsx";
+import { SignUp } from "./pages/signup.jsx";
+import { SignIn } from "./component/Signin.jsx";
 
 //create your first component
 const Layout = () => {
@@ -51,10 +53,16 @@ const Layout = () => {
             <Route exact path="/all">
               <All />
             </Route>
-            {/* THIS IS REQUIRED TO CONNECT YOUR PAGES AND MAKE THEM FOUND */}
             <Route exact path="/">
+              <SignUp />
+            </Route>
+            <Route exact path="/signin">
+              <SignIn />
+            </Route>
+            <Route exact path="/home">
               <Home />
             </Route>
+            {/* THIS IS REQUIRED TO CONNECT YOUR PAGES AND MAKE THEM FOUND */}
             <Route exact path="/single/:theid">
               <Single />
             </Route>
