@@ -39,7 +39,6 @@ def login():
         raise APIException("User Not Found", status_code=400)
 
     user=User.query.filter_by(email=body['email']).first()
-    print(user.password)
     if user == None or body['password'] != user.password:
         raise APIException("User  not found or password incorrect", status_code=400)
     else:
@@ -52,16 +51,6 @@ def protected():
     current_user=get_jwt_identity()
     user=User.query.filter_by(email=current_user).first()
     return jsonify({"first_name":user.first_name, "email":user.email}), 200
-
-
-@api.route('/hello', methods=['POST', 'GET'])
-def handle_hello():
-
-    response_body = {
-        "message": "Hello! I'm a message that came from the backend, check the network tab on the google inspector and you will see the GET request"
-    }
-
-    return jsonify(response_body), 200
 
 @api.route('/signup', methods=['GET'])
 def get_user():
@@ -90,14 +79,6 @@ def create_user():
     db.session.add(new_user)
     db.session.commit()
     return jsonify(new_user.serialize()), 200
-@api.route('/hello', methods=['POST', 'GET'])
-def handle_hello():
-
-    response_body = {
-        "message": "Hello! I'm a message that came from the backend, check the network tab on the google inspector and you will see the GET request"
-    }
-
-    return jsonify(response_body), 200
 
 @api.route('/exotics', methods=['GET'])
 def exotic_get():

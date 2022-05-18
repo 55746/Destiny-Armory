@@ -8,7 +8,7 @@ export const Home = () => {
   console.log(store.user);
   return (
     <div className="text-center mt-5">
-      {store.user ? (
+      {store.user.email ? (
         <div>
           <>
             <div
@@ -43,7 +43,7 @@ export const Home = () => {
           </>
         </div>
       ) : (
-        <h1>LOADING...</h1>
+        <h1>Not Logged in</h1>
       )}
     </div>
   );

@@ -3,7 +3,6 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import ScrollToTop from "./component/scrollToTop";
 
 import { Home } from "./component/pages/home";
-// import { Demo } from "./pages/demo";
 import { Single } from "./component/pages/single";
 import injectContext from "./store/appContext";
 
@@ -16,7 +15,7 @@ import { Rare } from "./component/rare.jsx";
 import { Uncommon } from "./component/uncommon.jsx";
 import { Common } from "./component/common.jsx";
 import { All } from "./component/all.jsx";
-import { SignUp } from "./pages/signup.jsx";
+import { SignUp } from "component/pages/signup";
 import { SignIn } from "./component/Signin.jsx";
 
 //create your first component
@@ -58,6 +57,9 @@ const Layout = () => {
             </Route>
             <Route exact path="/signin">
               <SignIn />
+            </Route>
+            <Route exact path="/signup">
+              <SignUp />
             </Route>
             <Route exact path="/home">
               <Home />

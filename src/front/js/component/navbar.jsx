@@ -7,13 +7,13 @@ export const Navbar = () => {
       <nav className="navbar navbar-light text-light bg-dark">
         {/* <img src="src/front/img/3396e642ba214821b01dde9d23292526.png" /> */}
         <div className="container">
+          <Link to="/signUp">
+            <button className="navbar-brand">Signup</button>
+          </Link>
           <Link to="/">
             <span className="navbar-brand mb-0 h1 text-light">Destiny</span>
           </Link>
           <div className="ml-auto">
-            {/* <Link to="/demo">
-              <button className="btn btn-primary">Contact</button>
-            </Link> */}
             <Link to="/create">
               <button className="btn btn-primary">Create</button>
             </Link>

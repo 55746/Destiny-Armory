@@ -18,9 +18,8 @@ class User(db.Model):
             "email": self.email,
             'first_name': self.first_name,
             'last_name': self.last_name,
-            'dob': self.dob
-            # do not serialize the password, its a security breach
-        }
+            'dob': self.dob        
+}
 class Weapon(db.Model):
         id = db.Column(db.Integer, primary_key=True)
         weapon_name=db.Column(db.String(120), nullable=False)
