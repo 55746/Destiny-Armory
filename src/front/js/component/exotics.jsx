@@ -1,18 +1,5 @@
-// import React, { useContext, useState } from "react";
-// import { Context } from "../store/appContext";
-
-// export const Exotics = () => {
-//   const { store, actions } = useContext(Context);
-//   console.log(store);
-//   return <span>{store.exotics}</span>;
-// };
-
 import React, { useState, useContext } from "react";
 import { Context } from "../store/appContext";
-
-// import { Link } from "react-router-dom";
-
-// import {LearnMore} from ""
 
 export const Exotics = () => {
   // const par = list.results.uid;
@@ -20,8 +7,8 @@ export const Exotics = () => {
   console.log(store);
   return (
     <div className="row" style={{ justifyContent: "center" }}>
-      {store.list &&
-        store.list.map((list, index) => {
+      {store.legendaryWeapons &&
+        store.legendaryWeapons.map((list, index) => {
           return (
             <div
               key={index}
