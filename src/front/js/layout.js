@@ -15,7 +15,7 @@ import { Rare } from "./component/rare.jsx";
 import { Uncommon } from "./component/uncommon.jsx";
 import { Common } from "./component/common.jsx";
 import { All } from "./component/all.jsx";
-import { SignUp } from "component/pages/signup";
+import { SignUp } from "./component/pages/signup.jsx";
 import { SignIn } from "./component/Signin.jsx";
 
 //create your first component
