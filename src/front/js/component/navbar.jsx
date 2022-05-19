@@ -18,9 +18,17 @@ export const Navbar = () => {
               className="fa fa-share-alt"
               style={{ fontSize: "36px" }}
             ></button>
-            <Link to="/signUp">
+            <Link to="/signup">
               <button className="navbar-brand">Signup</button>
             </Link>
+            {/* <button
+            onClick={(e) => {
+              // validateInput();
+              e.preventDefault();
+              actions.logout();
+              history.push("/signin");
+            }}
+          ></button> */}
           </div>
         </div>
 

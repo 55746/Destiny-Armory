@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import ScrollToTop from "./component/scrollToTop";
 
 import { Home } from "./component/pages/home";
-import { Single } from "./component/pages/single";
+import { Single } from "./component/single";
 import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar.jsx";
@@ -15,9 +15,8 @@ import { Rare } from "./component/rare.jsx";
 import { Uncommon } from "./component/uncommon.jsx";
 import { Common } from "./component/common.jsx";
 import { All } from "./component/all.jsx";
-import { SignUp } from "./component/pages/signup.jsx";
+import { SignUp } from "./component/signup.jsx";
 import { SignIn } from "./component/Signin.jsx";
-
 //create your first component
 const Layout = () => {
   //the basename is used when your project is published in a subdirectory and not in the root of the domain
@@ -29,7 +28,6 @@ const Layout = () => {
       <BrowserRouter basename={basename}>
         <ScrollToTop>
           <Navbar />
-
           <Switch>
             <Route exact path="/create">
               <CreatePage />
@@ -52,19 +50,15 @@ const Layout = () => {
             <Route exact path="/all">
               <All />
             </Route>
-            <Route exact path="/">
+            <Route exact path="/signup">
               <SignUp />
             </Route>
             <Route exact path="/signin">
               <SignIn />
             </Route>
-            <Route exact path="/signup">
-              <SignUp />
-            </Route>
             <Route exact path="/home">
               <Home />
             </Route>
-            {/* THIS IS REQUIRED TO CONNECT YOUR PAGES AND MAKE THEM FOUND */}
             <Route exact path="/single/:theid">
               <Single />
             </Route>
