@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { Context } from "../../store/appContext";
+import { Context } from "../store/appContext";
 import { useHistory } from "react-router-dom";
 // HAD TO IMPORT THE USEHISTORY TO BE ABLE TO BRING YOU TO THE LOGIN PAGE ONCLICK
 
