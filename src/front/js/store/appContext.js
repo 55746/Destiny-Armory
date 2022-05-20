@@ -22,6 +22,7 @@ const injectContext = (PassedComponent) => {
     );
 
     useEffect(() => {
+      state.actions.getData();
       // state.actions.getData();
       state.actions.pullExotic();
       // state.action
