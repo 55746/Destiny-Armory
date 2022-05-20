@@ -20,7 +20,7 @@ class User(db.Model):
             'last_name': self.last_name,
             'dob': self.dob        
 }
-class Weapon(db.Model):
+class ExoticWeapon(db.Model):
         id = db.Column(db.Integer, primary_key=True)
         weapon_name=db.Column(db.String(120), nullable=False)
         weapon_type=db.Column(db.String(20), nullable=False)
@@ -31,7 +31,7 @@ class Weapon(db.Model):
         # gunImg = 
 
         def __repr__(self):
-            return f'<Weapon {self.weapon_name}>' 
+            return f'<ExoticWeapon {self.weapon_name}>' 
 
         def serialize(self):
             return {

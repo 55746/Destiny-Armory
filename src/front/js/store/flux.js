@@ -4,7 +4,7 @@ const getState = ({ getStore, getActions, setStore }) => {
       list: { words: "helloWorld" },
       user: {},
       legendaryWeapons: [],
-      exotics: [],
+      exoticWeapons: [],
       message: null,
       demo: [
         {
@@ -34,6 +34,18 @@ const getState = ({ getStore, getActions, setStore }) => {
           .then((data) => setStore({ legendaryWeapons: data }))
           .catch((error) => console.error("error", error));
         // let url = fetch().map() +
+      },
+      pullExotic: () => {
+        fetch(
+          `https://3001-55746-destinyweaponsli-slopnf7tljb.ws-us45.gitpod.io/api/exotics`,
+          {
+            method: "GET",
+            redirect: "follow",
+          }
+        )
+          .then((res) => res.json())
+          .then((data) => setStore({ exoticWeapons: data }))
+          .catch((err) => console.log("err", err));
       },
       signUp: (email, password, first_name, last_name, dob) => {
         const new_user = {
