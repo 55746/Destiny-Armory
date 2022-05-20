@@ -25,6 +25,19 @@ const StarRating = () => {
                 onMouseLeave={() => setHover(null)}
               />
             </label>
+            <label key={i}>
+              <input
+                type="radio"
+                name="rating"
+                value={ratingValue}
+                onClick={() => setrating(ratingValue)}
+              />
+              <FaStar
+                className="star"
+                color={ratingValue <= rating ? "#ffc107" : "#e4e5e9"}
+                size={100}
+              />
+            </label>
           </>
         );
       })}

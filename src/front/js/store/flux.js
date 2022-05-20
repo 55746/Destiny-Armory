@@ -1,23 +1,13 @@
 const getState = ({ getStore, getActions, setStore }) => {
   return {
     store: {
+<<<<<<< HEAD
       // list: { words: "helloWorld" },
+=======
+>>>>>>> 9a7f5831d1c57bddfdcfd9f803b2f2fd26b2e209
       user: {},
       legendaryWeapons: [],
       exoticWeapons: [],
-      message: null,
-      demo: [
-        {
-          title: "FIRST",
-          background: "white",
-          initial: "white",
-        },
-        {
-          title: "SECOND",
-          background: "white",
-          initial: "white",
-        },
-      ],
     },
     actions: {
       getData: () => {
@@ -37,10 +27,11 @@ const getState = ({ getStore, getActions, setStore }) => {
       },
       pullExotic: () => {
         fetch(
-          `https://3001-55746-destinyweaponsli-slopnf7tljb.ws-us45.gitpod.io/api/exotics`,
+          `https://3001-55746-destinyweaponsli-u9xr1lfzxfb.ws-us45.gitpod.io/api/exotics`,
           {
             method: "GET",
             redirect: "follow",
+            // mode: "no-cors",
           }
         )
           .then((res) => res.json())
