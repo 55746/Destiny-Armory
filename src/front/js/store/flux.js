@@ -1,7 +1,7 @@
 const getState = ({ getStore, getActions, setStore }) => {
   return {
     store: {
-      list: { words: "helloWorld" },
+      // list: { words: "helloWorld" },
       user: {},
       legendaryWeapons: [],
       exoticWeapons: [],
