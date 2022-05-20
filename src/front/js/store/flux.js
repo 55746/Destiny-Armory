@@ -1,10 +1,7 @@
 const getState = ({ getStore, getActions, setStore }) => {
   return {
     store: {
-<<<<<<< HEAD
       // list: { words: "helloWorld" },
-=======
->>>>>>> 9a7f5831d1c57bddfdcfd9f803b2f2fd26b2e209
       user: {},
       legendaryWeapons: [],
       exoticWeapons: [],
