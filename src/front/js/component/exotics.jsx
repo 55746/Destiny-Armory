@@ -8,15 +8,6 @@ export const Exotics = () => {
   return (
     <div>
       <div className="row" style={{ justifyContent: "center" }}>
-<<<<<<< HEAD
-        {/* {store.ExoticWeapon &&
-        store.ExoticWeapon.map((list, index) => { */}
-        {/* return <div key={index}> */}
-        {store.list}
-        {/* oksodk */}
-        {/* </div>; */}
-        {/* })} */}
-=======
         {store.exoticWeapons &&
           store.exoticWeapons.map((list, index) => {
             return (
@@ -43,7 +34,6 @@ export const Exotics = () => {
               </div>
             );
           })}
->>>>>>> 9a7f5831d1c57bddfdcfd9f803b2f2fd26b2e209
       </div>
     </div>
   );
