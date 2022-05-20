@@ -4,35 +4,39 @@ const getState = ({ getStore, getActions, setStore }) => {
       user: {},
       legendaryWeapons: [],
       exoticWeapons: [],
+      singleExoticWeapon: [],
     },
     actions: {
       getData: () => {
-        fetch(
-          "https://3001-55746-destinyweaponsli-4bt3rw87ozx.ws-us45.gitpod.io/api/legendary",
-          {
-            // FIGURING OUT HOW TO GET THE RIGHT END TO THE URL TO SHOW US ALL THE INFO IN A LIST
-            method: "GET",
-            redirect: "follow",
-            mode: "no-cors",
-          }
-        )
+        fetch(process.env.BACKEND_URL + "/api/legendary", {
+          // FIGURING OUT HOW TO GET THE RIGHT END TO THE URL TO SHOW US ALL THE INFO IN A LIST
+          method: "GET",
+          redirect: "follow",
+          mode: "no-cors",
+        })
           .then((res) => res.json())
           .then((data) => setStore({ legendaryWeapons: data }))
-          .catch((error) => console.error("error", error));
+          .catch((error) => console.log("error", error));
         // let url = fetch().map() +
       },
       pullExotic: () => {
-        fetch(
-          `https://3001-55746-destinyweaponsli-u9xr1lfzxfb.ws-us45.gitpod.io/api/exotics`,
-          {
-            method: "GET",
-            redirect: "follow",
-            // mode: "no-cors",
-          }
-        )
+        fetch(process.env.BACKEND_URL + `/api/exotics`, {
+          method: "GET",
+          redirect: "follow",
+          // mode: "no-cors",
+        })
           .then((res) => res.json())
           .then((data) => setStore({ exoticWeapons: data }))
           .catch((err) => console.log("err", err));
+      },
+      singleExoticWeapon: (id) => {
+        fetch(process.env.BACKEND_URL + `/api/exotics/${id}`, {
+          method: "GET",
+          redirect: "follow",
+        })
+          .then((res) => res.json())
+          .then((data) => setStore({ singleExoticWeapon: data }))
+          .catch((error) => console.log("error", error));
       },
       signUp: (email, password, first_name, last_name, dob) => {
         const new_user = {

@@ -1,6 +1,7 @@
 import React, { useState, useContext } from "react";
 import { Context } from "../store/appContext";
 import StarRating from "./starRating.jsx";
+import { Link } from "react-router-dom";
 
 export const Exotics = () => {
   const { store, actions } = useContext(Context);
@@ -24,8 +25,20 @@ export const Exotics = () => {
                           {list.weapon_type}
                           {list.weapon_className}
                         </p>
-                        <StarRating />
-
+                        <p style={{}}>
+                          SignUp to Vote
+                          <StarRating />
+                        </p>
+                        <Link to={"/exoticweaponpage/" + list.id}>
+                          <button
+                            className="btn btn-primary"
+                            onClick={() => {
+                              actions.singleExoticWeapon(list.id);
+                            }}
+                          >
+                            Location Info
+                          </button>
+                        </Link>
                         {/* <p className="card-text"><small className="text-muted">Last updated 3 mins ago</small></p> */}
                       </div>
                     </div>

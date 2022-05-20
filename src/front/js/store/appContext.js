@@ -25,6 +25,7 @@ const injectContext = (PassedComponent) => {
       state.actions.getData();
       // state.actions.getData();
       state.actions.pullExotic();
+      state.actions.singleExoticWeapon();
       // state.action
     }, []);
 

@@ -96,7 +96,7 @@ def access_exoticweapons():
 
 # FIX THE READABILITY BETWEEN Exoticweapons and exoticWeapons
 @api.route('/exotics/<int:exotics_id>', methods=['DELETE'])
-def exoticsId(exotics_id):
+def delexoticsId(exotics_id):
     singleweapon = ExoticWeapon.query.get(exotics_id)
     print(singleweapon)
     if singleweapon is None:
@@ -105,6 +105,12 @@ def exoticsId(exotics_id):
     delete_exotics = db.session.delete(singleweapon)
     db.session.commit()
     return jsonify(singleweapon.serialize())
+# CREATE A GET BY ID FOR SINGLE EXOTICS
+@api.route('/exotics/<int:exotics_id>', methods=['GET'])
+def getexoticsId(exotics_id):
+    singleExoticweapon = ExoticWeapon.query.get(exotics_id)
+    print("This is the position of a single ExoticWeapon: ", singleExoticweapon)
+    return jsonify(singleExoticweapon.serialize())
 
 # never start anything thats not a class with a captal letter
 @api.route('/legendary', methods=['GET'])

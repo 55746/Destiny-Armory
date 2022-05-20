@@ -10,6 +10,7 @@ import { Navbar } from "./component/navbar.jsx";
 import { Footer } from "./component/footer.jsx";
 import { CreatePage } from "./component/create.jsx";
 import { Exotics } from "./component/exotics.jsx";
+import { ExoticWeaponPage } from "./component/pages/exoticweaponpage.jsx";
 import { Legendary } from "./component/legendary.jsx";
 import { Rare } from "./component/rare.jsx";
 import { Uncommon } from "./component/uncommon.jsx";
@@ -34,6 +35,9 @@ const Layout = () => {
             </Route>
             <Route exact path="/exotics">
               <Exotics />
+            </Route>
+            <Route exact path="/exoticweaponpage/:theid">
+              <ExoticWeaponPage />
             </Route>
             <Route exact path="/legendary">
               <Legendary />
