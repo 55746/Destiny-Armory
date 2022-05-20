@@ -2,27 +2,17 @@ import React, { useState, useContext } from "react";
 import { Context } from "../store/appContext";
 
 export const Exotics = () => {
-  // const par = list.results.uid;
   const { store, actions } = useContext(Context);
   console.log(store);
   return (
     <div className="row" style={{ justifyContent: "center" }}>
-      {store.ExoticWeapon &&
-        store.ExoticWeapon.map((list, index) => {
-          return (
-            <div
-              key={index}
-              className="card"
-              style={{ width: "16rem", margin: "5px" }}
-            >
-              <div className="card-body">
-                <h5 className="card-title">
-                  {store.pullExotics.ExoticWeapon.weapon_name}
-                </h5>
-              </div>
-            </div>
-          );
-        })}
+      {/* {store.ExoticWeapon &&
+        store.ExoticWeapon.map((list, index) => { */}
+      {/* return <div key={index}> */}
+      {store.list}
+      {/* oksodk */}
+      {/* </div>; */}
+      {/* })} */}
     </div>
   );
 };
