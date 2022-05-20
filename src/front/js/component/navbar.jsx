@@ -39,44 +39,34 @@ export const Navbar = () => {
           >
             <li className="nav-item">
               <Link to="/exotics">
-                <a className="nav-link active" aria-current="page" href="#">
+                <button className="nav-link active" aria-current="page">
                   Exotic
-                </a>
+                </button>
               </Link>
             </li>
             <li className="nav-item">
               <Link to="/legendary">
-                <a className="nav-link" href="#">
-                  Legendary
-                </a>
+                <button className="nav-link">Legendary</button>
               </Link>
             </li>
             <li className="nav-item">
               <Link to="/rare">
-                <a className="nav-link" href="#">
-                  Rare
-                </a>
+                <button className="nav-link">Rare</button>
               </Link>
             </li>
             <li className="nav-item">
               <Link to="/uncommon">
-                <a className="nav-link" href="#">
-                  Uncommon
-                </a>
+                <button className="nav-link">Uncommon</button>
               </Link>
             </li>
             <li className="nav-item">
               <Link to="/common">
-                <a className="nav-link" href="#">
-                  Common
-                </a>
+                <button className="nav-link">Common</button>
               </Link>
             </li>
             <li className="nav-item">
               <Link to="/all">
-                <a className="nav-link" href="#">
-                  All
-                </a>
+                <button className="nav-link">All</button>
               </Link>
             </li>
           </ul>

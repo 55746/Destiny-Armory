@@ -73,3 +73,5 @@ const Layout = () => {
 export default injectContext(Layout);
 
 // WHEN NO module named flask_jwt_extended pipenv run shell
+// when CORS policy: No 'Access-Control-Allow-Origin', mode: no-cors in you flux function
+// Every time i reopen the workspace the url for the flux and on postman changes, use simple browser url and copy paste
