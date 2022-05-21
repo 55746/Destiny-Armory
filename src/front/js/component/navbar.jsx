@@ -21,55 +21,57 @@ export const Navbar = () => {
             <Link to="/signup">
               <button className="navbar-brand">Signup</button>
             </Link>
-            {/* <button
-            onClick={(e) => {
-              // validateInput();
-              e.preventDefault();
-              actions.logout();
-              history.push("/signin");
-            }}
-          ></button> */}
           </div>
         </div>
-
-        <div>
-          <ul
-            style={{ position: "absolute", left: "25%" }}
-            className="nav justify-content-center"
-          >
-            <li className="nav-item">
-              <Link to="/exotics">
-                <button className="nav-link active" aria-current="page">
-                  Exotic
-                </button>
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link to="/legendary">
-                <button className="nav-link">Legendary</button>
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link to="/rare">
-                <button className="nav-link">Rare</button>
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link to="/uncommon">
-                <button className="nav-link">Uncommon</button>
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link to="/common">
-                <button className="nav-link">Common</button>
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link to="/all">
-                <button className="nav-link">All</button>
-              </Link>
-            </li>
-          </ul>
+        <ul
+          className="nav nav-tabs nav justify-content-center"
+          style={{ position: "absolute", left: "25%" }}
+        >
+          <li className="nav-item">
+            <Link to="/home">
+              <button className="nav-link">Search</button>
+            </Link>
+          </li>
+          <li className="nav-item" role="presentation">
+            <Link to="/exotics">
+              <button className="nav-link">Exotic</button>
+            </Link>
+          </li>
+          <li className="nav-item" role="presentation">
+            <Link to="/legendary">
+              <button className="nav-link">Legendary</button>
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link to="/rare">
+              <button className="nav-link">Rare</button>
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link to="/common">
+              <button className="nav-link">Common</button>
+            </Link>
+          </li>
+        </ul>
+        <div className="tab-content" id="myTabContent">
+          <div
+            className="tab-pane fade show active"
+            id="home"
+            role="tabpanel"
+            aria-labelledby="home-tab"
+          ></div>
+          <div
+            className="tab-pane fade"
+            id="profile"
+            role="tabpanel"
+            aria-labelledby="profile-tab"
+          ></div>
+          <div
+            className="tab-pane fade"
+            id="contact"
+            role="tabpanel"
+            aria-labelledby="contact-tab"
+          ></div>
         </div>
       </nav>
     </>
