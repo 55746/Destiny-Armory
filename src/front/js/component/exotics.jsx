@@ -3,6 +3,7 @@ import { Context } from "../store/appContext";
 import StarRating from "./starRating.jsx";
 import { Link } from "react-router-dom";
 import Images from "../../img/ExoticJadeRabbit.webp";
+// THIS IS WHERE WE PUT ALL THE IMAGES FOR THE GUNS
 
 export const Exotics = () => {
   const { store, actions } = useContext(Context);
@@ -30,9 +31,11 @@ export const Exotics = () => {
                         <h5 className="card-title">{list.weapon_name}</h5>
                         <p className="card-text">
                           {list.weapon_type}
-                          {list.weapon_className}
+                          <br />
+                          {list.weapon_lore}
                         </p>
-                        <p style={{}}>
+                        <p onClick={() => {}}>
+                          {/* ONCLICK WE WANT IT TO MAKE SURE YOU ARE SIGNED IN<, IF NOT ASK IF THEYD LIKE TO SIGN UP OR BRING TO SIGN UP PAGE */}
                           SignUp to Vote
                           <StarRating />
                         </p>
