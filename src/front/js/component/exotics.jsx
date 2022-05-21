@@ -2,24 +2,31 @@ import React, { useState, useContext } from "react";
 import { Context } from "../store/appContext";
 import StarRating from "./starRating.jsx";
 import { Link } from "react-router-dom";
+import Images from "../../img/ExoticJadeRabbit.webp";
 
 export const Exotics = () => {
   const { store, actions } = useContext(Context);
   console.log(store);
+  let blob = [Images];
+
   return (
     <div>
       <div className="row" style={{ justifyContent: "center" }}>
         {store.exoticWeapons &&
           store.exoticWeapons.map((list, index) => {
             return (
-              <div key={index}>
-                <div className="card mb-3" style={{ "max-width": "540px" }}>
-                  <div className="row no-gutters">
-                    <div className="col-md-4">
-                      <img src="..." className="card-img" alt="..." />
+              <div
+                className="list-group list-group-horizontal w-75"
+                style={{ display: "table-row" }}
+                key={index}
+              >
+                <div className="card">
+                  <div className="row">
+                    <div className="col-md-3">
+                      <img className="w-100 h-100" src={blob} />
                     </div>
-                    <div className="col-md-8">
-                      <div className="card-body">
+                    <div className="col-md-8 w-25">
+                      <div className="card-body h-25">
                         <h5 className="card-title">{list.weapon_name}</h5>
                         <p className="card-text">
                           {list.weapon_type}
