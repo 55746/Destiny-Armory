@@ -250,5 +250,20 @@ def commonId(common_id):
     #     return eData+lData+rData+cData
         
 
+@api.route('/starrating', methods=['GET'])
+def get_rating():
+    rating=StarRating.query.all()
+    rating_list=list(map(lambda x: x.serialize(), rating))
+    return jsonify(rating_list), 200
+
+
+@api.route('/starrating', methods=['POST'])
+def create_rating():
+    response_body = request.get_json()
+    rating=StarRating(rating=response_body['rating'])
+    db.session.add(rating)
+    db.session.commit()
+    return jsonify(rating.serialize()), 200
+
 #     # YOU WILL DELEte bY USING THE ID IN THE URL WHEN TRYING TO DELETE IN POSTMAN
 

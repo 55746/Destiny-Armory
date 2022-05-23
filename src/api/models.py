@@ -20,6 +20,17 @@ class User(db.Model):
             'last_name': self.last_name,
             'dob': self.dob        
 }
+class StarRating(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    rating = db.Column(db.Integer)
+    def __repr__(self):
+        return f'<StarRating {self.rating}>' 
+
+    def serialize(self):
+        return {
+                "id": self.id,
+                "rating": self.rating,
+            }
 class ExoticWeapon(db.Model):
         id = db.Column(db.Integer, primary_key=True)
         weapon_name=db.Column(db.String(120), nullable=False)

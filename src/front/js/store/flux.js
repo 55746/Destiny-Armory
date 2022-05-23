@@ -10,6 +10,7 @@ const getState = ({ getStore, getActions, setStore }) => {
       singleRareWeapons: [],
       commonWeapons: [],
       singleCommonWeapons: [],
+      starRating: [],
     },
     actions: {
       getData: () => {
@@ -99,14 +100,19 @@ const getState = ({ getStore, getActions, setStore }) => {
           .then((data) => setStore({ singlecommonWeapon: data }))
           .catch((error) => console.log("error", error));
       },
-      signUp: (email, password, first_name, last_name, dob) => {
-        const new_user = {
-          email: email,
-          password: password,
-          first_name: first_name,
-          last_name: last_name,
-          dob: dob,
-        };
+      // signUp: (email, password, first_name, last_name, dob) => {
+      //   const new_user = {
+      //     email: email,
+      //     password: password,
+      //     first_name: first_name,
+      //     last_name: last_name,
+      //     dob: dob,
+      //   };
+      // starRating: (star) => {
+      //   setStore({ starRating: star });
+      // },
+
+      signUp: (new_user) => {
         fetch(process.env.BACKEND_URL + "/api/signup", {
           method: "POST",
           headers: {
@@ -150,10 +156,8 @@ const getState = ({ getStore, getActions, setStore }) => {
           .catch((error) => console.log("error", error));
         // localStorage.setItem("token", token);
       },
-      logout() {
-        this.authToken = null;
-        this.user = null;
-        localStorage.clear();
+      logout: () => {
+        setStore({ user: null });
       },
     },
   };
