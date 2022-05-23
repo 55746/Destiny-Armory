@@ -2,8 +2,13 @@ import React, { useContext, useEffect } from "react";
 import { Context } from "../../store/appContext";
 import "../../../styles/home.css";
 import Marcus from "../../../img/warmindImg.jpg";
+// import { Exotics } from "../exotics";
 
 export const Home = () => {
+  // const Search = async () => {
+  //   let data = await fetch("/exotics");
+  //   let changecode = data.json();
+  // };
   const { store, actions } = useContext(Context);
   console.log(store.user);
   return (

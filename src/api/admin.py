@@ -1,7 +1,7 @@
   
 import os
 from flask_admin import Admin
-from .models import db, User, ExoticWeapon, Legendaryweapon
+from .models import db, User, ExoticWeapon, LegendaryWeapon, RareWeapon, UncommonWeapon, CommonWeapon
 from flask_admin.contrib.sqla import ModelView
 
 def setup_admin(app):
@@ -15,4 +15,7 @@ def setup_admin(app):
     
     # You can duplicate that line to add mew models
     admin.add_view(ModelView(ExoticWeapon, db.session))
-    admin.add_view(ModelView(Legendaryweapon, db.session))
+    admin.add_view(ModelView(LegendaryWeapon, db.session))
+    admin.add_view(ModelView(RareWeapon, db.session))
+    admin.add_view(ModelView(UncommonWeapon, db.session))
+    admin.add_view(ModelView(CommonWeapon, db.session))

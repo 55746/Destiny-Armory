@@ -12,9 +12,13 @@ import { CreatePage } from "./component/create.jsx";
 import { Exotics } from "./component/exotics.jsx";
 import { ExoticWeaponPage } from "./component/pages/exoticweaponpage.jsx";
 import { Legendary } from "./component/legendary.jsx";
+import { LegendaryWeaponPage } from "./component/pages/legendaryweaponpage.jsx";
 import { Rare } from "./component/rare.jsx";
+import { RareWeaponPage } from "./component/pages/rareweaponpage.jsx";
 import { Uncommon } from "./component/uncommon.jsx";
+import { UncommonWeaponPage } from "./component/pages/uncommonweaponpage.jsx";
 import { Common } from "./component/common.jsx";
+import { CommonWeaponPage } from "./component/pages/commonweaponpage.jsx";
 import { All } from "./component/all.jsx";
 import { SignUp } from "./component/signup.jsx";
 import { SignIn } from "./component/Signin.jsx";
@@ -42,14 +46,26 @@ const Layout = () => {
             <Route exact path="/legendary">
               <Legendary />
             </Route>
+            <Route exact path="/legendary/:theid">
+              <LegendaryWeaponPage />
+            </Route>
             <Route exact path="/rare">
               <Rare />
+            </Route>
+            <Route exact path="/rare/:theid">
+              <RareWeaponPage />
             </Route>
             <Route exact path="/uncommon">
               <Uncommon />
             </Route>
+            <Route exact path="/uncommon/:theid">
+              <UncommonWeaponPage />
+            </Route>
             <Route exact path="/common">
               <Common />
+            </Route>
+            <Route exact path="/common/:theid">
+              <CommonWeaponPage />
             </Route>
             <Route exact path="/all">
               <All />

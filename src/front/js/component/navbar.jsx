@@ -1,7 +1,10 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useContext } from "react";
+import { Link, useHistory } from "react-router-dom";
+import { Context } from "../store/appContext";
 
 export const Navbar = () => {
+  const { store, actions } = useContext(Context);
+  let history = useHistory();
   return (
     <>
       <nav
@@ -35,24 +38,59 @@ export const Navbar = () => {
             </Link>
           </li>
           <li className="nav-item" role="presentation">
-            <Link to="/exotics">
-              <button className="nav-link">Exotic</button>
-            </Link>
+            <button
+              className="nav-link"
+              onClick={() => {
+                actions.pullExotic();
+                history.push("/exotics");
+              }}
+            >
+              Exotics
+            </button>
           </li>
           <li className="nav-item" role="presentation">
-            <Link to="/legendary">
-              <button className="nav-link">Legendary</button>
-            </Link>
+            <button
+              className="nav-link"
+              onClick={() => {
+                actions.pullLegendary();
+                history.push("/legendary");
+              }}
+            >
+              Legendary
+            </button>
           </li>
-          <li className="nav-item">
-            <Link to="/rare">
-              <button className="nav-link">Rare</button>
-            </Link>
+          <li className="nav-item" role="presentation">
+            <button
+              className="nav-link"
+              onClick={() => {
+                actions.pullRare();
+                history.push("/rare");
+              }}
+            >
+              Rare
+            </button>
           </li>
-          <li className="nav-item">
-            <Link to="/common">
-              <button className="nav-link">Common</button>
-            </Link>
+          <li className="nav-item" role="presentation">
+            <button
+              className="nav-link"
+              onClick={() => {
+                actions.pullUncommon();
+                history.push("/uncommon");
+              }}
+            >
+              Uncommon
+            </button>
+          </li>
+          <li className="nav-item" role="presentation">
+            <button
+              className="nav-link"
+              onClick={() => {
+                actions.pullCommon();
+                history.push("/common");
+              }}
+            >
+              Common
+            </button>
           </li>
         </ul>
         <div className="tab-content" id="myTabContent">

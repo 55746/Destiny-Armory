@@ -11,7 +11,7 @@ export const Exotics = () => {
   let blob = [Images];
 
   return (
-    <div>
+    <li>
       <div className="row" style={{ justifyContent: "center" }}>
         {store.exoticWeapons &&
           store.exoticWeapons.map((list, index) => {
@@ -58,7 +58,7 @@ export const Exotics = () => {
             );
           })}
       </div>
-    </div>
+    </li>
   );
 };
 

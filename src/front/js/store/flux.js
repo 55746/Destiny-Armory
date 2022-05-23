@@ -2,9 +2,14 @@ const getState = ({ getStore, getActions, setStore }) => {
   return {
     store: {
       user: null,
-      legendaryWeapons: [],
       exoticWeapons: [],
       singleExoticWeapon: [],
+      legendaryWeapons: [],
+      singleLegendaryWeapons: [],
+      rareWeapons: [],
+      singleRareWeapons: [],
+      commonWeapons: [],
+      singleCommonWeapons: [],
     },
     actions: {
       getData: () => {
@@ -35,6 +40,63 @@ const getState = ({ getStore, getActions, setStore }) => {
         })
           .then((res) => res.json())
           .then((data) => setStore({ singleExoticWeapon: data }))
+          .catch((error) => console.log("error", error));
+      },
+      pullLegendary: () => {
+        fetch(process.env.BACKEND_URL + `/api/legendary`, {
+          method: "GET",
+          redirect: "follow",
+          // mode: "no-cors",
+        })
+          .then((res) => res.json())
+          .then((data) => setStore({ legendaryWeapons: data }))
+          .catch((err) => console.log("err", err));
+      },
+      singleLegendaryWeapon: (id) => {
+        fetch(process.env.BACKEND_URL + `/api/legendary/${id}`, {
+          method: "GET",
+          redirect: "follow",
+        })
+          .then((res) => res.json())
+          .then((data) => setStore({ singleLegendaryWeapon: data }))
+          .catch((error) => console.log("error", error));
+      },
+      pullRare: () => {
+        fetch(process.env.BACKEND_URL + `/api/rare`, {
+          method: "GET",
+          redirect: "follow",
+          // mode: "no-cors",
+        })
+          .then((res) => res.json())
+          .then((data) => setStore({ rareWeapons: data }))
+          .catch((err) => console.log("err", err));
+      },
+      singleRareWeapon: (id) => {
+        fetch(process.env.BACKEND_URL + `/api/rare/${id}`, {
+          method: "GET",
+          redirect: "follow",
+        })
+          .then((res) => res.json())
+          .then((data) => setStore({ singleRareWeapon: data }))
+          .catch((error) => console.log("error", error));
+      },
+      pullCommon: () => {
+        fetch(process.env.BACKEND_URL + `/api/common`, {
+          method: "GET",
+          redirect: "follow",
+          // mode: "no-cors",
+        })
+          .then((res) => res.json())
+          .then((data) => setStore({ commonWeapons: data }))
+          .catch((err) => console.log("err", err));
+      },
+      singleCommonWeapon: (id) => {
+        fetch(process.env.BACKEND_URL + `/api/common/${id}`, {
+          method: "GET",
+          redirect: "follow",
+        })
+          .then((res) => res.json())
+          .then((data) => setStore({ singlecommonWeapon: data }))
           .catch((error) => console.log("error", error));
       },
       signUp: (email, password, first_name, last_name, dob) => {

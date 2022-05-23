@@ -9,7 +9,7 @@ const StarRating = () => {
       {[...Array(5)].map((star, i) => {
         const ratingValue = i + 1;
         return (
-          <>
+          <div key={i}>
             <label>
               <input
                 type="radio"
@@ -25,7 +25,7 @@ const StarRating = () => {
                 onMouseLeave={() => setHover(null)}
               />
             </label>
-          </>
+          </div>
         );
       })}
     </div>

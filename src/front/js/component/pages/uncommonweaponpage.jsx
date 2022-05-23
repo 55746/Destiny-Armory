@@ -4,12 +4,12 @@ import Images from "../../../img/ExoticJadeRabbit.webp";
 
 // import StarRating from "./starRating.jsx";
 
-export const ExoticWeaponPage = () => {
+export const UncommonWeaponPage = () => {
   let blob = [Images];
   const { store, actions } = useContext(Context);
   console.log(store);
   return (
-    <div style={{ height: "100%" }}>
+    <div>
       <img className="w-100 h-100" src={blob} />
       {store.singleExoticWeapon.weapon_name}
       <br />

@@ -4,22 +4,22 @@ import Images from "../../../img/ExoticJadeRabbit.webp";
 
 // import StarRating from "./starRating.jsx";
 
-export const ExoticWeaponPage = () => {
+export const LegendaryWeaponPage = () => {
   let blob = [Images];
   const { store, actions } = useContext(Context);
   console.log(store);
   return (
-    <div style={{ height: "100%" }}>
+    <div>
       <img className="w-100 h-100" src={blob} />
-      {store.singleExoticWeapon.weapon_name}
+      {store.singleLegendaryWeapon.weapon_name}
       <br />
-      {store.singleExoticWeapon.weapon_lore}
+      {store.singleLegendaryWeapon.weapon_lore}
       <br />
-      {store.singleExoticWeapon.location_information}
+      {store.singleLegendaryWeapon.location_information}
       <br />
-      {store.singleExoticWeapon.weapon_type}
+      {store.singleLegendaryWeapon.weapon_type}
       <br />
-      {store.singleExoticWeapon.weapon_class}
+      {store.singleLegendaryWeapon.weapon_class}
     </div>
   );
 };
