@@ -1,7 +1,9 @@
-import React from "react";
-import { Link } from "react-router-dom";
-
+import React, { useContext } from "react";
+import { Link, useHistory } from "react-router-dom";
+import { Context } from "../store/appContext";
 export const Navbar = () => {
+  const { store, actions } = useContext(Context);
+  let history = useHistory();
   return (
     <>
       <nav
@@ -13,16 +15,29 @@ export const Navbar = () => {
             <span className="navbar-brand mb-0 h1 text-light">Destiny</span>
           </Link>
           <div className="ml-auto">
-            <Link to="/create">
-              <button className="btn btn-primary">Create</button>
+            <Link to="/signin">
+              <button className="btn btn-primary">Signin</button>
             </Link>
             <button
               className="fa fa-share-alt"
               style={{ fontSize: "36px" }}
             ></button>
-            <Link to="/signup">
-              <button className="navbar-brand">Signup</button>
-            </Link>
+            {store.user ? (
+              <div className="ml-auto">
+                <button
+                  onClick={() => {
+                    actions.logout();
+                  }}
+                  className="btn btn-danger"
+                >
+                  Logout
+                </button>
+              </div>
+            ) : (
+              <Link to="/signup">
+                <button className="btn btn-primary">signup</button>
+              </Link>
+            )}
           </div>
         </div>
         <ul
@@ -52,6 +67,16 @@ export const Navbar = () => {
           <li className="nav-item">
             <Link to="/common">
               <button className="nav-link">Common</button>
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link to="/uncommon">
+              <button className="nav-link">uncommon</button>
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link to="/all">
+              <button className="nav-link">all</button>
             </Link>
           </li>
         </ul>

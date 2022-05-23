@@ -5,6 +5,7 @@ const getState = ({ getStore, getActions, setStore }) => {
       legendaryWeapons: [],
       exoticWeapons: [],
       singleExoticWeapon: [],
+      starRating: [],
     },
     actions: {
       getData: () => {
@@ -37,6 +38,10 @@ const getState = ({ getStore, getActions, setStore }) => {
           .then((data) => setStore({ singleExoticWeapon: data }))
           .catch((error) => console.log("error", error));
       },
+      starRating: (star) => {
+        setStore({ starRating: star });
+      },
+
       signUp: (new_user) => {
         fetch(process.env.BACKEND_URL + "/api/signup", {
           method: "POST",
@@ -82,9 +87,7 @@ const getState = ({ getStore, getActions, setStore }) => {
         // localStorage.setItem("token", token);
       },
       logout() {
-        this.authToken = null;
-        this.user = null;
-        localStorage.clear();
+        setStore({ user: null });
       },
     },
   };

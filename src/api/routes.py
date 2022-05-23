@@ -15,7 +15,7 @@
 This module takes care of starting the API Server, Loading the DB and Adding the endpoints
 """
 from flask import Flask, request, jsonify, url_for, Blueprint
-from api.models import db, User, ExoticWeapon, Legendaryweapon
+from api.models import db, User, StarRating, ExoticWeapon, Legendaryweapon
 from api.utils import generate_sitemap, APIException
 
 """
@@ -137,6 +137,22 @@ def legendaryId(legendary_id):
     delete_legendary = db.session.delete(singleweapon)
     db.session.commit()
     return jsonify(singleweapon.serialize())
+
+
+@api.route('/starrating', methods=['GET'])
+def get_rating():
+    rating=StarRating.query.all()
+    rating_list=list(map(lambda x: x.serialize(), rating))
+    return jsonify(rating_list), 200
+
+
+@api.route('/starrating', methods=['POST'])
+def create_rating():
+    response_body = request.get_json()
+    rating=StarRating(rating=response_body['rating'])
+    db.session.add(rating)
+    db.session.commit()
+    return jsonify(rating.serialize()), 200
 
 #     # YOU WILL DELEte bY USING THE ID IN THE URL WHEN TRYING TO DELETE IN POSTMAN
 

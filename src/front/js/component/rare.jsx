@@ -5,7 +5,15 @@ import StarRating from "./starRating.jsx";
 export const Rare = () => {
   return (
     <div>
-      <ul className="list-group list-group-horizontal">
+      <ul
+        className="list-group list-group-horizontal"
+        style={{
+          position: "absolute",
+          left: "40%",
+          marginTop: "15%",
+          width: "50%",
+        }}
+      >
         <li className="list-group-item">An item</li>
         <li className="list-group-item">A second item</li>
         <li className="list-group-item">
