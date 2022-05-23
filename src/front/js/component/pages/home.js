@@ -34,8 +34,8 @@ export const Home = () => {
           <div>
             <img
               src={Marcus}
-              className="img-fluid"
-              style={{ width: "100%" }}
+              // className="img-fluid"
+              style={{ width: "100%", height: "100%" }}
               alt="..."
             />
           </div>
