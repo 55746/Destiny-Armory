@@ -27,7 +27,7 @@ export const Navbar = () => {
           className="nav nav-tabs nav justify-content-center"
           style={{ position: "absolute", left: "25%" }}
         >
-          <li className="nav-item">
+          {/* <li className="nav-item">
             <Link to="/home">
               <button className="nav-link">Search</button>
             </Link>
@@ -36,8 +36,8 @@ export const Navbar = () => {
             <Link to="/exotics">
               <button className="nav-link">Exotic</button>
             </Link>
-          </li>
-          <li className="nav-item" role="presentation">
+          </li> */}
+          {/* <li className="nav-item" role="presentation">
             <Link to="/legendary">
               <button className="nav-link">Legendary</button>
             </Link>
@@ -46,7 +46,7 @@ export const Navbar = () => {
             <Link to="/rare">
               <button className="nav-link">Rare</button>
             </Link>
-          </li>
+          </li> */}
           <li className="nav-item">
             <Link to="/common">
               <button className="nav-link">Common</button>
