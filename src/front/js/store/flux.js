@@ -37,14 +37,7 @@ const getState = ({ getStore, getActions, setStore }) => {
           .then((data) => setStore({ singleExoticWeapon: data }))
           .catch((error) => console.log("error", error));
       },
-      signUp: (email, password, first_name, last_name, dob) => {
-        const new_user = {
-          email: email,
-          password: password,
-          first_name: first_name,
-          last_name: last_name,
-          dob: dob,
-        };
+      signUp: (new_user) => {
         fetch(process.env.BACKEND_URL + "/api/signup", {
           method: "POST",
           headers: {
