@@ -1,7 +1,7 @@
 const getState = ({ getStore, getActions, setStore }) => {
   return {
     store: {
-      user: {},
+      user: null,
       legendaryWeapons: [],
       exoticWeapons: [],
       singleExoticWeapon: [],
@@ -12,7 +12,6 @@ const getState = ({ getStore, getActions, setStore }) => {
           // FIGURING OUT HOW TO GET THE RIGHT END TO THE URL TO SHOW US ALL THE INFO IN A LIST
           method: "GET",
           redirect: "follow",
-          mode: "no-cors",
         })
           .then((res) => res.json())
           .then((data) => setStore({ legendaryWeapons: data }))

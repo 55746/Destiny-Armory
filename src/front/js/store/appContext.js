@@ -23,6 +23,10 @@ const injectContext = (PassedComponent) => {
 
     useEffect(() => {
       state.actions.getData();
+      state.actions.signUp();
+      state.actions.signIn();
+      state.actions.verifyUser();
+
       // state.actions.getData();
       state.actions.pullExotic();
       state.actions.singleExoticWeapon();

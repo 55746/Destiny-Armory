@@ -110,12 +110,17 @@ export const SignUp = () => {
       </div>
       <button
         onClick={(e) => {
-          // validateInput();
           e.preventDefault();
-          actions.signUp(email, password, first_name, last_name, dob);
+          actions.signUp({
+            email: email,
+            password: password,
+            first_name: first_name,
+            last_name: last_name,
+            dob: dob,
+          });
           history.push("/signin");
         }}
-        formtype="submit"
+        type="submit"
         className="btn btn-primary"
       >
         Submit
