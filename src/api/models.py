@@ -127,27 +127,3 @@ class UncommonWeapon(db.Model):
                 # "locationImg": "...",
                 # "gunImg": "..."
             }
-class CommonWeapon(db.Model):
-        id = db.Column(db.Integer, primary_key=True)
-        weapon_name=db.Column(db.String(120), nullable=False)
-        weapon_type=db.Column(db.String(20), nullable=False)
-        weapon_class=db.Column(db.String(20), nullable=False)
-        weapon_lore=db.Column(db.String(1000), nullable=False)
-        location_description=db.Column(db.String(1000), nullable=True)
-        # locationImg=
-        # gunImg = 
-
-        def __repr__(self):
-            return f'<Commonweapon {self.weapon_name}>' 
-
-        def serialize(self):
-            return {
-                "id": self.id,
-                "weapon_name": self.weapon_name,
-                "weapon_type": self.weapon_type,
-                "weapon_class": self.weapon_class,
-                "weapon_lore": self.weapon_lore,
-                "location_description": self.location_description
-                # "locationImg": "...",
-                # "gunImg": "..."
-            }
