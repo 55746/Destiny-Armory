@@ -8,8 +8,8 @@ const getState = ({ getStore, getActions, setStore }) => {
       singleLegendaryWeapons: [],
       rareWeapons: [],
       singleRareWeapons: [],
-      commonWeapons: [],
-      singleCommonWeapons: [],
+      uncommonWeapons: [],
+      singleUncommonWeapons: [],
       starRating: [],
     },
     actions: {
@@ -81,23 +81,23 @@ const getState = ({ getStore, getActions, setStore }) => {
           .then((data) => setStore({ singleRareWeapon: data }))
           .catch((error) => console.log("error", error));
       },
-      pullCommon: () => {
-        fetch(process.env.BACKEND_URL + `/api/common`, {
+      pullUncommon: () => {
+        fetch(process.env.BACKEND_URL + `/api/uncommon`, {
           method: "GET",
           redirect: "follow",
           // mode: "no-cors",
         })
           .then((res) => res.json())
-          .then((data) => setStore({ commonWeapons: data }))
+          .then((data) => setStore({ uncommonWeapons: data }))
           .catch((err) => console.log("err", err));
       },
-      singleCommonWeapon: (id) => {
-        fetch(process.env.BACKEND_URL + `/api/common/${id}`, {
+      singleUncommonWeapon: (id) => {
+        fetch(process.env.BACKEND_URL + `/api/uncommon/${id}`, {
           method: "GET",
           redirect: "follow",
         })
           .then((res) => res.json())
-          .then((data) => setStore({ singlecommonWeapon: data }))
+          .then((data) => setStore({ singleUncommonWeapon: data }))
           .catch((error) => console.log("error", error));
       },
       // signUp: (email, password, first_name, last_name, dob) => {

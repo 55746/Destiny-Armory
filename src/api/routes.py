@@ -15,7 +15,7 @@
 This module takes care of starting the API Server, Loading the DB and Adding the endpoints
 """
 from flask import Flask, request, jsonify, url_for, Blueprint
-from api.models import db, User, ExoticWeapon, LegendaryWeapon, RareWeapon, CommonWeapon, UncommonWeapon, StarRating
+from api.models import db, User, ExoticWeapon, LegendaryWeapon, RareWeapon, UncommonWeapon, StarRating
 from api.utils import generate_sitemap, APIException
 
 """
@@ -267,59 +267,6 @@ def uncommonId(uncommon_id):
     delete_rare = db.session.delete(singleweapon)
     db.session.commit()
     return jsonify(singleweapon.serialize())
-
-
-@api.route('/common', methods=['GET'])
-def common_get():
-    common_get=CommonWeapon.query.all()
-    weapons_list=list(map(lambda x: x.serialize(), common_get))
-    return jsonify(weapons_list), 200
-
-@api.route('/common/<int:common_id>', methods=['GET'])
-def getcommonId(common_id):
-    singleCommonweapon = CommonWeapon.query.get(common_id)
-    print("This is the position of a single ExoticWeapon: ", singleCommonweapon)
-    return jsonify(singleCommonweapon.serialize())
-
-
-@api.route('/common', methods=['POST'])
-def access_commonweapons():
-    response_body = request.get_json()
-    if response_body is None:
-        raise APIException("You need to specify the request body as a json object", status_code=400)
-        print(response_body)
-    if type(response_body)==dict:
-        weaponInput=CommonWeapon(weapon_name=response_body['weapon_name'], weapon_type=response_body['weapon_type'],weapon_class=response_body['weapon_class'], weapon_lore=response_body['weapon_lore'], location_description=response_body['location_description'])
-        db.session.add(weaponInput)
-        db.session.commit()
-        return jsonify(weaponInput.serialize()), 200
-    elif type(response_body)==list:
-        for item in response_body:
-            weaponInput=CommonWeapon(weapon_name=item['weapon_name'], weapon_type=item['weapon_type'],weapon_class=item['weapon_class'], weapon_lore=item['weapon_lore'], location_description=item['location_description'])
-            db.session.add(weaponInput)
-            db.session.commit()
-        return "Successfully added Common Weapons", 200
-
-@api.route('/common/<int:common_id>', methods=['DELETE'])
-def commonId(common_id):
-    singleweapon = CommonWeapon.query.get(common_id)
-    print(singleweapon)
-    if singleweapon is None:
-        raise APIException(
-            'This Weapon doesnt exist, or has already been deleted', status_code=404)
-    delete_rare = db.session.delete(singleweapon)
-    db.session.commit()
-    return jsonify(singleweapon.serialize())
-
-
-    # @api.route('/...', methods=['GET'])
-    # def getAll():
-    #     eData= ExoticWeapon.query.getAll()
-    #     lData= Legendaryweapon.query.getAll()
-    #     rData= Rareweapon.query.getAll()
-    #     cData= CommonWeapon.query.getall()
-    #     return eData+lData+rData+cData
-        
 
 @api.route('/starrating', methods=['GET'])
 def get_rating():

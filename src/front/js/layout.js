@@ -17,8 +17,6 @@ import { Rare } from "./component/rare.jsx";
 import { RareWeaponPage } from "./component/pages/rareweaponpage.jsx";
 import { Uncommon } from "./component/uncommon.jsx";
 import { UncommonWeaponPage } from "./component/pages/uncommonweaponpage.jsx";
-import { Common } from "./component/common.jsx";
-import { CommonWeaponPage } from "./component/pages/commonweaponpage.jsx";
 import { All } from "./component/all.jsx";
 import { SignUp } from "./component/signup.jsx";
 import { SignIn } from "./component/Signin.jsx";
@@ -60,12 +58,6 @@ const Layout = () => {
             </Route>
             <Route exact path="/uncommon/:theid">
               <UncommonWeaponPage />
-            </Route>
-            <Route exact path="/common">
-              <Common />
-            </Route>
-            <Route exact path="/common/:theid">
-              <CommonWeaponPage />
             </Route>
             <Route exact path="/all">
               <All />
