@@ -62,7 +62,7 @@ export const Exotics = () => {
   );
 };
 
-// WHEN I ENCOUNTER THE psycopg2.errors.UndefinedTable ERROR
+// WHEN I ENCOUNTER THE    psycopg2.errors.UndefinedTable ERROR
 // 1. delete migrations folder
 // 2. run pipenv run init
 // 2. go to gitpod.yml file
