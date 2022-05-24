@@ -26,7 +26,7 @@ const injectContext = (PassedComponent) => {
     // }, []);
     useEffect(() => {
       state.actions.getData();
-      state.actions.starRating();
+      // state.actions.starRating();
 
       // state.actions.getData();
       // state.action

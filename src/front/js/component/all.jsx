@@ -1,8 +1,9 @@
 import React from "react";
-import Marcus from "../../img/warmindImg.jpg";
+import Images from "../../img/warmindImg.jpg";
 import StarRating from "./starRating.jsx";
 
 export const All = () => {
+  let blob = [Images];
   return (
     <div>
       <ul
@@ -27,7 +28,7 @@ export const All = () => {
         </li>
       </ul>
       <img
-        src={Marcus}
+        src={blob}
         className="img-fluid"
         style={{ width: "100%" }}
         alt="..."
