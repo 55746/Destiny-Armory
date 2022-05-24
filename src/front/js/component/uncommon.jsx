@@ -2,7 +2,7 @@ import React, { useState, useContext } from "react";
 import { Context } from "../store/appContext";
 import StarRating from "./starRating.jsx";
 import { Link } from "react-router-dom";
-import Images from "../../img/ExoticJadeRabbit.webp";
+import Images from "../../img/warmindImg.jpg";
 // THIS IS WHERE WE PUT ALL THE IMAGES FOR THE GUNS
 
 export const Uncommon = () => {
@@ -80,7 +80,7 @@ export const Uncommon = () => {
         </li>
       </ul>
       <img
-        src={Marcus}
+        src={blob}
         className="img-fluid"
         style={{ width: "100%" }}
         alt="..."

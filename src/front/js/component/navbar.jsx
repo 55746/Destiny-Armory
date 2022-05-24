@@ -19,10 +19,6 @@ export const Navbar = () => {
             <Link to="/signin">
               <button className="btn btn-primary">Signin</button>
             </Link>
-            <button
-              className="fa fa-share-alt"
-              style={{ fontSize: "36px" }}
-            ></button>
             {store.user ? (
               <div className="ml-auto">
                 <button

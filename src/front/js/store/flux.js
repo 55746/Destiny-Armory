@@ -108,9 +108,9 @@ const getState = ({ getStore, getActions, setStore }) => {
       //     last_name: last_name,
       //     dob: dob,
       //   };
-      // starRating: (star) => {
-      //   setStore({ starRating: star });
-      // },
+      starRating: (star) => {
+        setStore({ starRating: star });
+      },
 
       signUp: (new_user) => {
         fetch(process.env.BACKEND_URL + "/api/signup", {

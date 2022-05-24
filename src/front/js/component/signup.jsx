@@ -1,6 +1,8 @@
 import React, { useContext, useState } from "react";
 import { Context } from "../store/appContext";
 import { useHistory } from "react-router-dom";
+import Images from "../../img/warmindImg.jpg";
+import "../../styles/home.css";
 // HAD TO IMPORT THE USEHISTORY TO BE ABLE TO BRING YOU TO THE LOGIN PAGE ONCLICK
 
 export const SignUp = () => {
@@ -11,6 +13,7 @@ export const SignUp = () => {
   const [dob, setDob] = useState("");
   const { store, actions } = useContext(Context);
   let history = useHistory();
+  let blob = [Images];
 
   // const validateInput = () => {
   //   if (value === "") alert("The input cannot be empty");
@@ -21,110 +24,103 @@ export const SignUp = () => {
   // };
 
   return (
-    <form>
-      <div className="mb-3">
-        <label htmlFor="exampleInputEmail1" className="form-label">
-          Email address
-        </label>
-        <input
-          onChange={(e) => setEmail(e.target.value)}
-          value={email}
-          type="email"
-          className="form-control"
-          id="exampleInputEmail1"
-          aria-describedby="emailHelp"
-        />
-        <div id="emailHelp" className="form-text">
-          We'll never share your email with anyone else.
-        </div>
-      </div>
-      <div className="mb-3">
-        <label htmlFor="first_name" className="form-label">
-          First Name
-        </label>
-        <input
-          onChange={(e) => setFirst_name(e.target.value)}
-          value={first_name}
-          type="first_name"
-          className="form-control"
-          id="first_name_input"
-          aria-describedby="first_name"
-        />
-        <div id="first_name" className="form-text">
-          First Name
-        </div>
-      </div>
-      <div className="mb-3">
-        <label htmlFor="last_name" className="form-label">
-          last_name
-        </label>
-        <input
-          onChange={(e) => setLast_name(e.target.value)}
-          value={last_name}
-          type="last_name"
-          className="form-control"
-          id="last_name_input"
-          aria-describedby="last_name"
-        />
-        <div id="last_name" className="form-text">
-          last_name
-        </div>
-      </div>
-      <div className="mb-3">
-        <label htmlFor="dob" className="form-label">
-          Date of Birth
-        </label>
-        <input
-          onChange={(e) => setDob(e.target.value)}
-          value={dob}
-          type="dob"
-          className="form-control"
-          id="dob"
-          aria-describedby="dob"
-        />
-        <div id="dob" className="form-text">
-          enter your Date of Birth
-        </div>
-      </div>
-      <div className="mb-3">
-        <label htmlFor="exampleInputPassword1" className="form-label">
-          Password
-        </label>
-        <input
-          onChange={(e) => setPassword(e.target.value)}
-          value={password}
-          type="password"
-          className="form-control"
-          id="exampleInputPassword1"
-        />
-      </div>
-      <div className="mb-3 form-check">
-        <input
-          type="checkbox"
-          className="form-check-input"
-          id="exampleCheck1"
-        />
-        <label className="form-check-label" htmlFor="exampleCheck1">
-          Check me out
-        </label>
-      </div>
-      <button
-        onClick={(e) => {
-          e.preventDefault();
-          actions.signUp({
-            email: email,
-            password: password,
-            first_name: first_name,
-            last_name: last_name,
-            dob: dob,
-          });
-          history.push("/signin");
+    <div>
+      <form
+        className="text-dark bg-light text-center"
+        style={{
+          position: "absolute",
+          left: "25%",
+          marginTop: "5%",
+          width: "40%",
+          borderRadius: "2%",
+          height: "50%",
         }}
-        type="submit"
-        className="btn btn-primary"
       >
-        Submit
-      </button>
-    </form>
+        <div style={{ marginTop: "12%" }}>
+          <div className="mb-3">
+            <input
+              onChange={(e) => setEmail(e.target.value)}
+              value={email}
+              style={{ width: "50%" }}
+              placeholder="Email Address"
+              type="email"
+              className="form-control move"
+              id="exampleInputEmail1"
+              aria-describedby="emailHelp"
+            />
+          </div>
+          <div className="mb-3">
+            <input
+              onChange={(e) => setFirst_name(e.target.value)}
+              value={first_name}
+              style={{ width: "50%" }}
+              placeholder="First Name"
+              type="first_name"
+              className="form-control move"
+              id="first_name_input"
+              aria-describedby="first_name"
+            />
+          </div>
+          <div className="mb-3">
+            <input
+              onChange={(e) => setLast_name(e.target.value)}
+              value={last_name}
+              style={{ width: "50%" }}
+              placeholder="Last Name"
+              type="last_name"
+              className="form-control move"
+              id="last_name_input"
+              aria-describedby="last_name"
+            />
+          </div>
+          <div className="mb-3">
+            <input
+              onChange={(e) => setDob(e.target.value)}
+              value={dob}
+              style={{ width: "50%" }}
+              placeholder="Date of Birth"
+              type="dob"
+              className="form-control move"
+              id="dob"
+              aria-describedby="dob"
+            />
+          </div>
+          <div className="mb-3">
+            <input
+              onChange={(e) => setPassword(e.target.value)}
+              value={password}
+              style={{ width: "50%" }}
+              placeholder="Password"
+              type="password"
+              className="form-control move"
+              id="exampleInputPassword1"
+            />
+          </div>
+        </div>
+        <button
+          onClick={(e) => {
+            e.preventDefault();
+            actions.signUp({
+              email: email,
+              password: password,
+              first_name: first_name,
+              last_name: last_name,
+              dob: dob,
+            });
+            history.push("/signin");
+          }}
+          type="submit"
+          className="btn btn-primary"
+        >
+          Submit
+        </button>
+      </form>
+      <img
+        src={blob}
+        className="img-fluid"
+        style={{ width: "100%" }}
+        alt="..."
+      />
+    </div>
   );
 };
