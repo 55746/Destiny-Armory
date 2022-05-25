@@ -90,26 +90,16 @@ export const Navbar = () => {
               Uncommon
             </button>
           </li>
-          <li className="nav-item" role="presentation">
+          <li className="nav-item">
             <button
               className="nav-link"
               onClick={() => {
-                actions.pullCommon();
-                history.push("/common");
+                actions.pullAll();
+                history.push("/all");
               }}
             >
-              Common
+              All
             </button>
-          </li>
-          <li className="nav-item">
-            <Link to="/uncommon">
-              <button className="nav-link">uncommon</button>
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link to="/all">
-              <button className="nav-link">all</button>
-            </Link>
           </li>
         </ul>
         <div className="tab-content" id="myTabContent">
