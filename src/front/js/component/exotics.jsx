@@ -16,7 +16,7 @@ export const Exotics = () => {
     <div>
       <div
         className="row"
-        style={{ justifyContent: "center", display: "block" }}
+        style={{ justifyContent: "center", marginTop: "85px" }}
       >
         {store.exoticWeapons &&
           store.exoticWeapons.map((list, index) => {

@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { Context } from "../store/appContext";
+import "../../styles/nav.css";
 
 export const Navbar = () => {
   const { store, actions } = useContext(Context);

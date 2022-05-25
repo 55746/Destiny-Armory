@@ -12,7 +12,10 @@ export const Rare = () => {
 
   return (
     <div>
-      <div className="row" style={{ justifyContent: "center" }}>
+      <div
+        className="row"
+        style={{ justifyContent: "center", marginTop: "85px" }}
+      >
         {store.rareWeapons &&
           store.rareWeapons.map((list, index) => {
             return (

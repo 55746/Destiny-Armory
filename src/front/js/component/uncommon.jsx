@@ -12,7 +12,10 @@ export const Uncommon = () => {
 
   return (
     <div>
-      <div className="row" style={{ justifyContent: "center" }}>
+      <div
+        className="row"
+        style={{ justifyContent: "center", marginTop: "85px" }}
+      >
         {store.uncommonWeapons &&
           store.uncommonWeapons.map((list, index) => {
             return (
