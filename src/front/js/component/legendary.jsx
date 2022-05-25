@@ -12,7 +12,10 @@ export const Legendary = () => {
 
   return (
     <div>
-      <div className="row" style={{ justifyContent: "center" }}>
+      <div
+        className="row"
+        style={{ justifyContent: "center", marginTop: "85px" }}
+      >
         {store.legendaryWeapons &&
           store.legendaryWeapons.map((list, index) => {
             return (
