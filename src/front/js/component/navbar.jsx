@@ -17,25 +17,30 @@ export const Navbar = () => {
           </Link>
           <div className="ml-auto">
             <Link to="/signin">
-              <button className="btn btn-primary">Signin</button>
+              <button
+                className="btn btn-primary"
+                style={{ marginLeft: "1000%" }}
+              >
+                Signin
+              </button>
             </Link>
-            {store.user ? (
-              <div className="ml-auto">
-                <button
-                  onClick={() => {
-                    actions.logout();
-                  }}
-                  className="btn btn-danger"
-                >
-                  Logout
-                </button>
-              </div>
-            ) : (
-              <Link to="/signup">
-                <button className="btn btn-primary">signup</button>
-              </Link>
-            )}
           </div>
+          {store.user ? (
+            <div className="ml-auto">
+              <button
+                onClick={() => {
+                  actions.logout();
+                }}
+                className="btn btn-danger"
+              >
+                Logout
+              </button>
+            </div>
+          ) : (
+            <Link to="/signup">
+              <button className="btn btn-primary">signup</button>
+            </Link>
+          )}
         </div>
         <ul
           className="nav nav-tabs nav justify-content-center"
@@ -100,6 +105,9 @@ export const Navbar = () => {
             >
               All
             </button>
+            <Link to="/all">
+              <button className="nav-link">all</button>
+            </Link>
           </li>
         </ul>
         <div className="tab-content" id="myTabContent">

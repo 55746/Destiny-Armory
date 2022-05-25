@@ -58,7 +58,9 @@ export const SignIn = () => {
             e.preventDefault();
             if (email === "" || password === "") {
               alert("The input cannot be empty");
-            } else {
+            }
+            //NEED ANOTHER IF STATEMENT
+            else {
               actions.signIn(email, password);
               history.push("/home");
             }
@@ -68,7 +70,7 @@ export const SignIn = () => {
         >
           Submit
         </button>
-        <Link to="/">
+        <Link to="/home">
           <button className="btn btn-primary">Back home</button>
         </Link>
       </form>
