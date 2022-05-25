@@ -44,19 +44,19 @@ const Layout = () => {
             <Route exact path="/legendary">
               <Legendary />
             </Route>
-            <Route exact path="/legendary/:theid">
+            <Route exact path="/legendaryweaponpage/:theid">
               <LegendaryWeaponPage />
             </Route>
             <Route exact path="/rare">
               <Rare />
             </Route>
-            <Route exact path="/rare/:theid">
+            <Route exact path="/rareweaponpage/:theid">
               <RareWeaponPage />
             </Route>
             <Route exact path="/uncommon">
               <Uncommon />
             </Route>
-            <Route exact path="/uncommon/:theid">
+            <Route exact path="/uncommonweaponpage/:theid">
               <UncommonWeaponPage />
             </Route>
             <Route exact path="/all">
@@ -68,7 +68,7 @@ const Layout = () => {
             <Route exact path="/signin">
               <SignIn />
             </Route>
-            <Route exact path="/home">
+            <Route exact path="/">
               <Home />
             </Route>
             <Route>

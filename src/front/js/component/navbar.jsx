@@ -8,8 +8,8 @@ export const Navbar = () => {
   return (
     <>
       <nav
-        className="navbar navbar-dark text-light bg-dark"
-        style={{ margin: "0px" }}
+        className="navbar navbar-dark text-dark"
+        style={{ margin: "0px", background: "transparent" }}
       >
         <div className="container">
           <Link to="/home">
@@ -17,30 +17,25 @@ export const Navbar = () => {
           </Link>
           <div className="ml-auto">
             <Link to="/signin">
-              <button
-                className="btn btn-primary"
-                style={{ marginLeft: "1000%" }}
-              >
-                Signin
-              </button>
+              <button className="btn btn-primary">Signin</button>
             </Link>
+            {store.user ? (
+              <div className="ml-auto">
+                <button
+                  onClick={() => {
+                    actions.logout();
+                  }}
+                  className="btn btn-danger"
+                >
+                  Logout
+                </button>
+              </div>
+            ) : (
+              <Link to="/signup">
+                <button className="btn btn-primary">signup</button>
+              </Link>
+            )}
           </div>
-          {store.user ? (
-            <div className="ml-auto">
-              <button
-                onClick={() => {
-                  actions.logout();
-                }}
-                className="btn btn-danger"
-              >
-                Logout
-              </button>
-            </div>
-          ) : (
-            <Link to="/signup">
-              <button className="btn btn-primary">signup</button>
-            </Link>
-          )}
         </div>
         <ul
           className="nav nav-tabs nav justify-content-center"
@@ -99,7 +94,6 @@ export const Navbar = () => {
             <button
               className="nav-link"
               onClick={() => {
-                actions.pullAll();
                 history.push("/all");
               }}
             >

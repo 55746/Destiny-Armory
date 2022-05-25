@@ -11,15 +11,15 @@ export const RareWeaponPage = () => {
   return (
     <div>
       <img className="w-100 h-100" src={blob} />
-      {store.singleRareWeapon.weapon_name}
+      {store.singleRareWeaponPage.weapon_name}
       <br />
-      {store.singleRareWeapon.weapon_lore}
+      {store.singleRareWeaponPage.weapon_lore}
       <br />
-      {store.singleRareWeapon.location_information}
+      {store.singleRareWeaponPage.location_information}
       <br />
-      {store.singleRareWeapon.weapon_type}
+      {store.singleRareWeaponPage.weapon_type}
       <br />
-      {store.singleRareWeapon.weapon_class}
+      {store.singleRareWeaponPage.weapon_class}
     </div>
   );
 };

@@ -1,7 +1,6 @@
 import React, { useContext, useEffect } from "react";
 import { Context } from "../../store/appContext";
 import "../../../styles/home.css";
-import Marcus from "../../../img/2.webp";
 // import { Exotics } from "../exotics";
 
 export const Home = () => {

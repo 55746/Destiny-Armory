@@ -5,11 +5,11 @@ const getState = ({ getStore, getActions, setStore }) => {
       exoticWeapons: [],
       singleExoticWeapon: [],
       legendaryWeapons: [],
-      singleLegendaryWeapons: [],
+      singleLegendaryWeapon: [],
       rareWeapons: [],
-      singleRareWeapons: [],
+      singleRareWeaponPage: [],
       uncommonWeapons: [],
-      singleUncommonWeapons: [],
+      singleUncommonWeaponPage: [],
       starRating: [],
     },
     actions: {
@@ -78,7 +78,7 @@ const getState = ({ getStore, getActions, setStore }) => {
           redirect: "follow",
         })
           .then((res) => res.json())
-          .then((data) => setStore({ singleRareWeapon: data }))
+          .then((data) => setStore({ singleRareWeaponPage: data }))
           .catch((error) => console.log("error", error));
       },
       pullUncommon: () => {
@@ -97,7 +97,7 @@ const getState = ({ getStore, getActions, setStore }) => {
           redirect: "follow",
         })
           .then((res) => res.json())
-          .then((data) => setStore({ singleUncommonWeapon: data }))
+          .then((data) => setStore({ singleUncommonWeaponPage: data }))
           .catch((error) => console.log("error", error));
       },
       // signUp: (email, password, first_name, last_name, dob) => {

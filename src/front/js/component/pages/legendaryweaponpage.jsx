@@ -15,7 +15,7 @@ export const LegendaryWeaponPage = () => {
       <br />
       {store.singleLegendaryWeapon.weapon_lore}
       <br />
-      {store.singleLegendaryWeapon.location_information}
+      {store.singleLegendaryWeapon.location_description}
       <br />
       {store.singleLegendaryWeapon.weapon_type}
       <br />

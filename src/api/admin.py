@@ -18,3 +18,4 @@ def setup_admin(app):
     admin.add_view(ModelView(LegendaryWeapon, db.session))
     admin.add_view(ModelView(RareWeapon, db.session))
     admin.add_view(ModelView(UncommonWeapon, db.session))
+

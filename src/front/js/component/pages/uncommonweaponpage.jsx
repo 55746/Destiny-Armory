@@ -11,15 +11,15 @@ export const UncommonWeaponPage = () => {
   return (
     <div>
       <img className="w-100 h-100" src={blob} />
-      {store.singleExoticWeapon.weapon_name}
+      {store.singleUncommonWeaponPage.weapon_name}
       <br />
-      {store.singleExoticWeapon.weapon_lore}
+      {store.singleUncommonWeaponPage.weapon_lore}
       <br />
-      {store.singleExoticWeapon.location_information}
+      {store.singleUncommonWeaponPage.location_description}
       <br />
-      {store.singleExoticWeapon.weapon_type}
+      {store.singleUncommonWeaponPage.weapon_type}
       <br />
-      {store.singleExoticWeapon.weapon_class}
+      {store.singleUncommonWeaponPage.weapon_class}
     </div>
   );
 };
