@@ -105,9 +105,6 @@ export const Navbar = () => {
             >
               All
             </button>
-            <Link to="/all">
-              <button className="nav-link">all</button>
-            </Link>
           </li>
         </ul>
         <div className="tab-content" id="myTabContent">
