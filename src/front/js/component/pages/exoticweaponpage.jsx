@@ -10,16 +10,13 @@ export const ExoticWeaponPage = () => {
   console.log(store);
   return (
     <div style={{ height: "100%" }}>
-      <img className="w-100 h-100" src={blob} />
-      {store.singleExoticWeapon.weapon_name}
-      <br />
-      {store.singleExoticWeapon.weapon_lore}
-      <br />
-      {store.singleExoticWeapon.location_information}
-      <br />
-      {store.singleExoticWeapon.weapon_type}
-      <br />
-      {store.singleExoticWeapon.weapon_class}
+      <img className="w-100 h-100" src={store.singleExoticWeapon.weapon_Img} />
+      <p>{store.singleExoticWeapon.weapon_name}</p>
+      <p>{store.singleExoticWeapon.weapon_lore}</p>
+      <p>{store.singleExoticWeapon.location_information}</p>
+      <p>{store.singleExoticWeapon.weapon_type}</p>
+      <p>{store.singleExoticWeapon.weapon_class}</p>
+      <a>{store.singleExoticWeapon.location_video}</a>
     </div>
   );
 };
