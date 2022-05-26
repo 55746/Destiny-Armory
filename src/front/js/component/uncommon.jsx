@@ -2,13 +2,13 @@ import React, { useState, useContext } from "react";
 import { Context } from "../store/appContext";
 import StarRating from "./starRating.jsx";
 import { Link } from "react-router-dom";
-import Images from "../../img/warmindImg.jpg";
+// import Images from "../../img/warmindImg.jpg";
 // THIS IS WHERE WE PUT ALL THE IMAGES FOR THE GUNS
 
 export const Uncommon = () => {
   const { store, actions } = useContext(Context);
   console.log(store);
-  let blob = [Images];
+  // let blob = [Images];
 
   return (
     <div>
@@ -24,7 +24,10 @@ export const Uncommon = () => {
                 <div className="card">
                   <div className="row">
                     <div className="col-md-3">
-                      <img className="w-100 h-100" src={blob} />
+                      <img
+                        className="w-100 h-100"
+                        src={store.singleUncommonWeapon.weapon_Img}
+                      />
                     </div>
                     <div className="col-md-8 w-25">
                       <div className="card-body h-25">

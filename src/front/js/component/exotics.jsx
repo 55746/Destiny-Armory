@@ -2,7 +2,7 @@ import React, { useState, useContext } from "react";
 import { Context } from "../store/appContext";
 // import StarRating from "./starRating.jsx";
 import { Link } from "react-router-dom";
-import Images from "../../img/ExoticJadeRabbit.webp";
+// import Images from "../../img/ExoticJadeRabbit.webp";
 import "../../styles/home.css";
 
 // THIS IS WHERE WE PUT ALL THE IMAGES FOR THE GUNS
@@ -10,7 +10,7 @@ import "../../styles/home.css";
 export const Exotics = () => {
   const { store, actions } = useContext(Context);
   console.log(store);
-  let blob = Images;
+  // let blob = Images;
 
   return (
     <div>
@@ -26,7 +26,10 @@ export const Exotics = () => {
                 <div className="card">
                   <div className="row">
                     <div className="col-md-3">
-                      <img className="w-100 h-100" src={blob} />
+                      <img
+                        className="w-100 h-100"
+                        src={store.singleExoticWeapon.weapon_Img}
+                      />
                     </div>
                     <div className=" w-25">
                       <div
