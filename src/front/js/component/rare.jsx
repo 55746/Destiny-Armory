@@ -2,13 +2,13 @@ import React, { useState, useContext } from "react";
 import { Context } from "../store/appContext";
 import StarRating from "./starRating.jsx";
 import { Link } from "react-router-dom";
-import Images from "../../img/warmindImg.jpg";
+// import Images from "../../img/warmindImg.jpg";
 // THIS IS WHERE WE PUT ALL THE IMAGES FOR THE GUNS
 
 export const Rare = () => {
   const { store, actions } = useContext(Context);
   console.log(store);
-  let blob = [Images];
+  // let blob = [Images];
 
   return (
     <>
@@ -25,7 +25,10 @@ export const Rare = () => {
                   <div className="card">
                     <div className="row">
                       <div className="col-md-3">
-                        <img className="w-100 h-100" src={blob} />
+                        <img
+                          className="w-100 h-100"
+                          src={store.singleRareWeapon.weapon_Img}
+                        />
                       </div>
                       <div className="col-md-8 w-25">
                         <div className="card-body h-25">
@@ -35,10 +38,10 @@ export const Rare = () => {
                             <br />
                             {list.weapon_lore}
                           </p>
-                          <p onClick={() => {}}>
-                            {/* ONCLICK WE WANT IT TO MAKE SURE YOU ARE SIGNED IN<, IF NOT ASK IF THEYD LIKE TO SIGN UP OR BRING TO SIGN UP PAGE */}
-                            SignUp to Vote
-                          </p>
+                          {/* <p onClick={() => {}}> */}
+                          {/* ONCLICK WE WANT IT TO MAKE SURE YOU ARE SIGNED IN<, IF NOT ASK IF THEYD LIKE TO SIGN UP OR BRING TO SIGN UP PAGE */}
+                          {/* SignUp to Vote */}
+                          {/* </p> */}
                           <Link to={"/rareweaponpage/" + list.id}>
                             <button
                               className="btn btn-primary"
