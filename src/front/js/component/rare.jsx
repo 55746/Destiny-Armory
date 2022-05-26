@@ -38,10 +38,10 @@ export const Rare = () => {
                             <br />
                             {list.weapon_lore}
                           </p>
-                          <p onClick={() => {}}>
-                            {/* ONCLICK WE WANT IT TO MAKE SURE YOU ARE SIGNED IN<, IF NOT ASK IF THEYD LIKE TO SIGN UP OR BRING TO SIGN UP PAGE */}
-                            SignUp to Vote
-                          </p>
+                          {/* <p onClick={() => {}}> */}
+                          {/* ONCLICK WE WANT IT TO MAKE SURE YOU ARE SIGNED IN<, IF NOT ASK IF THEYD LIKE TO SIGN UP OR BRING TO SIGN UP PAGE */}
+                          {/* SignUp to Vote */}
+                          {/* </p> */}
                           <Link to={"/rareweaponpage/" + list.id}>
                             <button
                               className="btn btn-primary"

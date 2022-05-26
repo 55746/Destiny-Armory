@@ -25,10 +25,7 @@ export const Legendary = () => {
                   <div className="card">
                     <div className="row">
                       <div className="col-md-3">
-                        <img
-                          className="w-100 h-100"
-                          src={store.singleLegendaryWeapon.weapon_Img}
-                        />
+                        <img className="w-100 h-100" src={list.weapon_Img} />
                       </div>
                       <div className="col-md-8 w-25">
                         <div className="card-body h-25">
@@ -38,10 +35,10 @@ export const Legendary = () => {
                             <br />
                             {list.weapon_lore}
                           </p>
-                          <p onClick={() => {}}>
-                            {/* ONCLICK WE WANT IT TO MAKE SURE YOU ARE SIGNED IN<, IF NOT ASK IF THEYD LIKE TO SIGN UP OR BRING TO SIGN UP PAGE */}
-                            SignUp to Vote
-                          </p>
+                          {/* <p onClick={() => {}}> */}
+                          {/* ONCLICK WE WANT IT TO MAKE SURE YOU ARE SIGNED IN<, IF NOT ASK IF THEYD LIKE TO SIGN UP OR BRING TO SIGN UP PAGE */}
+                          {/* SignUp to Vote
+                          </p> */}
                           <Link to={"/legendaryweaponpage/" + list.id}>
                             <button
                               className="btn btn-primary"
