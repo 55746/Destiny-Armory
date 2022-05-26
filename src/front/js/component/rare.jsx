@@ -25,10 +25,7 @@ export const Rare = () => {
                   <div className="card">
                     <div className="row">
                       <div className="col-md-3">
-                        <img
-                          className="w-100 h-100"
-                          src={store.singleRareWeapon.weapon_Img}
-                        />
+                        <img className="w-100 h-100" src={list.weapon_Img} />
                       </div>
                       <div className="col-md-8 w-25">
                         <div className="card-body h-25">

@@ -20,24 +20,19 @@ export const Exotics = () => {
             return (
               <div
                 className="list-group list-group-horizontal w-75"
-                style={{ display: "flex", width: "100px" }}
+                style={{ display: "table-row" }}
                 key={index}
               >
                 <div className="card">
                   <div className="row">
                     <div className="col-md-3">
-                      <img
-                        className="w-100 h-100"
-                        src={store.singleExoticWeapon.weapon_Img}
-                      />
+                      <img className="w-100 h-100" src={list.weapon_Img} />
                     </div>
-                    <div className=" w-25">
-                      <div
-                        className="card-body"
-                        // style={{ display: "inline-block", width: "100%" }}
-                      >
-                        <h5>{list.weapon_name}</h5>
-                        <p style={{ width: "100%" }}>
+                    <div className="col-md-8 w-25">
+                      <div className="card-body h-25">
+                        <h5 className="card-title">{list.weapon_name}</h5>
+                        <p className="card-text">
+                          {list.weapon_type}
                           <br />
                           {list.weapon_lore}
                         </p>
@@ -47,7 +42,7 @@ export const Exotics = () => {
                         </p> */}
                         <Link to={"/exoticweaponpage/" + list.id}>
                           <button
-                            style={{ float: "right" }}
+                            // style={{ float: "right" }}
                             className="btn btn-primary"
                             onClick={() => {
                               actions.singleExoticWeapon(list.id);

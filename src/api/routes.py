@@ -213,7 +213,9 @@ def access_rareweapons():
         for item in response_body:
             weaponInput=RareWeapon(weapon_name=item['weapon_name'], weapon_type=item['weapon_type'],weapon_class=item['weapon_class'], weapon_lore=item['weapon_lore'], location_description=item['location_description'], weapon_Img=item['weapon_Img'], location_video=item['location_video'], video_credit=item['video_credit'])
             db.session.add(weaponInput)
-            db.sessiovideo()
+            db.session.commit()
+
+            # db.sessiovideo()
         return "Succesfully posted Rare Weapons", 200
 
 @api.route('/rare/<int:rare_id>', methods=['DELETE'])
