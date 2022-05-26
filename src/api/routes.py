@@ -120,13 +120,13 @@ def access_exoticweapons():
         raise APIException("You need to specify the request body as a json object", status_code=400)
         print(response_body)
     if type(response_body)==dict:
-        exoticWeapons=ExoticWeapon(weapon_name=response_body['weapon_name'], weapon_type=response_body['weapon_type'],weapon_class=response_body['weapon_class'], weapon_lore=response_body['weapon_lore'], location_description=response_body['location_description'])
+        exoticWeapons=ExoticWeapon(weapon_name=response_body['weapon_name'], weapon_type=response_body['weapon_type'],weapon_class=response_body['weapon_class'], weapon_lore=response_body['weapon_lore'], location_description=response_body['location_description'], weapon_Img=response_body['weapon_Img'], location_Img=response_body['location_Img'])
         db.session.add(exoticWeapons)
         db.session.commit()
         return jsonify(exoticWeapons.serialize()), 200
     elif type(response_body)==list:
         for item in response_body:
-            exoticWeapons=ExoticWeapon(weapon_name=item['weapon_name'], weapon_type=item['weapon_type'],weapon_class=item['weapon_class'], weapon_lore=item['weapon_lore'], location_description=item['location_description'])
+            exoticWeapons=ExoticWeapon(weapon_name=item['weapon_name'], weapon_type=item['weapon_type'],weapon_class=item['weapon_class'], weapon_lore=item['weapon_lore'], location_description=item['location_description'], weapon_Img=item['weapon_Img'], location_Img=item['location_Img'])
             db.session.add(exoticWeapons)
             db.session.commit()
         return "Exotics succesfully added", 200
@@ -163,13 +163,13 @@ def access_legendaryweapons():
         raise APIException("You need to specify the request body as a json object", status_code=400)
         print(response_body)
     if type(response_body)==dict:
-        weaponInput=LegendaryWeapon(weapon_name=response_body['weapon_name'], weapon_type=response_body['weapon_type'],weapon_class=response_body['weapon_class'], weapon_lore=response_body['weapon_lore'], location_description=response_body['location_description'])
+        weaponInput=LegendaryWeapon(weapon_name=response_body['weapon_name'], weapon_type=response_body['weapon_type'],weapon_class=response_body['weapon_class'], weapon_lore=response_body['weapon_lore'], location_description=response_body['location_description'], weapon_Img=response_body['weapon_Img'], location_Img=response_body['location_Img'])
         db.session.add(weaponInput)
         db.session.commit()
         return jsonify(weaponInput.serialize()), 200
     elif type(response_body)==list:
         for item in response_body:
-            weaponInput=LegendaryWeapon(weapon_name=item['weapon_name'], weapon_type=item['weapon_type'],weapon_class=item['weapon_class'], weapon_lore=item['weapon_lore'], location_description=item['location_description'])
+            weaponInput=LegendaryWeapon(weapon_name=item['weapon_name'], weapon_type=item['weapon_type'],weapon_class=item['weapon_class'], weapon_lore=item['weapon_lore'], location_description=item['location_description'], weapon_Img=item['weapon_Img'], location_Img=item['location_Img'])
             db.session.add(weaponInput)
             db.session.commit()
         return "SUccefully added Legendary Weapons", 200
@@ -205,13 +205,13 @@ def access_rareweapons():
         raise APIException("You need to specify the request body as a json object", status_code=400)
         print(response_body)
     if type(response_body)==dict:
-        weaponInput=RareWeapon(weapon_name=response_body['weapon_name'], weapon_type=response_body['weapon_type'],weapon_class=response_body['weapon_class'], weapon_lore=response_body['weapon_lore'], location_description=response_body['location_description'])
+        weaponInput=RareWeapon(weapon_name=response_body['weapon_name'], weapon_type=response_body['weapon_type'],weapon_class=response_body['weapon_class'], weapon_lore=response_body['weapon_lore'], location_description=response_body['location_description'], weapon_Img=response_body['weapon_Img'], location_Img=response_body['location_Img'])
         db.session.add(weaponInput)
         db.session.commit()
         return jsonify(weaponInput.serialize()), 200
     elif type(response_body)==list:
         for item in response_body:
-            weaponInput=RareWeapon(weapon_name=item['weapon_name'], weapon_type=item['weapon_type'],weapon_class=item['weapon_class'], weapon_lore=item['weapon_lore'], location_description=item['location_description'])
+            weaponInput=RareWeapon(weapon_name=item['weapon_name'], weapon_type=item['weapon_type'],weapon_class=item['weapon_class'], weapon_lore=item['weapon_lore'], location_description=item['location_description'], weapon_Img=item['weapon_Img'], location_Img=item['location_Img'])
             db.session.add(weaponInput)
             db.session.commit()
         return "Succesfully posted Rare Weapons", 200
@@ -246,13 +246,13 @@ def access_uncommonweapons():
         raise APIException("You need to specify the request body as a json object", status_code=400)
         print(response_body)
     if type(response_body)==dict:
-        weaponInput=UncommonWeapon(weapon_name=response_body['weapon_name'], weapon_type=response_body['weapon_type'],weapon_class=response_body['weapon_class'], weapon_lore=response_body['weapon_lore'], location_description=response_body['location_description'])
+        weaponInput=UncommonWeapon(weapon_name=response_body['weapon_name'], weapon_type=response_body['weapon_type'],weapon_class=response_body['weapon_class'], weapon_lore=response_body['weapon_lore'], location_description=response_body['location_description'], weapon_Img=response_body['weapon_Img'], location_Img=response_body['location_Img'])
         db.session.add(weaponInput)
         db.session.commit()
         return jsonify(weaponInput.serialize()), 200
     elif type(response_body)==list:
         for item in response_body:
-            weaponInput=UncommonWeapon(weapon_name=item['weapon_name'], weapon_type=item['weapon_type'],weapon_class=item['weapon_class'], weapon_lore=item['weapon_lore'], location_description=item['location_description'])
+            weaponInput=UncommonWeapon(weapon_name=item['weapon_name'], weapon_type=item['weapon_type'],weapon_class=item['weapon_class'], weapon_lore=item['weapon_lore'], location_description=item['location_description'], weapon_Img=item['weapon_Img'], location_Img=item['location_Img'])
             db.session.add(weaponInput)
             db.session.commit()
         return "Succesfully added Uncommon Weapons", 200

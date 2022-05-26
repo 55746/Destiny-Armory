@@ -38,8 +38,8 @@ class ExoticWeapon(db.Model):
         weapon_class=db.Column(db.String(20), nullable=False)
         weapon_lore=db.Column(db.String(1000), nullable=False)
         location_description=db.Column(db.String(1000), nullable=False)
-        # locationImg=
-        # gunImg = 
+        location_Img=db.Column(db.String(100), nullable=False)
+        weapon_Img =db.Column(db.String(100), nullable=False) 
 
         def __repr__(self):
             return f'<ExoticWeapon {self.weapon_name}>' 
@@ -51,9 +51,9 @@ class ExoticWeapon(db.Model):
                 "weapon_type": self.weapon_type,
                 "weapon_class": self.weapon_class,
                 "weapon_lore": self.weapon_lore,
-                "location_description": self.location_description
-                # "locationImg": "...",
-                # "gunImg": "..."
+                "location_description": self.location_description,
+                "location_Img": self.location_Img,
+                "weapon_Img": self.weapon_Img
             }
 class LegendaryWeapon(db.Model):
         id = db.Column(db.Integer, primary_key=True)
@@ -62,8 +62,8 @@ class LegendaryWeapon(db.Model):
         weapon_class=db.Column(db.String(20), nullable=False)
         weapon_lore=db.Column(db.String(1000), nullable=False)
         location_description=db.Column(db.String(1000), nullable=True)
-        # locationImg=
-        # gunImg = 
+        location_Img=db.Column(db.String(100), nullable=False)
+        weapon_Img =db.Column(db.String(100), nullable=False) 
 
         def __repr__(self):
             return f'<Legendaryweapon {self.weapon_name}>' 
@@ -75,9 +75,9 @@ class LegendaryWeapon(db.Model):
                 "weapon_type": self.weapon_type,
                 "weapon_class": self.weapon_class,
                 "weapon_lore": self.weapon_lore,
-                "location_description": self.location_description
-                # "locationImg": "...",
-                # "gunImg": "..."
+                "location_description": self.location_description,
+                "location_Img": self.location_Img,
+                "weapon_Img": self.weapon_Img
             }
 class RareWeapon(db.Model):
         id = db.Column(db.Integer, primary_key=True)
@@ -86,9 +86,9 @@ class RareWeapon(db.Model):
         weapon_class=db.Column(db.String(20), nullable=False)
         weapon_lore=db.Column(db.String(1000), nullable=False)
         location_description=db.Column(db.String(1000), nullable=True)
-        # locationImg=
-        # gunImg = 
-
+        location_Img=db.Column(db.String(100), nullable=False)
+        weapon_Img =db.Column(db.String(100), nullable=False) 
+# FINISHED WEAPON IMAGE AND LOCATION IMAGE, NEED TO FIND ALL THE LOCATION IMAGES
         def __repr__(self):
             return f'<Rareweapon {self.weapon_name}>' 
 
@@ -99,9 +99,9 @@ class RareWeapon(db.Model):
                 "weapon_type": self.weapon_type,
                 "weapon_class": self.weapon_class,
                 "weapon_lore": self.weapon_lore,
-                "location_description": self.location_description
-                # "locationImg": "...",
-                # "gunImg": "..."
+                "location_description": self.location_description,
+                "location_Img": self.location_Img,
+                "weapon_Img": self.weapon_Img
             }
 class UncommonWeapon(db.Model):
         id = db.Column(db.Integer, primary_key=True)
@@ -110,8 +110,8 @@ class UncommonWeapon(db.Model):
         weapon_class=db.Column(db.String(20), nullable=False)
         weapon_lore=db.Column(db.String(1000), nullable=False)
         location_description=db.Column(db.String(1000), nullable=True)
-        # locationImg=
-        # gunImg = 
+        location_Img=db.Column(db.String(100), nullable=False)
+        weapon_Img =db.Column(db.String(100), nullable=False)  
 
         def __repr__(self):
             return f'<Uncommonweapon {self.weapon_name}>' 
@@ -123,7 +123,8 @@ class UncommonWeapon(db.Model):
                 "weapon_type": self.weapon_type,
                 "weapon_class": self.weapon_class,
                 "weapon_lore": self.weapon_lore,
-                "location_description": self.location_description
-                # "locationImg": "...",
-                # "gunImg": "..."
+                "location_description": self.location_description,
+                "location_Img": self.location_Img,
+                "weapon_Img": self.weapon_Img
             }
+            # MIGHT NOT nEED A LOCATION IMAGE, MAYBE A LINK TO A GUIDE TO GEtTING THE WEApON???
