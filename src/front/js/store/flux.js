@@ -1,7 +1,7 @@
 const getState = ({ getStore, getActions, setStore }) => {
   return {
     store: {
-      user: null,
+      user: {},
       exoticWeapons: [],
       singleExoticWeapon: [],
       legendaryWeapons: [],
@@ -157,7 +157,7 @@ const getState = ({ getStore, getActions, setStore }) => {
         // localStorage.setItem("token", token);
       },
       logout: () => {
-        setStore({ user: null });
+        setStore({ user: {} });
       },
     },
   };

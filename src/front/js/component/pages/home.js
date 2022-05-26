@@ -12,7 +12,7 @@ export const Home = () => {
   console.log(store.user);
   return (
     <div>
-      {store.user ? (
+      {store.user.email ? (
         <>
           <div
             style={{
@@ -37,7 +37,6 @@ export const Home = () => {
           </div>
           <div>
             <img
-              src={Marcus}
               // className="img-fluid"
               style={{ width: "100%", height: "100%" }}
               alt="..."

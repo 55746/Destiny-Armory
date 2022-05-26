@@ -62,7 +62,7 @@ export const SignIn = () => {
             //NEED ANOTHER IF STATEMENT
             else {
               actions.signIn(email, password);
-              history.push("/home");
+              history.push("/");
             }
           }}
           formtype="submit"
