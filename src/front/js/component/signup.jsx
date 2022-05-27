@@ -115,12 +115,12 @@ export const SignUp = () => {
           Submit
         </button>
       </form>
-      <img
+      {/* <img
         src={blob}
         className="img-fluid"
         style={{ width: "100%" }}
         alt="..."
-      />
+      /> */}
     </div>
   );
 };
