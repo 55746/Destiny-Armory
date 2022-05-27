@@ -18,7 +18,7 @@ export const Navbar = () => {
       >
         <div className="container">
           <img src={Images} style={{ width: "5%", height: "5%" }} />
-          <Link to="/home">
+          <Link to="/all">
             <span className="navbar-brand mb-0 h1 text-dark top navbar-toggler-icon">
               Destiny
             </span>
@@ -80,6 +80,16 @@ export const Navbar = () => {
       </nav>
       <nav aria-label="Page navigation example">
         <ul className="nav nav-tabs nav justify-content-center">
+          <li className="nav-item" role="presentation">
+            <button
+              className="nav-link top2 button5"
+              onClick={() => {
+                history.push("/all");
+              }}
+            >
+              All
+            </button>
+          </li>
           <li className="nav-item star" role="presentation">
             <button
               className="nav-link top2 button1"
@@ -122,16 +132,6 @@ export const Navbar = () => {
               }}
             >
               Uncommon
-            </button>
-          </li>
-          <li className="nav-item top2 button5">
-            <button
-              className="nav-link"
-              onClick={() => {
-                history.push("/all");
-              }}
-            >
-              All
             </button>
           </li>
         </ul>

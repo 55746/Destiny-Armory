@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import { Context } from "../store/appContext";
 import { useHistory } from "react-router-dom";
-import Images from "../../img/warmindImg.jpg";
+// import Images from "../../img/warmindImg.jpg";
 import "../../styles/home.css";
 // HAD TO IMPORT THE USEHISTORY TO BE ABLE TO BRING YOU TO THE LOGIN PAGE ONCLICK
 
@@ -13,7 +13,7 @@ export const SignUp = () => {
   const [dob, setDob] = useState("");
   const { store, actions } = useContext(Context);
   let history = useHistory();
-  let blob = [Images];
+  // let blob = [Images];
 
   // const validateInput = () => {
   //   if (value === "") alert("The input cannot be empty");

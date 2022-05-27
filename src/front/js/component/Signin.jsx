@@ -2,7 +2,7 @@ import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
 import { useHistory } from "react-router-dom";
-import Images from "../../img/warmindImg.jpg";
+// import Images from "../../img/warmindImg.jpg";
 // IF YOU USE FLUX, YOU USE USECONTEXT, BECAUSE YOU ARE USEING THE STORE
 export const SignIn = () => {
   const [email, setEmail] = React.useState("");
@@ -10,7 +10,7 @@ export const SignIn = () => {
   const { store, actions } = useContext(Context);
   const [passLogin, setPasslogin] = useState(false);
   let history = useHistory();
-  let blob = [Images];
+  // let blob = [Images];
 
   return (
     <div>
@@ -74,12 +74,12 @@ export const SignIn = () => {
           <button className="btn btn-primary">Back home</button>
         </Link>
       </form>
-      <img
+      {/* <img
         src={blob}
         className="img-fluid"
         style={{ width: "100%" }}
         alt="..."
-      />
+      /> */}
     </div>
   );
 };
