@@ -10,8 +10,8 @@ export const Legendary = () => {
   // let blob = [Images];
 
   return (
-    <>
-      <div>
+    <div>
+      {store.legendaryWeapons ? (
         <div className="row" style={{ justifyContent: "center" }}>
           {store.legendaryWeapons &&
             store.legendaryWeapons.map((list, index) => {
@@ -57,8 +57,10 @@ export const Legendary = () => {
               );
             })}
         </div>
-      </div>
-    </>
+      ) : (
+        <h1>Loading</h1>
+      )}
+    </div>
   );
 };
 

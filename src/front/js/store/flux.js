@@ -2,13 +2,13 @@ const getState = ({ getStore, getActions, setStore }) => {
   return {
     store: {
       user: {},
-      exoticWeapons: [],
+      exoticWeapons: null,
       singleExoticWeapon: [],
-      legendaryWeapons: [],
+      legendaryWeapons: null,
       singleLegendaryWeapon: [],
-      rareWeapons: [],
+      rareWeapons: null,
       singleRareWeapon: [],
-      uncommonWeapons: [],
+      uncommonWeapons: null,
       singleUncommonWeapon: [],
       starRating: [],
     },
