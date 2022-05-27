@@ -1,8 +1,6 @@
 import React, { useState, useContext } from "react";
 import { Context } from "../store/appContext";
-// import StarRating from "./starRating.jsx";
 import { Link } from "react-router-dom";
-// import Images from "../../img/ExoticJadeRabbit.webp";
 import "../../styles/home.css";
 
 // THIS IS WHERE WE PUT ALL THE IMAGES FOR THE GUNS
@@ -10,8 +8,6 @@ import "../../styles/home.css";
 export const Exotics = () => {
   const { store, actions } = useContext(Context);
   console.log(store);
-  // let blob = Images;
-
   return (
     <div>
       <div className="row" style={{ justifyContent: "center" }}>
@@ -36,13 +32,8 @@ export const Exotics = () => {
                           <br />
                           {list.weapon_lore}
                         </p>
-                        {/* <p onClick={() => {}}>
-                          SignUp to Vote
-                          <StarRating />
-                        </p> */}
                         <Link to={"/exoticweaponpage/" + list.id}>
                           <button
-                            // style={{ float: "right" }}
                             className="btn btn-primary"
                             onClick={() => {
                               actions.singleExoticWeapon(list.id);
@@ -51,7 +42,6 @@ export const Exotics = () => {
                             Location Info
                           </button>
                         </Link>
-                        {/* <p className="card-text"><small className="text-muted">Last updated 3 mins ago</small></p> */}
                       </div>
                     </div>
                   </div>

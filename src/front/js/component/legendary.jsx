@@ -1,8 +1,7 @@
 import React, { useState, useContext } from "react";
 import { Context } from "../store/appContext";
-import StarRating from "./starRating.jsx";
 import { Link } from "react-router-dom";
-// import Images from "../../img/gold3.gif";
+
 // THIS IS WHERE WE PUT ALL THE IMAGES FOR THE GUNS
 
 export const Legendary = () => {
