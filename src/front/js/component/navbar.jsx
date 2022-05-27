@@ -18,7 +18,7 @@ export const Navbar = () => {
       >
         <div className="container">
           <img src={Images} style={{ width: "5%", height: "5%" }} />
-          <Link to="/mainpage">
+          <Link to="/all">
             <span className="navbar-brand mb-0 h1 text-dark top navbar-toggler-icon">
               Destiny
             </span>

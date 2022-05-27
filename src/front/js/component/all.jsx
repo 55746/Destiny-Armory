@@ -3,48 +3,37 @@ import { Exotics } from "./exotics.jsx";
 import { Legendary } from "././legendary.jsx";
 import { Rare } from "././rare.jsx";
 import { Uncommon } from "././uncommon.jsx";
-<<<<<<< HEAD
-import Images from "../../img/main.jpg";
-=======
-import TESTIMAGE from "../../img/destiny_nightfall_weapon_adept.jpg";
-
->>>>>>> 1cfbc791913ac469231591cf355b65023110faa4
+import Images from "../../img/main2.jpg";
 export const All = () => {
   let blob = [Images];
   return (
-<<<<<<< HEAD
     <div>
       <img src={blob} style={{ width: "100%", height: "100%" }} />
       <div
-        className="container-fluid"
-        style={{ width: "20%", marginLeft: "30%", marginBottom: "80%" }}
+        style={{
+          position: "absolute",
+          left: "40%",
+          marginTop: "-35%",
+          width: "50%",
+        }}
+        className="input-group"
       >
-        <form className="d-flex" role="search">
-          <input
-            className="form-control me-2"
-            type="search"
-            placeholder="Search"
-            aria-label="Search"
-          />
-          <button className="btn btn-outline-success" type="submit">
-            Search
-          </button>
-        </form>
+        <div className="form-outline">
+          <input type="search" id="form1" className="form-control" />
+          <label className="form-label" for="form1"></label>
+        </div>
+        <button
+          type="button"
+          className="btn btn-primary"
+          style={{ position: "absolute", left: "25%" }}
+        >
+          search
+        </button>
       </div>
       <Exotics />
       <Legendary />
       <Rare />
       <Uncommon />
-=======
-    <div className="row" style={{ justifyContent: "center" }}>
-      <img src={TESTIMAGE} />
-      <div>
-        <Exotics />
-        <Legendary />
-        <Rare />
-        <Uncommon />
-      </div>
->>>>>>> 1cfbc791913ac469231591cf355b65023110faa4
     </div>
   );
 };
