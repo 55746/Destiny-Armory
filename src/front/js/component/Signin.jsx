@@ -13,73 +13,66 @@ export const SignIn = () => {
   // let blob = [Images];
 
   return (
-    <div>
-      <form
-        className="text-dark bg-light text-center"
-        style={{
-          position: "absolute",
-          left: "25%",
-          marginTop: "10%",
-          width: "40%",
-          borderRadius: "2%",
-          height: "30%",
-        }}
-      >
-        <div style={{ marginTop: "11%" }}>
-          <div className="mb-3">
-            <input
-              onChange={(e) => setEmail(e.target.value)}
-              value={email}
-              style={{ width: "50%" }}
-              placeholder="Email Address"
-              type="email"
-              className="form-control move"
-              id="exampleInputEmail1"
-              aria-describedby="emailHelp"
-            />
-            <div id="emailHelp" className="form-text text-light">
-              LETS LOGIN
+    <>
+      <div className="container-fluid">
+        <div className="row main-content bg-success text-center">
+          <div className="col-md-4 text-center company__info">
+            <span className="company__logo">
+              <h2>
+                <span className="fa fa-android"></span>
+              </h2>
+            </span>
+            <h4 className="company_title">Your Company Logo</h4>
+          </div>
+          <div className="col-md-8 col-xs-12 col-sm-12 login_form ">
+            <div className="container-fluid">
+              <div className="row">
+                <h2>Log In</h2>
+              </div>
+              <div className="row">
+                <form control="" className="form-group">
+                  <div className="row">
+                    <input
+                      type="text"
+                      name="username"
+                      id="username"
+                      className="form__input"
+                      placeholder="Username"
+                    />
+                  </div>
+                  <div className="row">
+                    <span className="fa fa-lock"></span>
+                    <input
+                      type="password"
+                      name="password"
+                      id="password"
+                      className="form__input"
+                      placeholder="Password"
+                    />
+                  </div>
+                  <div className="row">
+                    <input
+                      type="checkbox"
+                      name="remember_me"
+                      id="remember_me"
+                      className=""
+                    />
+                    <label for="remember_me">Remember Me!</label>
+                  </div>
+                  <div className="row">
+                    <input type="submit" value="Submit" className="btn" />
+                  </div>
+                </form>
+              </div>
+              <div className="row">
+                <p>
+                  Don't have an account? <a href="#">Register Here</a>
+                </p>
+              </div>
             </div>
           </div>
-          <div className="mb-3">
-            <input
-              onChange={(e) => setPassword(e.target.value)}
-              value={password}
-              style={{ width: "50%" }}
-              placeholder="Password"
-              type="password"
-              className="form-control move"
-              id="exampleInputPassword1"
-            />
-          </div>
         </div>
-        <button
-          onClick={(e) => {
-            e.preventDefault();
-            if (email === "" || password === "") {
-              alert("The input cannot be empty");
-            }
-            //NEED ANOTHER IF STATEMENT
-            else {
-              actions.signIn(email, password);
-              history.push("/all");
-            }
-          }}
-          formtype="submit"
-          className="btn btn-primary"
-        >
-          Submit
-        </button>
-        <Link to="/all">
-          <button className="btn btn-primary">Back home</button>
-        </Link>
-      </form>
-      {/* <img
-        src={blob}
-        className="img-fluid"
-        style={{ width: "100%" }}
-        alt="..."
-      /> */}
-    </div>
+      </div>
+    </>
   );
 };

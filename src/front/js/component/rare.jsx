@@ -60,7 +60,7 @@ export const Rare = () => {
           <a href="#topofpage">back to top</a>
         </div>
       ) : (
-        <div style={{ justifyContent: "center" }}>
+        <div style={{ justifyContent: "center", marginLeft: "50%" }}>
           <img
             src={loadingImg}
             style={{

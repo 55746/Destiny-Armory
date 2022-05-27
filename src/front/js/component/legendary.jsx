@@ -60,7 +60,7 @@ export const Legendary = () => {
           <a href="#topofpage">back to top</a>
         </div>
       ) : (
-        <div style={{ postion: "absolute", justifyContent: "center" }}>
+        <div style={{ postion: "absolute", marginLeft: "50%" }}>
           <img
             src={loadingImg}
             style={{
