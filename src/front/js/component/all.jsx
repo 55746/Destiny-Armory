@@ -3,7 +3,7 @@ import { Exotics } from "./exotics.jsx";
 import { Legendary } from "././legendary.jsx";
 import { Rare } from "././rare.jsx";
 import { Uncommon } from "././uncommon.jsx";
-import Images from "../../img/main2.jpg";
+import Images from "../../img/destiny_nightfall_weapon_adept.jpg";
 export const All = () => {
   let blob = [Images];
   return (

@@ -1,13 +1,9 @@
 import React, { useState, useContext } from "react";
 import { Context } from "../../store/appContext";
-// import Images from "../../../img/ExoticJadeRabbit.webp";
-
-// import StarRating from "./starRating.jsx";
 
 export const ExoticWeaponPage = () => {
-  // let blob = [Images];
   const { store, actions } = useContext(Context);
-  console.log(store);
+  console.log(window.location.href);
   return (
     <div
       className="card"
@@ -47,6 +43,13 @@ export const ExoticWeaponPage = () => {
       <p style={{ paddingLeft: "73%" }}>
         {store.singleExoticWeapon.video_credit}
       </p>
+      <button
+        onClick={() =>
+          navigator.clickport.writeText(store.singleExoticWeapon.location_video)
+        }
+      >
+        copy
+      </button>
     </div>
   );
 };
