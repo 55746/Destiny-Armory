@@ -71,9 +71,9 @@ const Layout = () => {
             <Route exact path="/a11">
               <Home />
             </Route>
-            <Route>
+            {/* <Route>
               <h1>Not found!</h1>
-            </Route>
+            </Route> */}
           </Switch>
           <Footer />
         </ScrollToTop>
