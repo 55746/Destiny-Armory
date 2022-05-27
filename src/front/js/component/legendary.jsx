@@ -1,16 +1,17 @@
 import React, { useState, useContext } from "react";
 import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
+import Load from "../../img/tumblr_nhvhluqUM51tfvxn5o1_500.webp";
 
 // THIS IS WHERE WE PUT ALL THE IMAGES FOR THE GUNS
 
 export const Legendary = () => {
   const { store, actions } = useContext(Context);
   console.log(store);
-  // let blob = [Images];
+  let loadingImg = Load;
 
   return (
-    <div>
+    <div id="topofpage">
       {store.legendaryWeapons ? (
         <div className="row" style={{ justifyContent: "center" }}>
           {store.legendaryWeapons &&
@@ -56,14 +57,24 @@ export const Legendary = () => {
                 </div>
               );
             })}
+          <a href="#topofpage">back to top</a>
         </div>
       ) : (
-        <h1>Loading</h1>
+        <div style={{ postion: "absolute", justifyContent: "center" }}>
+          <img
+            src={loadingImg}
+            style={{
+              width: "100px",
+              height: "100px",
+              // background: red;
+              borderRadius: "50%",
+            }}
+          />
+        </div>
       )}
     </div>
   );
 };
-
 // WHEN I ENCOUNTER THE psycopg2.errors.UndefinedTable ERROR
 // 1. delete migrations folder
 // 2. run pipenv run init

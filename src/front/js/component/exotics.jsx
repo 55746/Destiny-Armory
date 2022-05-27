@@ -11,7 +11,7 @@ export const Exotics = () => {
   console.log(store);
   let loadingImg = Load;
   return (
-    <div>
+    <div id="topofpage">
       {store.exoticWeapons ? (
         <div className="row" style={{ justifyContent: "center" }}>
           {store.exoticWeapons &&
@@ -54,8 +54,21 @@ export const Exotics = () => {
             })}
         </div>
       ) : (
-        <h1>{loadingImg}</h1>
+        <div style={{ justifyContent: "center" }}>
+          <img
+            src={loadingImg}
+            style={{
+              width: "100px",
+              height: "100px",
+              // background: red;
+              borderRadius: "50%",
+            }}
+          />
+        </div>
       )}
+      <a style={{ justifyContent: "center" }} href="#topofpage">
+        back to top
+      </a>
     </div>
   );
 };
