@@ -16,3 +16,7 @@
 /* .my-image {
   background-image: "../img/possiblelogo.webp";
 } */
+
+.red {
+  background-image: url("../img/moon.png");
+}

@@ -3,7 +3,7 @@ import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
 import "../../styles/home.css";
 import Load from "../../img/tumblr_nhvhluqUM51tfvxn5o1_500.webp";
-
+// import img from "../../img/moon.png";
 // THIS IS WHERE WE PUT ALL THE IMAGES FOR THE GUNS
 
 export const Exotics = () => {
@@ -18,7 +18,7 @@ export const Exotics = () => {
             store.exoticWeapons.map((list, index) => {
               return (
                 <div
-                  className="list-group list-group-horizontal w-75"
+                  className="list-group list-group-horizontal w-75 red"
                   style={{ display: "table-row" }}
                   key={index}
                 >

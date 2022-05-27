@@ -62,7 +62,7 @@ export const SignIn = () => {
             //NEED ANOTHER IF STATEMENT
             else {
               actions.signIn(email, password);
-              history.push("/");
+              history.push("/all");
             }
           }}
           formtype="submit"
@@ -70,7 +70,7 @@ export const SignIn = () => {
         >
           Submit
         </button>
-        <Link to="/home">
+        <Link to="/all">
           <button className="btn btn-primary">Back home</button>
         </Link>
       </form>
