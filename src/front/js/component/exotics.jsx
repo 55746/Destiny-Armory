@@ -3,7 +3,7 @@ import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
 import "../../styles/home.css";
 import Load from "../../img/tumblr_nhvhluqUM51tfvxn5o1_500.webp";
-// import img from "../../img/moon.png";
+import { motion } from "framer-motion";
 // THIS IS WHERE WE PUT ALL THE IMAGES FOR THE GUNS
 
 export const Exotics = () => {
@@ -11,7 +11,12 @@ export const Exotics = () => {
   console.log(store);
   let loadingImg = Load;
   return (
-    <div id="topofpage">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      id="topofpage"
+    >
       {store.exoticWeapons ? (
         <div className="row" style={{ justifyContent: "center" }}>
           {store.exoticWeapons &&
@@ -69,7 +74,7 @@ export const Exotics = () => {
       <a style={{ justifyContent: "center" }} href="#topofpage">
         back to top
       </a>
-    </div>
+    </motion.div>
   );
 };
 

@@ -1,25 +1,10 @@
 import React from "react";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
 import ScrollToTop from "./component/scrollToTop";
-
-import { Home } from "./component/pages/home";
-
 import injectContext from "./store/appContext";
-
+import { BrowserRouter, Route, Switch, useLocation } from "react-router-dom";
 import { Navbar } from "./component/navbar.jsx";
-import { Footer } from "./component/footer.jsx";
-import { CreatePage } from "./component/create.jsx";
-import { Exotics } from "./component/exotics.jsx";
-import { ExoticWeaponPage } from "./component/pages/exoticweaponpage.jsx";
-import { Legendary } from "./component/legendary.jsx";
-import { LegendaryWeaponPage } from "./component/pages/legendaryweaponpage.jsx";
-import { Rare } from "./component/rare.jsx";
-import { RareWeaponPage } from "./component/pages/rareweaponpage.jsx";
-import { Uncommon } from "./component/uncommon.jsx";
-import { UncommonWeaponPage } from "./component/pages/uncommonweaponpage.jsx";
-import { All } from "./component/all.jsx";
-import { SignUp } from "./component/signup.jsx";
-import { SignIn } from "./component/Signin.jsx";
+import { AnimatedRoutes } from "../js/component/animatedroutes.js";
+
 //create your first component
 const Layout = () => {
   //the basename is used when your project is published in a subdirectory and not in the root of the domain
@@ -31,51 +16,7 @@ const Layout = () => {
       <BrowserRouter basename={basename}>
         <ScrollToTop>
           <Navbar />
-          <Switch>
-            <Route exact path="/create">
-              <CreatePage />
-            </Route>
-            <Route exact path="/exotics">
-              <Exotics />
-            </Route>
-            <Route exact path="/exoticweaponpage/:theid">
-              <ExoticWeaponPage />
-            </Route>
-            <Route exact path="/legendary">
-              <Legendary />
-            </Route>
-            <Route exact path="/legendaryweaponpage/:theid">
-              <LegendaryWeaponPage />
-            </Route>
-            <Route exact path="/rare">
-              <Rare />
-            </Route>
-            <Route exact path="/rareweaponpage/:theid">
-              <RareWeaponPage />
-            </Route>
-            <Route exact path="/uncommon">
-              <Uncommon />
-            </Route>
-            <Route exact path="/uncommonweaponpage/:theid">
-              <UncommonWeaponPage />
-            </Route>
-            <Route exact path="/all">
-              <All />
-            </Route>
-            <Route exact path="/signup">
-              <SignUp />
-            </Route>
-            <Route exact path="/signin">
-              <SignIn />
-            </Route>
-            <Route exact path="/a11">
-              <Home />
-            </Route>
-            {/* <Route>
-              <h1>Not found!</h1>
-            </Route> */}
-          </Switch>
-          {/* <Footer /> */}
+          <AnimatedRoutes />
         </ScrollToTop>
       </BrowserRouter>
     </div>

@@ -44,9 +44,7 @@ export const ExoticWeaponPage = () => {
         {store.singleExoticWeapon.video_credit}
       </p>
       <button
-        onClick={() =>
-          navigator.clickport.writeText(store.singleExoticWeapon.location_video)
-        }
+        onClick={() => navigator.clickport.writeText(window.location.href)}
       >
         copy
       </button>
