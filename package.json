@@ -73,7 +73,11 @@
 		]
 	},
 	"dependencies": {
+<<<<<<< HEAD
 		"framer-motion": "^6.3.4",
+=======
+		"aos": "^2.3.4",
+>>>>>>> 8ddd4ac24e4ce7be8adf82f956cfa787959e2ff0
 		"prop-types": "^15.6.1",
 		"react": "^16.8.4",
 		"react-dom": "^16.8.4",
