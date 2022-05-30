@@ -1,13 +1,17 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
 import "../../styles/home.css";
 import Load from "../../img/tumblr_nhvhluqUM51tfvxn5o1_500.webp";
+import Aos from "aos";
 // import img from "../../img/moon.png";
 // THIS IS WHERE WE PUT ALL THE IMAGES FOR THE GUNS
 
 export const Exotics = () => {
   const { store, actions } = useContext(Context);
+  useEffect(() => {
+    Aos.init({ duration: 2000 });
+  }, []);
   console.log(store);
   let loadingImg = Load;
   return (
@@ -23,7 +27,7 @@ export const Exotics = () => {
                   key={index}
                 >
                   <div className="card">
-                    <div className="row">
+                    <div className="row" data-aos="fade-up">
                       <div className="col-md-3">
                         <img className="w-100 h-100" src={list.weapon_Img} />
                       </div>
