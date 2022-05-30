@@ -71,8 +71,20 @@ export const Exotics = () => {
           />
         </div>
       )}
-      <a style={{ justifyContent: "center" }} href="#topofpage">
-        back to top
+      <a href="#" class="btt">
+        <i
+          style={{
+            position: "fixed" /* Fixed/sticky position */,
+            bottom: "20px" /* Place the button at the bottom of the page */,
+            right: "15px" /* Place the button 30px from the right */,
+            backgroundColor: "gray" /* Set a background color */,
+            color: "black" /* Text color */,
+            padding: "15px" /* Some padding */,
+            borderRadius: "10px" /* Rounded corners */,
+          }}
+          class="fa fa-arrow-circle-up"
+          aria-hidden="true"
+        ></i>
       </a>
     </motion.div>
   );

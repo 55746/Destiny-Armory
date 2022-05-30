@@ -4,10 +4,16 @@ import { Legendary } from "././legendary.jsx";
 import { Rare } from "././rare.jsx";
 import { Uncommon } from "././uncommon.jsx";
 import Images from "../../img/destiny_nightfall_weapon_adept.jpg";
+import { motion } from "framer-motion";
+
 export const All = () => {
   let blob = [Images];
   return (
-    <div>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+    >
       <img src={blob} style={{ width: "100%", height: "100%" }} />
       <div
         style={{
@@ -34,6 +40,6 @@ export const All = () => {
       <Legendary />
       <Rare />
       <Uncommon />
-    </div>
+    </motion.div>
   );
 };
