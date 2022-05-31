@@ -23,9 +23,9 @@ export const Navbar = () => {
               Destiny
             </span>
           </Link>
-          <div className="ml-auto">
+          <div className="" style={{ display: "inline-flex" }}>
             {store.user.email ? (
-              <div className="ml-auto">
+              <div className="" style={{ display: "inline-flex" }}>
                 <button
                   onClick={() => {
                     actions.logout();
