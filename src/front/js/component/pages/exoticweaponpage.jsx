@@ -1,9 +1,11 @@
 import React, { useState, useContext } from "react";
+import ReactPlayer from "react-player";
 import { Context } from "../../store/appContext";
 
 export const ExoticWeaponPage = () => {
   const { store, actions } = useContext(Context);
   console.log(window.location.href);
+  let par = store.singleExoticWeapon.location_video;
   return (
     <div
       className="card"
@@ -36,25 +38,28 @@ export const ExoticWeaponPage = () => {
           paddingBottom: "",
         }}
       >
-        <video width="400" controls>
-          <source
-            src="https://www.youtube.com/watch?v=OqE-TvWxGkQ"
-            type="video/mp4/"
-          />
-        </video>
+        {store.singleExoticWeapon.location_video == null ? (
+          <div>
+            <p>hello world</p>
+          </div>
+        ) : (
+          <>
+            <ReactPlayer
+              controls
+              url={store.singleExoticWeapon.location_video}
+            />
+            <p style={{ paddingLeft: "73%" }}>
+              {store.singleExoticWeapon.video_credit}
+            </p>
+            <button
+              // onClick={() => navigator.clickport.writeText(window.location.href)}
+              onClick={() => navigator.clipboard.writeText(par)}
+            >
+              copy
+            </button>
+          </>
+        )}
       </div>
-      <p style={{ paddingLeft: "73%" }}>
-        {store.singleExoticWeapon.video_credit}
-      </p>
-      {/* <button
-        // onClick={() => navigator.clickport.writeText(window.location.href)}
-        onClick={() =>
-          navigator.clipboard.writeText({store.singleExoticWeapon.location_video});
-          alert("copied the text")
-        }
-      >
-        copy
-      </button> */}
     </div>
   );
 };
