@@ -40,7 +40,6 @@ class ExoticWeapon(db.Model):
         location_description=db.Column(db.String(1000), nullable=False)
         location_video=db.Column(db.String(200), nullable=True)
         weapon_Img =db.Column(db.String(200), nullable=False)
-        video_credit =db.Column(db.String(100), nullable=True)
 
         def __repr__(self):
             return f'<ExoticWeapon {self.weapon_name}>' 
@@ -55,7 +54,6 @@ class ExoticWeapon(db.Model):
                 "location_description": self.location_description,
                 "location_video": self.location_video,
                 "weapon_Img": self.weapon_Img, 
-                "video_credit": self.video_credit
             }
 class LegendaryWeapon(db.Model):
         id = db.Column(db.Integer, primary_key=True)
@@ -66,7 +64,6 @@ class LegendaryWeapon(db.Model):
         location_description=db.Column(db.String(1000), nullable=True)
         location_video=db.Column(db.String(200), nullable=True)
         weapon_Img =db.Column(db.String(200), nullable=False) 
-        video_credit =db.Column(db.String(100), nullable=True)
 
 
         def __repr__(self):
@@ -82,7 +79,6 @@ class LegendaryWeapon(db.Model):
                 "location_description": self.location_description,
                 "location_video": self.location_video,
                 "weapon_Img": self.weapon_Img,
-                "video_credit": self.video_credit
 
             }
 class RareWeapon(db.Model):
@@ -94,7 +90,6 @@ class RareWeapon(db.Model):
         location_description=db.Column(db.String(1000), nullable=True)
         location_video=db.Column(db.String(200), nullable=True)
         weapon_Img =db.Column(db.String(200), nullable=False) 
-        video_credit =db.Column(db.String(100), nullable=True)
 
 # FINISHED WEAPON IMAGE AND LOCATION IMAGE, NEED TO FIND ALL THE LOCATION IMAGES
         def __repr__(self):
@@ -110,7 +105,7 @@ class RareWeapon(db.Model):
                 "location_description": self.location_description,
                 "location_video": self.location_video,
                 "weapon_Img": self.weapon_Img,
-                "video_credit": self.video_credit
+
 
             }
 class UncommonWeapon(db.Model):
@@ -122,8 +117,7 @@ class UncommonWeapon(db.Model):
         location_description=db.Column(db.String(1000), nullable=True)
         location_video=db.Column(db.String(200), nullable=True)
         weapon_Img =db.Column(db.String(200), nullable=False) 
-        video_credit =db.Column(db.String(100), nullable=True)
- 
+
 
         def __repr__(self):
             return f'<Uncommonweapon {self.weapon_name}>' 
@@ -138,7 +132,7 @@ class UncommonWeapon(db.Model):
                 "location_description": self.location_description,
                 "location_video": self.location_video,
                 "weapon_Img": self.weapon_Img,
-                "video_credit": self.video_credit
+
 
             }
             # MIGHT NOT nEED A LOCATION IMAGE, MAYBE A LINK TO A GUIDE TO GEtTING THE WEApON???
