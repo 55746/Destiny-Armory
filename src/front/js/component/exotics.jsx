@@ -27,33 +27,35 @@ export const Exotics = () => {
                   style={{ display: "table-row" }}
                   key={index}
                 >
-                  <div className="card">
-                    <div className="row" data-aos="fade-up">
-                      <div className="col-md-3">
-                        <img className="w-100 h-100" src={list.weapon_Img} />
-                      </div>
-                      <div className="col-md-8 w-25">
-                        <div className="card-body h-25">
-                          <h5 className="card-title">{list.weapon_name}</h5>
-                          <p className="card-text">
-                            {list.weapon_type}
-                            <br />
-                            {list.weapon_lore}
-                          </p>
-                          <Link to={"/exoticweaponpage/" + list.id}>
-                            <button
-                              className="btn btn-primary"
-                              onClick={() => {
-                                actions.singleExoticWeapon(list.id);
-                              }}
-                            >
-                              Location Info
-                            </button>
-                          </Link>
+                  <p>
+                    <div className="card">
+                      <div className="row" data-aos="fade-up">
+                        <div className="col-md-3">
+                          <img className="w-100 h-100" src={list.weapon_Img} />
+                        </div>
+                        <div className="col-md-8 w-25">
+                          <div className="card-body h-25">
+                            <h5 className="card-title">{list.weapon_name}</h5>
+                            <p className="card-text">
+                              {list.weapon_type}
+                              <br />
+                              {list.weapon_lore}
+                            </p>
+                            <Link to={"/exoticweaponpage/" + list.id}>
+                              <button
+                                className="btn btn-primary"
+                                onClick={() => {
+                                  actions.singleExoticWeapon(list.id);
+                                }}
+                              >
+                                Location Info
+                              </button>
+                            </Link>
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
+                  </p>
                 </div>
               );
             })}

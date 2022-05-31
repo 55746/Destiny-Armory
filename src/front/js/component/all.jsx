@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Exotics } from "./exotics.jsx";
 import { Legendary } from "././legendary.jsx";
 import { Rare } from "././rare.jsx";
@@ -7,6 +7,7 @@ import Images from "../../img/destiny_nightfall_weapon_adept.jpg";
 import { motion } from "framer-motion";
 
 export const All = () => {
+  const [visible, setVisible] = useState(false);
   let blob = [Images];
   return (
     <motion.div
@@ -15,31 +16,64 @@ export const All = () => {
       exit={{ opacity: 0 }}
     >
       <img src={blob} style={{ width: "100%", height: "100%" }} />
-      <div
+      <form
+        className="d-flex"
+        role="search"
         style={{
           position: "absolute",
           left: "40%",
           marginTop: "-35%",
-          width: "50%",
+          width: "20%",
+          height: "5%",
         }}
-        className="input-group"
       >
-        <div className="form-outline">
-          <input type="search" id="form1" className="form-control" />
-          <label className="form-label" for="form1"></label>
-        </div>
+        <input
+          className="form-control me-2"
+          type="search"
+          // placeholder="Search"
+          aria-label="Search"
+        />
         <button
           type="button"
-          className="btn btn-primary"
-          style={{ position: "absolute", left: "25%" }}
+          className="btn-primary bt"
+          style={{
+            width: "40%",
+          }}
         >
-          search
+          Search
         </button>
+      </form>
+      <div>
+        {/* <button
+          className="btn-primary bt"
+          style={{
+            position: "absolute",
+            left: "40%",
+            marginTop: "-15%",
+            width: "20%",
+            height: "5%",
+          }}
+          onClick={() => setVisible(!visible)}
+        >
+          {visible ? "Hide" : "Show"}
+        </button> */}
+        {visible && (
+          <div>
+            <p>
+              <Exotics />
+            </p>
+            <p>
+              <Legendary />
+            </p>
+            <p>
+              <Rare />
+            </p>
+            <p>
+              <Uncommon />
+            </p>
+          </div>
+        )}
       </div>
-      <Exotics />
-      <Legendary />
-      <Rare />
-      <Uncommon />
     </motion.div>
   );
 };

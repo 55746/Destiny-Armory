@@ -38,10 +38,14 @@ export const Navbar = () => {
             ) : (
               <>
                 <Link to="/signin">
-                  <button className="btn btn-dark text-light">Signin</button>
+                  <button className="btn btn-primary" style={{ width: "100%" }}>
+                    Signin
+                  </button>
                 </Link>
                 <Link to="/signup">
-                  <button className="btn btn-primary">signup</button>
+                  <button className="btn btn-primary" style={{ width: "100%" }}>
+                    signup
+                  </button>
                 </Link>
               </>
             )}

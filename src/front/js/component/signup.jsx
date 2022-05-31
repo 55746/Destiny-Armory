@@ -17,7 +17,7 @@ export const SignUp = () => {
   return (
     <div className="container-fluid">
       <form>
-        <div className="row main-content bg-success text-center">
+        <div className="row main-content text-center">
           <div className="col-md-4 text-center company__info">
             <span className="company__logo">
               <h2>
@@ -29,7 +29,7 @@ export const SignUp = () => {
           <div className="col-md-8 col-xs-12 col-sm-12 login_form ">
             <div className="container-fluid">
               <div className="row">
-                <h2>Log In</h2>
+                <h2>Sign up</h2>
               </div>
               <div className="row">
                 <form control="" className="form-group">
@@ -53,7 +53,7 @@ export const SignUp = () => {
                       style={{ width: "50%" }}
                       placeholder="First Name"
                       type="first_name"
-                      className="form-control move"
+                      className="form__input"
                       id="first_name_input"
                       aria-describedby="first_name"
                     />
@@ -65,7 +65,7 @@ export const SignUp = () => {
                       style={{ width: "50%" }}
                       placeholder="Last Name"
                       type="last_name"
-                      className="form-control move"
+                      className="form__input"
                       id="last_name_input"
                       aria-describedby="last_name"
                     />
@@ -74,10 +74,10 @@ export const SignUp = () => {
                     <input
                       onChange={(e) => setDob(e.target.value)}
                       value={dob}
-                      style={{ width: "50%" }}
+                      style={{ width: "52%" }}
                       placeholder="Date of Birth"
                       type="dob"
-                      className="form-control move"
+                      className="form__input"
                       id="dob"
                       aria-describedby="dob"
                     />
@@ -86,14 +86,13 @@ export const SignUp = () => {
                     <input
                       onChange={(e) => setPassword(e.target.value)}
                       value={password}
-                      style={{ width: "50%" }}
+                      style={{ width: "52%" }}
                       placeholder="Password"
                       type="password"
-                      className="form-control move"
+                      className="form__input"
                       id="exampleInputPassword1"
                     />
                   </div>
-                  //{" "}
                   <button
                     onClick={(e) => {
                       e.preventDefault();
