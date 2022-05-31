@@ -6,6 +6,7 @@ export const ExoticWeaponPage = () => {
   const { store, actions } = useContext(Context);
   console.log(window.location.href);
   let par = store.singleExoticWeapon.location_video;
+  const [success, setSuccess] = useState("");
   return (
     <div
       className="card"
@@ -23,24 +24,55 @@ export const ExoticWeaponPage = () => {
       <div
         style={{ position: "absolute", paddingLeft: "27%", paddingTop: "3%" }}
       >
-        <p>{store.singleExoticWeapon.weapon_name}</p>
-        <p>{store.singleExoticWeapon.weapon_lore}</p>
+        <p>
+          <strong>{store.singleExoticWeapon.weapon_name}</strong>
+        </p>
         <p>{store.singleExoticWeapon.weapon_type}</p>
+        <p>{store.singleExoticWeapon.weapon_lore}</p>
       </div>
       <p style={{ position: "relative", paddingTop: "3%", paddingLeft: "3%" }}>
         {store.singleExoticWeapon.location_description}
       </p>
       <div
         style={{
+          paddingLeft: "25%",
+          paddingTop: "5%",
+        }}
+      >
+        {store.user.email ? (
+          <button
+            style={{
+              position: "absolute",
+              marginRight: "-50px",
+            }}
+            onClick={() => {
+              navigator.clipboard.writeText(par);
+              {
+                setSuccess("copied");
+              }
+            }}
+          >
+            <i class="fa fa-clone" aria-hidden="true"></i>
+            copy
+          </button>
+        ) : (
+          <button onClick={() => alert("SignUp/Login to Share")}>
+            <i class="fa fa-clone" aria-hidden="true"></i>
+            copy
+          </button>
+        )}
+      </div>
+      <div
+        style={{
           position: "relative",
-          paddingLeft: "65.5%",
+          paddingLeft: "25%",
           paddingTop: "5%",
           paddingBottom: "",
         }}
       >
         {store.singleExoticWeapon.location_video == null ? (
           <div>
-            <p>hello world</p>
+            <p>No video was found for {store.singleExoticWeapon.weapon_name}</p>
           </div>
         ) : (
           <>
@@ -48,15 +80,14 @@ export const ExoticWeaponPage = () => {
               controls
               url={store.singleExoticWeapon.location_video}
             />
-            <p style={{ paddingLeft: "73%" }}>
-              {store.singleExoticWeapon.video_credit}
+            <p style={{ paddingLeft: "25%" }}>
+              This video is credited to its original creator.
             </p>
-            <button
-              // onClick={() => navigator.clickport.writeText(window.location.href)}
-              onClick={() => navigator.clipboard.writeText(par)}
-            >
-              copy
-            </button>
+            <p>
+              <i>
+                <small>{success}</small>
+              </i>
+            </p>
           </>
         )}
       </div>

@@ -58,9 +58,7 @@ export const SignIn = () => {
             e.preventDefault();
             if (email === "" || password === "") {
               alert("The input cannot be empty");
-            }
-            //NEED ANOTHER IF STATEMENT
-            else {
+            } else {
               actions.signIn(email, password);
               history.push("/all");
             }
