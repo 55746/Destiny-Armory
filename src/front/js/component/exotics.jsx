@@ -8,9 +8,6 @@ import { motion } from "framer-motion";
 
 export const Exotics = () => {
   const { store, actions } = useContext(Context);
-  useEffect(() => {
-    Aos.init({ duration: 2000 });
-  }, []);
   console.log(store);
   let loadingImg = Load;
   return (
