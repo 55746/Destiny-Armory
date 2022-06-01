@@ -4,7 +4,6 @@ import { Context } from "../../store/appContext";
 
 export const UncommonWeaponPage = () => {
   const { store, actions } = useContext(Context);
-  console.log(window.location.href);
   let par = store.singleUncommonWeapon.location_video;
   const [success, setSuccess] = useState("");
   return (
@@ -14,7 +13,6 @@ export const UncommonWeaponPage = () => {
         position: "relative",
         marginLeft: "10%",
         marginRight: "10%",
-        // marginBottom: "10%",
       }}
     >
       <img

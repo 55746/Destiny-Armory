@@ -4,15 +4,13 @@ import { Context } from "../store/appContext";
 import { useHistory } from "react-router-dom";
 import "../../styles/signup.css";
 import Image from "../../img/971421753-061c38c1fdfa681d822bd7f6c51fdd6a.gif";
-// import Images from "../../img/warmindImg.jpg";
-// IF YOU USE FLUX, YOU USE USECONTEXT, BECAUSE YOU ARE USEING THE STORE
+
 export const SignIn = () => {
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
   const { store, actions } = useContext(Context);
   const [passLogin, setPasslogin] = useState(false);
   let history = useHistory();
-  // let blob = [Images];
 
   return (
     <div className="container-fluid">
@@ -61,9 +59,7 @@ export const SignIn = () => {
                       e.preventDefault();
                       if (email === "" || password === "") {
                         alert("The input cannot be empty");
-                      }
-                      //NEED ANOTHER IF STATEMENT
-                      else {
+                      } else {
                         actions.signIn(email, password);
                         history.push("/all");
                       }

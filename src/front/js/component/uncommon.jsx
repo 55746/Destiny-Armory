@@ -4,11 +4,8 @@ import { Link } from "react-router-dom";
 import Load from "../../img/tumblr_nhvhluqUM51tfvxn5o1_500.webp";
 import { motion } from "framer-motion";
 
-// THIS IS WHERE WE PUT ALL THE IMAGES FOR THE GUNS
-
 export const Uncommon = () => {
   const { store, actions } = useContext(Context);
-  console.log(store);
   let loadingImg = Load;
 
   return (
@@ -17,7 +14,6 @@ export const Uncommon = () => {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
     >
-      {" "}
       {store.uncommonWeapons ? (
         <div className="row" style={{ justifyContent: "center" }}>
           {store.uncommonWeapons &&
@@ -42,10 +38,6 @@ export const Uncommon = () => {
                               <br />
                               {list.weapon_lore}
                             </p>
-                            {/* <p onClick={() => {}}> */}
-                            {/* ONCLICK WE WANT IT TO MAKE SURE YOU ARE SIGNED IN<, IF NOT ASK IF THEYD LIKE TO SIGN UP OR BRING TO SIGN UP PAGE */}
-                            {/* SignUp to Vote
-                        </p> */}
                             <Link to={"/uncommonweaponpage/" + list.id}>
                               <button
                                 className="btn btn-primary"
@@ -56,7 +48,6 @@ export const Uncommon = () => {
                                 Location Info
                               </button>
                             </Link>
-                            {/* <p className="card-text"><small className="text-muted">Last updated 3 mins ago</small></p> */}
                           </div>
                         </div>
                       </div>
@@ -68,13 +59,13 @@ export const Uncommon = () => {
           <a href="#" class="btt">
             <i
               style={{
-                position: "fixed" /* Fixed/sticky position */,
-                bottom: "20px" /* Place the button at the bottom of the page */,
-                right: "15px" /* Place the button 30px from the right */,
-                backgroundColor: "gray" /* Set a background color */,
-                color: "black" /* Text color */,
-                padding: "15px" /* Some padding */,
-                borderRadius: "10px" /* Rounded corners */,
+                position: "fixed",
+                bottom: "20px",
+                right: "15px",
+                backgroundColor: "gray",
+                color: "black",
+                padding: "15px",
+                borderRadius: "10px",
               }}
               class="fa fa-arrow-circle-up"
               aria-hidden="true"
@@ -88,7 +79,6 @@ export const Uncommon = () => {
             style={{
               width: "100px",
               height: "100px",
-              // background: red;
               borderRadius: "50%",
             }}
           />

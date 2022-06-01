@@ -51,7 +51,7 @@ const getState = ({ getStore, getActions, setStore }) => {
         })
           .then((res) => res.json())
           .then((data) => setStore({ legendaryWeapons: data }))
-          .catch((err) => console.log("err", err));
+          .catch((err) => ("err", err));
       },
       singleLegendaryWeapon: (id) => {
         fetch(process.env.BACKEND_URL + `/api/legendary/${id}`, {
@@ -60,7 +60,7 @@ const getState = ({ getStore, getActions, setStore }) => {
         })
           .then((res) => res.json())
           .then((data) => setStore({ singleLegendaryWeapon: data }))
-          .catch((error) => console.log("error", error));
+          .catch((error) => ("error", error));
       },
       pullRare: () => {
         fetch(process.env.BACKEND_URL + `/api/rare`, {
@@ -70,7 +70,7 @@ const getState = ({ getStore, getActions, setStore }) => {
         })
           .then((res) => res.json())
           .then((data) => setStore({ rareWeapons: data }))
-          .catch((err) => console.log("err", err));
+          .catch((err) => ("err", err));
       },
       singleRareWeapon: (id) => {
         fetch(process.env.BACKEND_URL + `/api/rare/${id}`, {
@@ -79,7 +79,7 @@ const getState = ({ getStore, getActions, setStore }) => {
         })
           .then((res) => res.json())
           .then((data) => setStore({ singleRareWeapon: data }))
-          .catch((error) => console.log("error", error));
+          .catch((error) => ("error", error));
       },
       pullUncommon: () => {
         fetch(process.env.BACKEND_URL + `/api/uncommon`, {
@@ -89,7 +89,7 @@ const getState = ({ getStore, getActions, setStore }) => {
         })
           .then((res) => res.json())
           .then((data) => setStore({ uncommonWeapons: data }))
-          .catch((err) => console.log("err", err));
+          .catch((err) => ("err", err));
       },
       singleUncommonWeapon: (id) => {
         fetch(process.env.BACKEND_URL + `/api/uncommon/${id}`, {
@@ -98,16 +98,9 @@ const getState = ({ getStore, getActions, setStore }) => {
         })
           .then((res) => res.json())
           .then((data) => setStore({ singleUncommonWeapon: data }))
-          .catch((error) => console.log("error", error));
+          .catch((error) => ("error", error));
       },
-      // signUp: (email, password, first_name, last_name, dob) => {
-      //   const new_user = {
-      //     email: email,
-      //     password: password,
-      //     first_name: first_name,
-      //     last_name: last_name,
-      //     dob: dob,
-      //   };
+
       starRating: (star) => {
         setStore({ starRating: star });
       },
@@ -122,8 +115,8 @@ const getState = ({ getStore, getActions, setStore }) => {
           // redirect: "follow",
         })
           .then((response) => response.json())
-          .then((result) => console.log(result))
-          .catch((error) => console.log("error", error));
+          .then((result) => result)
+          .catch((error) => ("error", error));
       },
       signIn: (email, password) => {
         const user = {
@@ -140,7 +133,7 @@ const getState = ({ getStore, getActions, setStore }) => {
         })
           .then((response) => response.json())
           .then((result) => getActions().verifyUser(result.access_token))
-          .catch((error) => console.log("error", error));
+          .catch((error) => ("error", error));
       },
 
       verifyUser: (token) => {
@@ -153,8 +146,7 @@ const getState = ({ getStore, getActions, setStore }) => {
         })
           .then((response) => response.json())
           .then((result) => setStore({ user: result }))
-          .catch((error) => console.log("error", error));
-        // localStorage.setItem("token", token);
+          .catch((error) => ("error", error));
       },
       logout: () => {
         setStore({ user: {} });
