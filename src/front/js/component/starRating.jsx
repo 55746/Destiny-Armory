@@ -2,7 +2,7 @@ import React, { useState, useContext } from "react";
 import { Context } from "../store/appContext";
 import { FaStar } from "react-icons/fa";
 import "../../styles/index.css";
-const StarRating = () => {
+export const StarRating = () => {
   const { store, actions } = useContext(Context);
   const [rating, setRating] = useState(null);
   const [hover, setHover] = useState(null);
@@ -38,5 +38,3 @@ const StarRating = () => {
     </div>
   );
 };
-
-export default StarRating;

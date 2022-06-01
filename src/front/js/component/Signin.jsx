@@ -81,6 +81,7 @@ export const SignIn = () => {
             </div>
           </div>
         </div>
+<<<<<<< HEAD
         <button
           onClick={(e) => {
             e.preventDefault();
@@ -99,6 +100,8 @@ export const SignIn = () => {
         <Link to="/all">
           <button className="btn btn-primary">Back home</button>
         </Link>
+=======
+>>>>>>> dd64d9d7b1004ecdbda48a2df6786d18e2830149
       </form>
     </div>
   );
