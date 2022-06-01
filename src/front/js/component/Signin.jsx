@@ -65,7 +65,7 @@ export const SignIn = () => {
                       //NEED ANOTHER IF STATEMENT
                       else {
                         actions.signIn(email, password);
-                        history.push("/all");
+                        history.push("/");
                       }
                     }}
                     formtype="submit"
@@ -73,7 +73,7 @@ export const SignIn = () => {
                   >
                     Submit
                   </button>
-                  <Link to="/all">
+                  <Link to="/">
                     <button className="btn btn-primary">Back home</button>
                   </Link>
                 </form>
@@ -81,27 +81,6 @@ export const SignIn = () => {
             </div>
           </div>
         </div>
-<<<<<<< HEAD
-        <button
-          onClick={(e) => {
-            e.preventDefault();
-            if (email === "" || password === "") {
-              alert("The input cannot be empty");
-            } else {
-              actions.signIn(email, password);
-              history.push("/all");
-            }
-          }}
-          formtype="submit"
-          className="btn btn-primary"
-        >
-          Submit
-        </button>
-        <Link to="/all">
-          <button className="btn btn-primary">Back home</button>
-        </Link>
-=======
->>>>>>> dd64d9d7b1004ecdbda48a2df6786d18e2830149
       </form>
     </div>
   );

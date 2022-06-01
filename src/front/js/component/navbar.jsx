@@ -18,7 +18,7 @@ export const Navbar = () => {
       >
         <div className="container">
           <img src={Images} style={{ width: "5%", height: "5%" }} />
-          <Link to="/all">
+          <Link to="/">
             <span className="navbar-brand mb-0 h1 text-dark top navbar-toggler-icon">
               Destiny
             </span>
@@ -89,7 +89,7 @@ export const Navbar = () => {
             <button
               className="nav-link top2 button5"
               onClick={() => {
-                history.push("/all");
+                history.push("/");
               }}
             >
               All

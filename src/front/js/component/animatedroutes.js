@@ -3,7 +3,6 @@ import { Home } from "./pages/home";
 import { Switch } from "react-router-dom";
 import { Route } from "react-router-dom";
 import { Footer } from "./footer.jsx";
-import { CreatePage } from "./create.jsx";
 import { Exotics } from "./exotics.jsx";
 import { ExoticWeaponPage } from "./pages/exoticweaponpage.jsx";
 import { Legendary } from "./legendary.jsx";
@@ -12,7 +11,6 @@ import { Rare } from "./rare.jsx";
 import { RareWeaponPage } from "./pages/rareweaponpage.jsx";
 import { Uncommon } from "./uncommon.jsx";
 import { UncommonWeaponPage } from "./pages/uncommonweaponpage.jsx";
-import { All } from "./all.jsx";
 import { SignUp } from "./signup.jsx";
 import { SignIn } from "./Signin.jsx";
 import { AnimatePresence } from "framer-motion";
@@ -24,9 +22,6 @@ export const AnimatedRoutes = () => {
     <div>
       <AnimatePresence>
         <Switch location={location} key={location.pathname}>
-          <Route exact path="/create">
-            <CreatePage />
-          </Route>
           <Route exact path="/exotics">
             <Exotics />
           </Route>
@@ -51,16 +46,13 @@ export const AnimatedRoutes = () => {
           <Route exact path="/uncommonweaponpage/:theid">
             <UncommonWeaponPage />
           </Route>
-          <Route exact path="/all">
-            <All />
-          </Route>
           <Route exact path="/signup">
             <SignUp />
           </Route>
           <Route exact path="/signin">
             <SignIn />
           </Route>
-          <Route exact path="/all">
+          <Route exact path="/">
             <Home />
           </Route>
         </Switch>
