@@ -276,6 +276,24 @@ def get_rating():
     rating_list=list(map(lambda x: x.serialize(), rating))
     return jsonify(rating_list), 200
 
+@api.route('search/<weapon_name>', methods=['GET'])
+def serach_weapon(weapon_name):
+    weapon_name = weapon_name.title()
+
+    uncommon = UncommonWeapon.query.filter_by(weapon_name=weapon_name).first()
+    rare = RareWeapon.query.filter_by(weapon_name=weapon_name).first()
+    legendary = LegendaryWeapon.query.filter_by(weapon_name=weapon_name).first()
+    exotic = ExoticWeapon.query.filter_by(weapon_name=weapon_name).first()
+    
+    if uncommon != None:
+        return jsonify(uncommon.serialize()), 200
+    if rare != None:
+        return jsonify(rare.serialize()), 200
+    if legendary != None:
+        return jsonify(legendary.serialize()), 200
+    if exotic != None:
+        return jsonify(exotic.serialize()), 200
+    return jsonify({"not": "not-found"})
 
 @api.route('/starrating', methods=['POST'])
 def create_rating():

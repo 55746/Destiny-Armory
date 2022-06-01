@@ -11,6 +11,7 @@ const getState = ({ getStore, getActions, setStore }) => {
       uncommonWeapons: null,
       singleUncommonWeapon: [],
       starRating: [],
+      searchWeapon: [],
     },
     actions: {
       getData: () => {
@@ -150,6 +151,18 @@ const getState = ({ getStore, getActions, setStore }) => {
       },
       logout: () => {
         setStore({ user: {} });
+      },
+      searchWeapon: (weaponName) => {
+        fetch(`${process.env.BACKEND_URL}/api/search/${weaponName}`, {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          redirect: "follow",
+        })
+          .then((response) => response.json())
+          .then((result) => setStore({ searchWeapon: result }))
+          .catch((error) => console.log("error", error));
       },
     },
   };

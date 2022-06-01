@@ -2,7 +2,6 @@ import React from "react";
 import { Home } from "./pages/home";
 import { Switch } from "react-router-dom";
 import { Route } from "react-router-dom";
-import { Footer } from "./footer.jsx";
 import { Exotics } from "./exotics.jsx";
 import { ExoticWeaponPage } from "./pages/exoticweaponpage.jsx";
 import { Legendary } from "./legendary.jsx";
