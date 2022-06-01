@@ -81,27 +81,6 @@ export const SignIn = () => {
             </div>
           </div>
         </div>
-<<<<<<< HEAD
-        <button
-          onClick={(e) => {
-            e.preventDefault();
-            if (email === "" || password === "") {
-              alert("The input cannot be empty");
-            } else {
-              actions.signIn(email, password);
-              history.push("/all");
-            }
-          }}
-          formtype="submit"
-          className="btn btn-primary"
-        >
-          Submit
-        </button>
-        <Link to="/all">
-          <button className="btn btn-primary">Back home</button>
-        </Link>
-=======
->>>>>>> 9c13ffe69a970b2b223f73fea6ada05e25c32489
       </form>
     </div>
   );
