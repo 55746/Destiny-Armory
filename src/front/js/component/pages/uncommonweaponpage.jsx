@@ -1,13 +1,12 @@
 import React, { useState, useContext } from "react";
+import ReactPlayer from "react-player";
 import { Context } from "../../store/appContext";
-// import Images from "../../../img/ExoticJadeRabbit.webp";
-
-// import StarRating from "./starRating.jsx";
 
 export const UncommonWeaponPage = () => {
-  // let blob = [Images];
   const { store, actions } = useContext(Context);
-  console.log(store);
+  console.log(window.location.href);
+  let par = store.singleUncommonWeapon.location_video;
+  const [success, setSuccess] = useState("");
   return (
     <div
       className="card"
@@ -25,9 +24,11 @@ export const UncommonWeaponPage = () => {
       <div
         style={{ position: "absolute", paddingLeft: "27%", paddingTop: "3%" }}
       >
-        <p>{store.singleUncommonWeapon.weapon_name}</p>
-        <p>{store.singleUncommonWeapon.weapon_lore}</p>
+        <p>
+          <strong>{store.singleUncommonWeapon.weapon_name}</strong>
+        </p>
         <p>{store.singleUncommonWeapon.weapon_type}</p>
+        <p>{store.singleUncommonWeapon.weapon_lore}</p>
       </div>
       <p style={{ position: "relative", paddingTop: "3%", paddingLeft: "3%" }}>
         {store.singleUncommonWeapon.location_description}
@@ -35,18 +36,64 @@ export const UncommonWeaponPage = () => {
       <div
         style={{
           position: "relative",
-          paddingLeft: "65.5%",
+          paddingLeft: "25%",
           paddingTop: "5%",
           paddingBottom: "1.5%",
         }}
       >
-        <video width="400" controls>
-          <source src={store.singleUncommonWeapon.location_video} />
-        </video>
+        {store.singleUncommonWeapon.location_video == null ? (
+          <div>
+            <p>
+              No video was found for {store.singleUncommonWeapon.weapon_name}
+            </p>
+          </div>
+        ) : (
+          <>
+            {store.user.email ? (
+              <button
+                style={{
+                  position: "absolute",
+                  marginRight: "100px",
+                }}
+                onClick={() => {
+                  navigator.clipboard.writeText(par);
+                  {
+                    setSuccess("copied");
+                  }
+                }}
+              >
+                <i class="fa fa-clone" aria-hidden="true"></i>
+                VideoUrl
+              </button>
+            ) : (
+              <button onClick={() => alert("SignUp/Login to Share")}>
+                <i class="fa fa-clone" aria-hidden="true"></i>
+                copy
+              </button>
+            )}
+            <ReactPlayer
+              controls
+              url={store.singleUncommonWeapon.location_video}
+            />
+            <p style={{ paddingLeft: "25%" }}>
+              This video is credited to its original creator.
+            </p>
+            <p>
+              <i>
+                <small>{success}</small>
+              </i>
+            </p>
+          </>
+        )}
       </div>
-      <p style={{ paddingLeft: "73%" }}>
-        {store.singleUncommonWeapon.video_credit}
-      </p>
+      <div
+        style={{
+          position: "relative",
+          paddingLeft: "25%",
+          paddingTop: "5%",
+          paddingBottom: "",
+        }}
+      ></div>
     </div>
   );
 };

@@ -35,39 +35,10 @@ export const ExoticWeaponPage = () => {
       </p>
       <div
         style={{
-          paddingLeft: "25%",
-          paddingTop: "5%",
-        }}
-      >
-        {store.user.email ? (
-          <button
-            style={{
-              position: "absolute",
-              marginRight: "-50px",
-            }}
-            onClick={() => {
-              navigator.clipboard.writeText(par);
-              {
-                setSuccess("copied");
-              }
-            }}
-          >
-            <i class="fa fa-clone" aria-hidden="true"></i>
-            copy
-          </button>
-        ) : (
-          <button onClick={() => alert("SignUp/Login to Share")}>
-            <i class="fa fa-clone" aria-hidden="true"></i>
-            copy
-          </button>
-        )}
-      </div>
-      <div
-        style={{
           position: "relative",
           paddingLeft: "25%",
           paddingTop: "5%",
-          paddingBottom: "",
+          paddingBottom: "1.5%",
         }}
       >
         {store.singleExoticWeapon.location_video == null ? (
@@ -76,6 +47,28 @@ export const ExoticWeaponPage = () => {
           </div>
         ) : (
           <>
+            {store.user.email ? (
+              <button
+                style={{
+                  position: "absolute",
+                  marginRight: "100px",
+                }}
+                onClick={() => {
+                  navigator.clipboard.writeText(par);
+                  {
+                    setSuccess("copied");
+                  }
+                }}
+              >
+                <i class="fa fa-clone" aria-hidden="true"></i>
+                VideoUrl
+              </button>
+            ) : (
+              <button onClick={() => alert("SignUp/Login to Share")}>
+                <i class="fa fa-clone" aria-hidden="true"></i>
+                copy
+              </button>
+            )}
             <ReactPlayer
               controls
               url={store.singleExoticWeapon.location_video}
@@ -91,6 +84,14 @@ export const ExoticWeaponPage = () => {
           </>
         )}
       </div>
+      <div
+        style={{
+          position: "relative",
+          paddingLeft: "25%",
+          paddingTop: "5%",
+          paddingBottom: "",
+        }}
+      ></div>
     </div>
   );
 };
