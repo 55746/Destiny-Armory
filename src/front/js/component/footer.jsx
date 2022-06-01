@@ -1,10 +1,7 @@
 import React, { Component } from "react";
 
 export const Footer = () => (
-  <footer
-    className="footer mt-auto py-3 text-center bg-info"
-    // style={{ background: "blue" }}
-  >
+  <footer className="footer mt-auto py-3 text-center bg-info">
     <p>MADE WITH DETERMINATION AND A YEARNING FOR KNOWLEDGE</p>
   </footer>
 );

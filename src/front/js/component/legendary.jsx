@@ -8,7 +8,6 @@ import { motion } from "framer-motion";
 
 export const Legendary = () => {
   const { store, actions } = useContext(Context);
-  console.log(store);
   let loadingImg = Load;
 
   return (
@@ -18,7 +17,6 @@ export const Legendary = () => {
       exit={{ opacity: 0 }}
       id="topofpage"
     >
-      {" "}
       {store.legendaryWeapons ? (
         <div className="row" style={{ justifyContent: "center" }}>
           {store.legendaryWeapons &&
@@ -43,10 +41,6 @@ export const Legendary = () => {
                               <br />
                               {list.weapon_lore}
                             </p>
-                            {/* <p onClick={() => {}}> */}
-                            {/* ONCLICK WE WANT IT TO MAKE SURE YOU ARE SIGNED IN<, IF NOT ASK IF THEYD LIKE TO SIGN UP OR BRING TO SIGN UP PAGE */}
-                            {/* SignUp to Vote
-                          </p> */}
                             <Link to={"/legendaryweaponpage/" + list.id}>
                               <button
                                 className="btn btn-primary"
@@ -57,7 +51,6 @@ export const Legendary = () => {
                                 Location Info
                               </button>
                             </Link>
-                            {/* <p className="card-text"><small className="text-muted">Last updated 3 mins ago</small></p> */}
                           </div>
                         </div>
                       </div>
@@ -69,13 +62,13 @@ export const Legendary = () => {
           <a href="#" class="btt">
             <i
               style={{
-                position: "fixed" /* Fixed/sticky position */,
-                bottom: "20px" /* Place the button at the bottom of the page */,
-                right: "15px" /* Place the button 30px from the right */,
-                backgroundColor: "gray" /* Set a background color */,
-                color: "black" /* Text color */,
-                padding: "15px" /* Some padding */,
-                borderRadius: "10px" /* Rounded corners */,
+                position: "fixed",
+                bottom: "20px",
+                right: "15px",
+                backgroundColor: "gray",
+                color: "black",
+                padding: "15px",
+                borderRadius: "10px",
               }}
               class="fa fa-arrow-circle-up"
               aria-hidden="true"
@@ -89,7 +82,6 @@ export const Legendary = () => {
             style={{
               width: "100px",
               height: "100px",
-              // background: red;
               borderRadius: "50%",
             }}
           />

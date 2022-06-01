@@ -5,11 +5,10 @@ import "../../styles/nav.css";
 import "../../styles/logo.css";
 import "../../styles/navcolor.css";
 import Images from "../../img/symbol.png";
+
 export const Navbar = () => {
   const { store, actions } = useContext(Context);
   let history = useHistory();
-  let blob = [Images];
-
   return (
     <>
       <nav
@@ -55,13 +54,7 @@ export const Navbar = () => {
         <ul
           className="nav nav-tabs nav justify-content-center"
           style={{ position: "absolute", left: "25%" }}
-        >
-          {/* <li className="nav-item">
-            <Link to="/home">
-              <button className="nav-link">Search</button>
-            </Link>
-          </li> */}
-        </ul>
+        ></ul>
         <div className="tab-content" id="myTabContent">
           <div
             className="tab-pane fade show active"
@@ -92,7 +85,7 @@ export const Navbar = () => {
                 history.push("/");
               }}
             >
-              All
+              Search
             </button>
           </li>
           <li className="nav-item star" role="presentation">

@@ -1,7 +1,6 @@
 import React, { useState, useContext } from "react";
 import { Context } from "../../store/appContext";
 import ReactPlayer from "react-player";
-// import StarRating from "./starRating.jsx";
 
 export const LegendaryWeaponPage = () => {
   const { store, actions } = useContext(Context);
@@ -15,7 +14,6 @@ export const LegendaryWeaponPage = () => {
         position: "relative",
         marginLeft: "10%",
         marginRight: "10%",
-        // marginBottom: "10%",
       }}
     >
       <img
