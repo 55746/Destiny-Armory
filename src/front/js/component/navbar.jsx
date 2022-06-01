@@ -92,7 +92,7 @@ export const Navbar = () => {
                 history.push("/all");
               }}
             >
-              All
+              Search
             </button>
           </li>
           <li className="nav-item star" role="presentation">
