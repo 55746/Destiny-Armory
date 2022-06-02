@@ -286,13 +286,13 @@ def serach_weapon(weapon_name):
     exotic = ExoticWeapon.query.filter_by(weapon_name=weapon_name).first()
     
     if uncommon != None:
-        return jsonify(uncommon.serialize()), 200
+        return jsonify({"info": uncommon.serialize(), "type": "uncommonweaponpage"}), 200
     if rare != None:
-        return jsonify(rare.serialize()), 200
+        return jsonify({"info": rare.serialize(), "type": "rareweaponpage"}), 200
     if legendary != None:
-        return jsonify(legendary.serialize()), 200
+        return jsonify({"info": legendary.serialize(), "type": "legendaryweaponpage"}), 200
     if exotic != None:
-        return jsonify(exotic.serialize()), 200
+        return jsonify({"info":exotic.serialize(), "type":"exoticweaponpage"}), 200
     return jsonify({"not": "not-found"})
 
 @api.route('/starrating', methods=['POST'])

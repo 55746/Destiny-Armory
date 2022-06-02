@@ -2,10 +2,12 @@ import React, { useState, useContext } from "react";
 // import Images from "../../../img/destiny_nightfall_weapon_adept.jpg";
 import { motion } from "framer-motion";
 import { Context } from "../../store/appContext.js";
+import { Link } from "react-router-dom";
 
 export const Home = () => {
   const { store, actions } = useContext(Context);
   const [weapon, setWeapon] = useState("");
+  console.log(store.searchWeapon);
   // const [dat, setDat] = useState([]);
   // let blob = Images;
   // const search = async () => {
@@ -56,7 +58,7 @@ export const Home = () => {
             Search
           </button>
         </form>
-        {store.searchWeapon.id ? (
+        {store.searchWeapon.info ? (
           <div
             className="card"
             style={{
@@ -68,7 +70,7 @@ export const Home = () => {
           >
             <img
               style={{ width: "25%", paddingLeft: "2%", paddingTop: "2%" }}
-              src={store.searchWeapon.weapon_Img}
+              src={store.searchWeapon.info.weapon_Img}
             />
             <div
               style={{
@@ -78,10 +80,29 @@ export const Home = () => {
               }}
             >
               <p>
-                <strong>{store.searchWeapon.weapon_name}</strong>
+                <strong>{store.searchWeapon.info.weapon_name}</strong>
               </p>
-              <p>{store.searchWeapon.weapon_type}</p>
-              <p>{store.searchWeapon.weapon_lore}</p>
+              <p>{store.searchWeapon.info.weapon_type}</p>
+              <p>{store.searchWeapon.info.weapon_lore}</p>
+
+              <Link
+                style={{
+                  marginBottom: "2px",
+                  marginLeft: "2%",
+                  position: "relative",
+                  zIndex: "1",
+                }}
+                to={`/${store.searchWeapon.type}/` + store.searchWeapon.info.id}
+              >
+                <button
+                  className="btn btn-primary"
+                  onClick={() => {
+                    actions.singleExoticWeapon(store.searchWeapon.info.id);
+                  }}
+                >
+                  Location Info
+                </button>
+              </Link>
             </div>
             <p
               style={{
@@ -90,7 +111,7 @@ export const Home = () => {
                 paddingLeft: "3%",
               }}
             >
-              {store.searchWeapon.location_description}
+              {store.searchWeapon.info.location_description}
             </p>
           </div>
         ) : (

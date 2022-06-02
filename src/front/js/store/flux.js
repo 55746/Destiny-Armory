@@ -11,7 +11,7 @@ const getState = ({ getStore, getActions, setStore }) => {
       uncommonWeapons: null,
       singleUncommonWeapon: [],
       starRating: [],
-      searchWeapon: [],
+      searchWeapon: {},
     },
     actions: {
       getData: () => {
