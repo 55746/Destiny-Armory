@@ -18,7 +18,10 @@ export const Legendary = () => {
       id="topofpage"
     >
       {store.legendaryWeapons ? (
-        <div className="row" style={{ justifyContent: "center" }}>
+        <div
+          className="row"
+          style={{ marginTop: "1%", justifyContent: "center" }}
+        >
           {store.legendaryWeapons &&
             store.legendaryWeapons.map((list, index) => {
               return (

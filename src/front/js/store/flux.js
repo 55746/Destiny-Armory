@@ -11,7 +11,7 @@ const getState = ({ getStore, getActions, setStore }) => {
       uncommonWeapons: null,
       singleUncommonWeapon: [],
       starRating: [],
-      searchWeapon: [],
+      searchWeapon: {},
     },
     actions: {
       getData: () => {
@@ -163,6 +163,9 @@ const getState = ({ getStore, getActions, setStore }) => {
           .then((response) => response.json())
           .then((result) => setStore({ searchWeapon: result }))
           .catch((error) => console.log("error", error));
+      },
+      deleteSearch: () => {
+        setStore({ searchWeapon: {} });
       },
     },
   };

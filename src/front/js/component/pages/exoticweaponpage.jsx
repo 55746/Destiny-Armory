@@ -6,6 +6,7 @@ export const ExoticWeaponPage = () => {
   const { store, actions } = useContext(Context);
   let par = store.singleExoticWeapon.location_video;
   const [success, setSuccess] = useState("");
+  console.log(store.searchWeapon);
   return (
     <div
       className="card"
