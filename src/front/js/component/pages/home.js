@@ -2,7 +2,6 @@ import React, { useState, useContext } from "react";
 // import Images from "../../../img/destiny_nightfall_weapon_adept.jpg";
 import { motion } from "framer-motion";
 import { Context } from "../../store/appContext.js";
-
 export const Home = () => {
   const { store, actions } = useContext(Context);
   const [weapon, setWeapon] = useState("");

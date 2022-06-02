@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { Context } from "../store/appContext";
+import Dark from "../component/dark.jsx";
 import "../../styles/nav.css";
 import "../../styles/logo.css";
 import "../../styles/navcolor.css";
