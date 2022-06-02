@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 export const Home = () => {
   const { store, actions } = useContext(Context);
   const [weapon, setWeapon] = useState("");
+  const [search, setSearch] = useState("");
   console.log(store.searchWeapon);
   // const [dat, setDat] = useState([]);
   // let blob = Images;
@@ -97,7 +98,10 @@ export const Home = () => {
                 <button
                   className="btn btn-primary"
                   onClick={() => {
+                    actions.singleUncommonWeapon(store.searchWeapon.info.id);
+                    actions.singleRareWeapon(store.searchWeapon.info.id);
                     actions.singleExoticWeapon(store.searchWeapon.info.id);
+                    actions.singlLegendaryeWeapon(store.searchWeapon.info.id);
                   }}
                 >
                   Location Info
