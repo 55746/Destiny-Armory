@@ -34,7 +34,7 @@ export const Home = () => {
         exit={{ opacity: 0 }}
       >
         {/* <img src={blob} style={{ width: "100%", height: "50%" }} /> */}
-        <form className="d-flex" role="search">
+        <form className="d-flex" role="search" style={{ marginTop: "3%" }}>
           <input
             className="form-control me-2"
             type="search"
@@ -43,6 +43,7 @@ export const Home = () => {
             onChange={(e) => setWeapon(e.target.value)}
             // data={dat}
             value={weapon}
+            style={{ padding: "2%", fontSize: "20px" }}
           />
           <button
             onClick={() => {

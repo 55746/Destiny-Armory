@@ -16,7 +16,10 @@ export const Rare = () => {
       id="topofpage"
     >
       {store.rareWeapons ? (
-        <div className="row" style={{ justifyContent: "center" }}>
+        <div
+          className="row"
+          style={{ marginTop: "1%", justifyContent: "center" }}
+        >
           {store.rareWeapons &&
             store.rareWeapons.map((list, index) => {
               return (
