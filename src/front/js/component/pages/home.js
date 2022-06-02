@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 // import Images from "../../../img/destiny_nightfall_weapon_adept.jpg";
 import { motion } from "framer-motion";
 import { Context } from "../../store/appContext.js";
@@ -9,6 +9,9 @@ export const Home = () => {
   const [weapon, setWeapon] = useState("");
   const [search, setSearch] = useState("");
   console.log(store.searchWeapon);
+  useEffect(() => {
+    actions.deleteSearch();
+  }, []);
   // const [dat, setDat] = useState([]);
   // let blob = Images;
   // const search = async () => {
@@ -43,7 +46,7 @@ export const Home = () => {
             onChange={(e) => setWeapon(e.target.value)}
             // data={dat}
             value={weapon}
-            style={{ padding: "2%", fontSize: "20px" }}
+            style={{ padding: "1%", fontSize: "20px" }}
           />
           <button
             onClick={() => {
@@ -102,7 +105,7 @@ export const Home = () => {
                     actions.singleUncommonWeapon(store.searchWeapon.info.id);
                     actions.singleRareWeapon(store.searchWeapon.info.id);
                     actions.singleExoticWeapon(store.searchWeapon.info.id);
-                    actions.singlLegendaryeWeapon(store.searchWeapon.info.id);
+                    actions.singleLegendaryeWeapon(store.searchWeapon.info.id);
                   }}
                 >
                   Location Info

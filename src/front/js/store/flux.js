@@ -164,6 +164,9 @@ const getState = ({ getStore, getActions, setStore }) => {
           .then((result) => setStore({ searchWeapon: result }))
           .catch((error) => console.log("error", error));
       },
+      deleteSearch: () => {
+        setStore({ searchWeapon: {} });
+      },
     },
   };
 };
