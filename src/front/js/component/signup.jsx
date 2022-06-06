@@ -46,7 +46,6 @@ export const SignUp = () => {
                     />
                   </div>
                   <div className="row">
-                    <span className="fa fa-lock"></span>
                     <input
                       onChange={(e) => setFirst_name(e.target.value)}
                       value={first_name}

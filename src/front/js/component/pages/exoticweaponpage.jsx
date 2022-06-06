@@ -10,14 +10,15 @@ export const ExoticWeaponPage = () => {
   return (
     <div
       className="card"
-      style={{
-        position: "relative",
-        marginLeft: "10%",
-        marginRight: "10%",
-      }}
+      // style={{
+      //   position: "relative",
+      //   marginLeft: "10%",
+      //   marginRight: "10%",
+      // }}
     >
       <img
-        style={{ width: "25%", paddingLeft: "2%", paddingTop: "2%" }}
+        className="image"
+        // style={{ width: "25%", paddingLeft: "2%", paddingTop: "2%" }}
         src={store.singleExoticWeapon.weapon_Img}
       />
       <div

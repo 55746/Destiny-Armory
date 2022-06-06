@@ -1,0 +1,15 @@
+.card {
+  position: relative;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+.image {
+  width: 25%;
+  padding-left: 2%;
+  padding-top: 2%;
+}
+.outerdiv {
+  position: "absolute";
+  padding-left: "27%";
+  padding-top: "3%";
+}

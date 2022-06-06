@@ -11,69 +11,53 @@ export const Navbar = () => {
   let history = useHistory();
   return (
     <>
-      <nav
-        className="navbar navbar-dark text-dark"
-        style={{ margin: "0px", background: "transparent" }}
-      >
-        <div className="container">
-          <img src={Images} style={{ width: "5%", height: "5%" }} />
-          <Link to="/">
-            <span className="navbar-brand mb-0 h1 text-dark top navbar-toggler-icon">
-              Destiny
-            </span>
-          </Link>
-          <div className="" style={{ display: "inline-flex" }}>
-            {store.user.email ? (
-              <div className="" style={{ display: "inline-flex" }}>
-                <button
-                  onClick={() => {
-                    actions.logout();
-                  }}
-                  className="bt1 btn-danger"
-                  style={{ width: "100%" }}
-                >
-                  Logout
-                </button>
-              </div>
-            ) : (
-              <>
-                <Link to="/signin">
-                  <button className="btn btn-primary" style={{ width: "100%" }}>
-                    Signin
-                  </button>
-                </Link>
-                <Link to="/signup">
-                  <button className="btn btn-primary" style={{ width: "100%" }}>
-                    signup
-                  </button>
-                </Link>
-              </>
-            )}
+      <nav className=" container navbar navbar-dark text-dark d-flex justify-content-between">
+        <div className="d-flex">
+          <div
+            style={{
+              positon: "relative",
+              display: "inline-flex",
+              width: "4rem",
+              height: "2rem",
+            }}
+          >
+            <img src={Images} className="img-fluid" />
           </div>
+          <Link to="/">
+            <div>
+              <span className="navbar-brand h1 text-dark top move">
+                Destiny
+              </span>
+            </div>
+          </Link>
         </div>
-        <ul
-          className="nav nav-tabs nav justify-content-center"
-          style={{ position: "absolute", left: "25%" }}
-        ></ul>
-        <div className="tab-content" id="myTabContent">
-          <div
-            className="tab-pane fade show active"
-            id="home"
-            role="tabpanel"
-            aria-labelledby="home-tab"
-          ></div>
-          <div
-            className="tab-pane fade"
-            id="profile"
-            role="tabpanel"
-            aria-labelledby="profile-tab"
-          ></div>
-          <div
-            className="tab-pane fade"
-            id="contact"
-            role="tabpanel"
-            aria-labelledby="contact-tab"
-          ></div>
+        <div className="d-flex">
+          {store.user.email ? (
+            <div className="">
+              <button
+                onClick={() => {
+                  actions.logout();
+                }}
+                className="bt1 btn-danger"
+                style={{ width: "100%" }}
+              >
+                Logout
+              </button>
+            </div>
+          ) : (
+            <>
+              <Link to="/signin">
+                <button className="btn btn-primary" style={{ width: "100%" }}>
+                  Signin
+                </button>
+              </Link>
+              <Link to="/signup">
+                <button className="btn btn-primary" style={{ width: "100%" }}>
+                  signup
+                </button>
+              </Link>
+            </>
+          )}
         </div>
       </nav>
       <nav aria-label="Page navigation example">
