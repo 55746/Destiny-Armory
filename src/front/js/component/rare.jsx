@@ -3,6 +3,7 @@ import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
 import Load from "../../img/tumblr_nhvhluqUM51tfvxn5o1_500.webp";
 import { motion } from "framer-motion";
+import "../../styles/list.css";
 
 export const Rare = () => {
   const { store, actions } = useContext(Context);
@@ -44,7 +45,7 @@ export const Rare = () => {
                             </p>
                             <Link to={"/rareweaponpage/" + list.id}>
                               <button
-                                className="btn btn-primary"
+                                className="locinfo btn btn-primary"
                                 onClick={() => {
                                   actions.singleRareWeapon(list.id);
                                 }}

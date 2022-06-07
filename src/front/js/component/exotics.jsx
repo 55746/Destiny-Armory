@@ -1,7 +1,7 @@
 import React, { useState, useContext, useEffect } from "react";
 import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
-import "../../styles/home.css";
+import "../../styles/list.css";
 import Load from "../../img/tumblr_nhvhluqUM51tfvxn5o1_500.webp";
 import { motion } from "framer-motion";
 
@@ -44,7 +44,7 @@ export const Exotics = () => {
                             </p>
                             <Link to={"/exoticweaponpage/" + list.id}>
                               <button
-                                className="btn btn-primary"
+                                className="locinfo btn btn-primary"
                                 onClick={() => {
                                   actions.singleExoticWeapon(list.id);
                                 }}

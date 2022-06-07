@@ -1,0 +1,19 @@
+.card-text {
+  margin-bottom: -5rem;
+}
+.locinfo {
+  margin-left: 100%;
+  margin: 0, 20, 0, 0;
+
+  /* padding: 0; */
+}
+
+html,
+body {
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+.move {
+  margin: 0 auto;
+}

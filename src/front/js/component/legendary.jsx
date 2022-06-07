@@ -3,6 +3,7 @@ import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
 import Load from "../../img/tumblr_nhvhluqUM51tfvxn5o1_500.webp";
 import { motion } from "framer-motion";
+import "../../styles/list.css";
 
 // THIS IS WHERE WE PUT ALL THE IMAGES FOR THE GUNS
 
@@ -46,7 +47,7 @@ export const Legendary = () => {
                             </p>
                             <Link to={"/legendaryweaponpage/" + list.id}>
                               <button
-                                className="btn btn-primary"
+                                className="locinfo btn btn-primary"
                                 onClick={() => {
                                   actions.singleLegendaryWeapon(list.id);
                                 }}
