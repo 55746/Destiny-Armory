@@ -4,7 +4,6 @@ import ReactPlayer from "react-player";
 
 export const LegendaryWeaponPage = () => {
   const { store, actions } = useContext(Context);
-  console.log(window.location.href);
   let par = store.singleLegendaryWeapon.location_video;
   const [success, setSuccess] = useState("");
   return (

@@ -6,7 +6,6 @@ export const ExoticWeaponPage = () => {
   const { store, actions } = useContext(Context);
   let par = store.singleExoticWeapon.location_video;
   const [success, setSuccess] = useState("");
-  console.log(store.searchWeapon);
   return (
     <div
       className="card"
@@ -18,7 +17,7 @@ export const ExoticWeaponPage = () => {
     >
       <img
         className="image"
-        // style={{ width: "25%", paddingLeft: "2%", paddingTop: "2%" }}
+        style={{ width: "25%", paddingLeft: "2%", paddingTop: "2%" }}
         src={store.singleExoticWeapon.weapon_Img}
       />
       <div
@@ -69,17 +68,17 @@ export const ExoticWeaponPage = () => {
                 copy
               </button>
             )}
+            <p style={{ position: "absolute", marginTop: "-2%" }}>
+              <i>
+                <small>{success}</small>
+              </i>
+            </p>
             <ReactPlayer
               controls
               url={store.singleExoticWeapon.location_video}
             />
             <p style={{ paddingLeft: "25%" }}>
               This video is credited to its original creator.
-            </p>
-            <p>
-              <i>
-                <small>{success}</small>
-              </i>
             </p>
           </>
         )}

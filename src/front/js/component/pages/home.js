@@ -1,32 +1,14 @@
 import React, { useState, useContext, useEffect } from "react";
-// import Images from "../../../img/destiny_nightfall_weapon_adept.jpg";
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Context } from "../../store/appContext.js";
 export const Home = () => {
   const { store, actions } = useContext(Context);
   const [weapon, setWeapon] = useState("");
   const [search, setSearch] = useState("");
-  console.log(store.searchWeapon);
   useEffect(() => {
     actions.deleteSearch();
   }, []);
-  // const [dat, setDat] = useState([]);
-  // let blob = Images;
-  // const search = async () => {
-  //   let res = await fetch(
-  //     "https://3001-55746-destinyarmory-6hgy296ti3e.ws-us46.gitpod.io/api/exotics"
-  //   );
-  //   let searched = await res.json();
-  //   let par = setDat(searched);
-  //   console.log(dat);
-  // };
-  // search();
-  // console.log(store.searchWeapon);
-  // console.log(weapon);
-  // const search = () => {
-  //   let par = actions.pullExotic();
-  //   console.log(par);
-  // };
   return (
     <>
       <motion.div
@@ -42,7 +24,6 @@ export const Home = () => {
             // placeholder="Search"
             aria-label="Search"
             onChange={(e) => setWeapon(e.target.value)}
-            // data={dat}
             value={weapon}
             style={{ padding: "1%", fontSize: "20px" }}
           />
@@ -68,7 +49,6 @@ export const Home = () => {
               position: "relative",
               marginLeft: "10%",
               marginRight: "10%",
-              // marginBottom: "10%",
             }}
           >
             <img
