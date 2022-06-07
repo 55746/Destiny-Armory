@@ -49,6 +49,7 @@ export const Home = () => {
               position: "relative",
               marginLeft: "10%",
               marginRight: "10%",
+              marginTop: "1%",
             }}
           >
             <img
